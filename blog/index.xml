@@ -6,8 +6,44 @@
     <description>Recent content in Blogs on Ryan Mukherjee</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 22 Sep 2016 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 01 Oct 2016 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://www.ryanmukherjee.com/blog/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>android obd terminal</title>
+      <link>http://www.ryanmukherjee.com/blog/android-obd-terminal/</link>
+      <pubDate>Sat, 01 Oct 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.ryanmukherjee.com/blog/android-obd-terminal/</guid>
+      <description>
+
+&lt;h2 id=&#34;terminal&#34;&gt;Terminal&lt;/h2&gt;
+
+&lt;p&gt;The first step to interfacing with the ECU is communicating with the OBD adapter that&amp;rsquo;s plugged into my car. As I mentioned in a previous blog post, I&amp;rsquo;m using an OBDLink MX Bluetooth adapter to communicate with the car. As this will be my first foray into raw OBD commands, I figured the best place to start would be a terminal interface that would allow me to enter commands manually so that I can test things out. I&amp;rsquo;d also like to do some general logging of OBD/CAN traffic on my car&amp;rsquo;s network so that I can start to understand how things are connected and what normal communications look like.&lt;/p&gt;
+
+&lt;p&gt;Towards that goal, I&amp;rsquo;ve just about finished up the terminal interface. I ran into a few snags using an IntentService to handle the Bluetooth connection, but so far I&amp;rsquo;ve been able to tackle them. I was successfully able to use a BroadcastReceiver to handle user input and send it to the Bluetooth device, while using the main onHandleIntent function to wait for input from the Bluetooth connection. I initially tried to use service binding to support notifying the main Activity when the Bluetooth connection was successfully connected or not. However, I couldn&amp;rsquo;t find a way to support delaying the onServiceConnected callback until the Bluetooth connection was fully connected. As such, I switched to using a ResultReceiver, which is Parcelable and can be passed in to the IntentService as an extra.&lt;/p&gt;
+
+&lt;h2 id=&#34;obdsim&#34;&gt;OBDSim&lt;/h2&gt;
+
+&lt;p&gt;While I was looking for a way to test the current version of my app, I stumbled upon &lt;a href=&#34;https://icculus.org/obdgpslogger/obdsim.html&#34;&gt;OBDSim&lt;/a&gt;. Written by a guy named Gary, or so it seems, this tool is pretty awesome. Most of the other software ECU simulators I could find are paid and seemed to have pretty clunky interfaces.&lt;/p&gt;
+
+&lt;p&gt;I downloaded the latest &lt;a href=&#34;https://icculus.org/obdgpslogger/&#34;&gt;OBD GPS Logger&lt;/a&gt; source code, which was apparently from 6 years ago, and let out a sigh of relief when I saw that Gary used CMake. So I quickly created a build directory and got to compiling. Unfortunately, it looks like there might be some errors in the main OBD GPS Logger application. However, OBDSim is a separate target, so with a quick &amp;ldquo;make obdsim&amp;rdquo; command I was able to compile just the simulator. There were a few linking dependencies that weren&amp;rsquo;t called out in the CMakeLists.txt file, but it was trivial to install them via apt-get.&lt;/p&gt;
+
+&lt;p&gt;Next thing I knew, I had a living breathing OBD simulator. A quick Google search led me to a &lt;a href=&#34;http://unix.stackexchange.com/questions/92255/how-do-i-connect-and-send-data-to-a-bluetooth-serial-port-on-linux&#34;&gt;Stack Overflow&lt;/a&gt; article that allowed me to get my phone connected to OBDSim. I&amp;rsquo;ve replicated the necessary commands below:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;# Check if serial service is currently supported
+sdptool browse local
+# If not, create a serial service on channel 22
+sdptool add --channel=22 SP
+# Watch channel 22 with rfcomm, create /dev/rfcomm0 when a device connects
+sudo rfcomm watch /dev/rfcomm0 22
+# Start obdsim on /dev/rfcomm0 once a device connects
+obdsim -t /dev/rfcomm0
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Once connected, I was able to send commands as you can see from the screenshot in this post. My initial thought is that I need to hide the extra return carriage and terminal prompt that are being returning by the OBD adapter. However, it looks like OBDSim isn&amp;rsquo;t 100% consistent about sending these characters, so I&amp;rsquo;ll need to test on my real device to verify. My next steps will probably be to put logic like this in the Settings dialog, and then I&amp;rsquo;ll want to implement the Log tab so that I can create log files to start understanding my car&amp;rsquo;s network.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>logging obd</title>
