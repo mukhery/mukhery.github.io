@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Blogs on Ryan Mukherjee</title>
+    <link>http://www.ryanmukherjee.com/blog/</link>
+    <description>Recent content in Blogs on Ryan Mukherjee</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 22 Sep 2016 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://www.ryanmukherjee.com/blog/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>logging obd</title>
+      <link>http://www.ryanmukherjee.com/blog/logging-obd/</link>
+      <pubDate>Thu, 22 Sep 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.ryanmukherjee.com/blog/logging-obd/</guid>
+      <description>
+
+&lt;h2 id=&#34;obd-adapter&#34;&gt;OBD Adapter&lt;/h2&gt;
+
+&lt;p&gt;Back in 2009 I purchased an OBDLink USB adapter so that I could scan trouble codes from my car using a laptop. The hardware was very nice, but as I messed around with the tool I realized it had a major shortcoming. While I appreciated that ScanTool offered open source software, I was very disappointed that the software was incapable of handling my vehicle&amp;rsquo;s proprietary protocols. This isn&amp;rsquo;t really the fault of ScanTool but rather the industry itself. Standardized automotive communication protocols have come a long way over the years, but they still have a ways to go in terms of making things more standardized, open, and accessible.&lt;/p&gt;
+
+&lt;p&gt;At any rate, I was able to upgrade to an OBDLink MX Bluetooth adapter in 2012. This little adapter is small, fast, and has nice power saving features. The STN11xx IC also supports a variety of different communication protocols to enable some potentially awesome applications.&lt;/p&gt;
+
+
+&lt;figure &gt;
+    &lt;a href=&#34;https://www.scantool.net/obdlink-mxbt/&#34;&gt;
+        &lt;img src=&#34;https://www.scantool.net/media/catalog/product/cache/1/image/650x/040ec09b1e35df139433887a97daa66f/m/x/mxbt_main_st_20140630.jpg&#34; alt=&#34;OBDLink MX Bluetooth&#34; /&gt;
+    &lt;/a&gt;
+    
+&lt;/figure&gt;
+
+
+&lt;p&gt;However, I&amp;rsquo;ve seen a surprising lack of software options for the STN11xx chip. Most of the apps that I&amp;rsquo;ve seen only support the ELM327 command set. This is certainly the best way to cover the widest variety of hardware, as the STN11xx chips also support the ELM327 v1.4 command set. But these apps miss out on some of the advanced features of the ST11xx chips.&lt;/p&gt;
+
+&lt;h2 id=&#34;building-an-android-application&#34;&gt;Building an Android Application&lt;/h2&gt;
+
+&lt;p&gt;After rebuilding my engine I&amp;rsquo;m going to need tools to properly tune the engine. I surveyed commercial tuning products, however all of the viable options for an engine this new were too expensive. As such, I have begun to write my own software to interface with my OBDLink MX adapter with the goal of working towards a custom open-source solution to reading and flashing my ECU.&lt;/p&gt;
+
+&lt;p&gt;You can follow my progress on the Android app &lt;a href=&#34;https://github.com/mukhery/AudiECU&#34;&gt;here&lt;/a&gt;. My first step is to create a terminal program to interface with the OBDLink MX bluetooth adapter and allow for manual command entry. After testing out OBD command scripts and ensuring that they work on my vehicle, I plan to incorporate these scripts into the app as part of a diagnostics page. There will also be a logs page for importing and exporting terminal logs, and eventually (if possible) the app will also have functionality to dump and flash ECU memory.&lt;/p&gt;
+
+&lt;p&gt;My current design for the app has all of the OBD command input and output being fed into a ContentProvider. This allows for fragments to more easily and seamlessly update with the latest terminal history. It also allows me to easily export and import command history by writing out the contents of the SQLite database to a file or vice versa. One of my goals is to ensure that no matter what diagnostic or ECU read/flash command a user runs, he or she can potentially export the terminal log that includes that raw OBD commands that allowed the software to perform these commands.&lt;/p&gt;
+
+&lt;p&gt;To handle the Bluetooth connection, my current design is to use an IntentService. The class&amp;rsquo;s onHandleIntent method is used to open a Bluetooth socket and instantiate an infinite loop receiving data through the socket. All received data is written into the ContentProvider and any fragments that are monitoring this data will be automatically notified to pull the latest data. Once the IntentService starts, it registers a BroadcastReceiver that listens for commands to send to the OBD adapter. As soon as it receives a BroadcastIntent, it writes the contents to the Bluetooth socket.&lt;/p&gt;
+
+&lt;p&gt;By using an IntentService, I can quickly create a background service that maintains, reads, and writes from/to a Bluetooth connection. Services are required because some OBD commands simply put the adapter into a passive listen-only mode, and we would like to remain in this mode and collect data even when the app isn&amp;rsquo;t in the foreground.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>engine purchase</title>
+      <link>http://www.ryanmukherjee.com/blog/engine-purchase/</link>
+      <pubDate>Tue, 13 Sep 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.ryanmukherjee.com/blog/engine-purchase/</guid>
+      <description>
+
+&lt;h2 id=&#34;rationale&#34;&gt;Rationale&lt;/h2&gt;
+
+&lt;p&gt;An oil consumption issue with my current engine is what caused me to start researching engine technology and possible solutions. I initially noticed the oil consumption issue while my vehicle was still under warranty and brought the issue to the attention of my local Audi dealer. They performed an oil consumption test a little over a year ago and only measured consumption of about 0.13 liters of oil per 1000 miles.&lt;/p&gt;
+
+&lt;p&gt;Several months after my oil consumption test, the turbocharger on my vehicle failed. Fortunately, my car&amp;rsquo;s warranty period had not yet ended and my dealer replaced the entire turbocharger unit. Reflecting about this failure now makes me wonder whether or not this failure is connected with the increased oil consumption issue that I am seeing now. However, at the time I did not suspect that my engine had any major issues (especially given that it only had 40,000 miles at the time).&lt;/p&gt;
+
+&lt;p&gt;As my warranty was ending, I decided to install an oil catch can to help prolong the life of my engine. Unfortunately (or fortunately, depending on how you look at it), this catch can is what revealed the greater issue with my engine. My engine was filling my catch can almost completely with oil in a little over one week of daily driving. My commute isn&amp;rsquo;t anything crazy, either. I drive about 30 minutes and 20 miles each day.&lt;/p&gt;
+
+&lt;p&gt;I took my vehicle back to the dealer after discovering this issue, even though my vehicle was now out of its warranty period. The dealer refused to perform another oil consumption test, given that I had an oil consumption test performed one year earlier and that I had modified the vehicle by adding a catch can.&lt;/p&gt;
+
+&lt;p&gt;I suspect that my vehicle might have an issue similar to the one that countless other 2.0L TFSI engine owners have experienced, and for which there is now an &lt;a href=&#34;http://www.oilconsumptionsettlement.com/&#34;&gt;oil consumption settlement&lt;/a&gt;. There are rumors that these engines had faulty piston rings, which caused excessive oil consumption and blow-by. It seems a little unlikely to me that Audi would use vastly different parts for their nearly-identical transverse version of the 2.0L TFSI engine. I suspect my engine has a similar set of faulty piston rings.&lt;/p&gt;
+
+&lt;p&gt;At any rate, my frustration getting this issue resolved through Audi encouraged me to look into solving the problem myself. As my interest in automotive science has been piqued by the issues I encountered, I decided that it could be a worthwhile endeavor to rebuild an engine myself. As I only have one vehicle and I wanted to take my time, I couldn&amp;rsquo;t use my own engine and would need to purchase a used one.&lt;/p&gt;
+
+&lt;h2 id=&#34;the-engine&#34;&gt;The engine&lt;/h2&gt;
+
+&lt;p&gt;Luckily, just as I made the decision to rebuild an engine for my car I found a perfect used engine online from &lt;a href=&#34;https://www.lkqonline.com/&#34;&gt;LKQ&lt;/a&gt;. The host vehicle was nearly identical to mine in model year, color, and options. Ed at &lt;a href=&#34;http://4induktion.com/&#34;&gt;Induktion Motorsports&lt;/a&gt; was kind enough to help me out with some guidance as I made the purchase and to receive the engine for me.&lt;/p&gt;
+
+&lt;p&gt;As I was waiting for the engine to arrive, I made sure I had the right tools to work on the engine. I turned to &lt;a href=&#34;http://www.harborfreight.com/&#34;&gt;Harbor Freight&lt;/a&gt; as any hobbyist on a budget would. With the engine weighing in around 320 lbs, a &lt;a href=&#34;http://www.harborfreight.com/1000-lb-capacity-engine-stand-69886.html&#34;&gt;1000 lb engine stand&lt;/a&gt; should be more than strong enough to hold to engine while I work on it. I also needed a &lt;a href=&#34;http://www.harborfreight.com/1-ton-capacity-foldable-shop-crane-61858.html&#34;&gt;shop crane&lt;/a&gt; to move the engine around and get it on and off a truck.&lt;/p&gt;
+
+&lt;p&gt;Finally the day came for me to pick up the engine. The engine was shipped on a wood pallet with an additional wooden box strapped to the bottom. The engine was light enough for 3-4 people to lift easily, and it was very easy to manage the shop crane to pull the engine off a truck. I bought four M12x1.75 bolts from Home Depot and used them to bolt the engine to the stand.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

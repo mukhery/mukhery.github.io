@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Hardware on Ryan Mukherjee</title>
+    <link>http://www.ryanmukherjee.com/categories/hardware/</link>
+    <description>Recent content in Hardware on Ryan Mukherjee</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 13 Sep 2016 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://www.ryanmukherjee.com/categories/hardware/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>engine purchase</title>
+      <link>http://www.ryanmukherjee.com/blog/engine-purchase/</link>
+      <pubDate>Tue, 13 Sep 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.ryanmukherjee.com/blog/engine-purchase/</guid>
+      <description>
+
+&lt;h2 id=&#34;rationale&#34;&gt;Rationale&lt;/h2&gt;
+
+&lt;p&gt;An oil consumption issue with my current engine is what caused me to start researching engine technology and possible solutions. I initially noticed the oil consumption issue while my vehicle was still under warranty and brought the issue to the attention of my local Audi dealer. They performed an oil consumption test a little over a year ago and only measured consumption of about 0.13 liters of oil per 1000 miles.&lt;/p&gt;
+
+&lt;p&gt;Several months after my oil consumption test, the turbocharger on my vehicle failed. Fortunately, my car&amp;rsquo;s warranty period had not yet ended and my dealer replaced the entire turbocharger unit. Reflecting about this failure now makes me wonder whether or not this failure is connected with the increased oil consumption issue that I am seeing now. However, at the time I did not suspect that my engine had any major issues (especially given that it only had 40,000 miles at the time).&lt;/p&gt;
+
+&lt;p&gt;As my warranty was ending, I decided to install an oil catch can to help prolong the life of my engine. Unfortunately (or fortunately, depending on how you look at it), this catch can is what revealed the greater issue with my engine. My engine was filling my catch can almost completely with oil in a little over one week of daily driving. My commute isn&amp;rsquo;t anything crazy, either. I drive about 30 minutes and 20 miles each day.&lt;/p&gt;
+
+&lt;p&gt;I took my vehicle back to the dealer after discovering this issue, even though my vehicle was now out of its warranty period. The dealer refused to perform another oil consumption test, given that I had an oil consumption test performed one year earlier and that I had modified the vehicle by adding a catch can.&lt;/p&gt;
+
+&lt;p&gt;I suspect that my vehicle might have an issue similar to the one that countless other 2.0L TFSI engine owners have experienced, and for which there is now an &lt;a href=&#34;http://www.oilconsumptionsettlement.com/&#34;&gt;oil consumption settlement&lt;/a&gt;. There are rumors that these engines had faulty piston rings, which caused excessive oil consumption and blow-by. It seems a little unlikely to me that Audi would use vastly different parts for their nearly-identical transverse version of the 2.0L TFSI engine. I suspect my engine has a similar set of faulty piston rings.&lt;/p&gt;
+
+&lt;p&gt;At any rate, my frustration getting this issue resolved through Audi encouraged me to look into solving the problem myself. As my interest in automotive science has been piqued by the issues I encountered, I decided that it could be a worthwhile endeavor to rebuild an engine myself. As I only have one vehicle and I wanted to take my time, I couldn&amp;rsquo;t use my own engine and would need to purchase a used one.&lt;/p&gt;
+
+&lt;h2 id=&#34;the-engine&#34;&gt;The engine&lt;/h2&gt;
+
+&lt;p&gt;Luckily, just as I made the decision to rebuild an engine for my car I found a perfect used engine online from &lt;a href=&#34;https://www.lkqonline.com/&#34;&gt;LKQ&lt;/a&gt;. The host vehicle was nearly identical to mine in model year, color, and options. Ed at &lt;a href=&#34;http://4induktion.com/&#34;&gt;Induktion Motorsports&lt;/a&gt; was kind enough to help me out with some guidance as I made the purchase and to receive the engine for me.&lt;/p&gt;
+
+&lt;p&gt;As I was waiting for the engine to arrive, I made sure I had the right tools to work on the engine. I turned to &lt;a href=&#34;http://www.harborfreight.com/&#34;&gt;Harbor Freight&lt;/a&gt; as any hobbyist on a budget would. With the engine weighing in around 320 lbs, a &lt;a href=&#34;http://www.harborfreight.com/1000-lb-capacity-engine-stand-69886.html&#34;&gt;1000 lb engine stand&lt;/a&gt; should be more than strong enough to hold to engine while I work on it. I also needed a &lt;a href=&#34;http://www.harborfreight.com/1-ton-capacity-foldable-shop-crane-61858.html&#34;&gt;shop crane&lt;/a&gt; to move the engine around and get it on and off a truck.&lt;/p&gt;
+
+&lt;p&gt;Finally the day came for me to pick up the engine. The engine was shipped on a wood pallet with an additional wooden box strapped to the bottom. The engine was light enough for 3-4 people to lift easily, and it was very easy to manage the shop crane to pull the engine off a truck. I bought four M12x1.75 bolts from Home Depot and used them to bolt the engine to the stand.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

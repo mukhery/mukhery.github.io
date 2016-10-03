@@ -1,0 +1,684 @@
+<!DOCTYPE HTML>
+
+<html>
+    <head>
+        
+            
+                <title>logging obd</title>
+            
+        
+
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="generator" content="Hugo 0.16" />
+        
+    
+        
+    
+
+    
+
+    <link rel="apple-touch-icon-precomposed"
+        href='/favicon/apple-touch-icon.png'>
+    <link rel="icon" href='/favicon/favicon-32x32.png'>
+    
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="msapplication-TileImage"
+        content='/favicon/mstile-150x150.png'>
+
+
+
+        
+            <meta name="author" content="Ryan Mukherjee">
+        
+        
+            <meta name="description" content="Developing an Android app">
+        
+
+        
+
+  <meta name="twitter:card" content="summary"/>
+
+
+
+<meta name="twitter:title" content="logging obd"/>
+<meta name="twitter:description" content="Developing an Android app"/>
+
+
+
+        <meta property="og:title" content="logging obd" />
+<meta property="og:description" content="Developing an Android app" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://www.ryanmukherjee.com/blog/logging-obd/" />
+
+
+<meta property="og:updated_time" content="2016-09-22T00:00:00&#43;00:00"/>
+
+
+
+
+
+
+
+
+
+
+        
+<meta itemprop="name" content="logging obd">
+<meta itemprop="description" content="Developing an Android app">
+
+
+<meta itemprop="dateModified" content="2016-09-22T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="632">
+
+
+
+<meta itemprop="keywords" content="Hardware,Software," />
+
+        
+
+        
+
+        
+        
+            
+        
+
+        
+        
+
+        
+            
+                
+                    <link rel="stylesheet" href="/css/main.min.css" />
+                
+            
+        
+
+        
+        
+        
+            
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-84061813-1', 'auto');
+ga('send', 'pageview');
+</script>
+
+        
+    </head>
+    <body>
+
+        
+        <div id="wrapper">
+
+    
+    
+<header id="header">
+    
+        <h2><a href="/">Ryan Mukherjee</i></a></h2>
+    
+
+    <nav class="links">
+        <ul>
+            
+                <li>
+                    <a href="/blog">
+                        
+                            <i class="fa fa-newspaper-o">&nbsp;</i>Blog
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/categories">
+                        Categories
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/about">
+                        About
+                    </a>
+                </li>
+            
+        </ul>
+    </nav>
+    <nav class="main">
+        <ul>
+            
+            <li id="share-nav" class="share-menu" style="display:none;">
+                <a class="fa-share-alt" href="#share-menu">Share</a>
+            </li>
+            
+            <li class="search">
+                <a class="fa-search" href="#search">Search</a>
+                <form id="search" method="get" action="//google.com/search">
+                    <input type="text" name="q" placeholder="Search" />
+                    <input type="hidden" name="q" value="site:http://www.ryanmukherjee.com/">
+                </form>
+            </li>
+            <li class="menu">
+                <a class="fa-bars" href="#menu">Menu</a>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+
+<section id="menu">
+
+    
+        <section>
+            <form class="search" method="get" action="//google.com/search">
+                <input type="text" name="q" placeholder="Search" />
+                <input type="hidden" name="q" value="site:http://www.ryanmukherjee.com/">
+            </form>
+        </section>
+
+    
+        <section>
+            <ul class="links">
+                
+                    <li>
+                        <a href="/blog">
+                            <h3>
+                                
+                                    <i class="fa fa-newspaper-o">&nbsp;</i>
+                                
+                                Blog
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/categories">
+                            <h3>
+                                
+                                Categories
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/about">
+                            <h3>
+                                
+                                About
+                            </h3>
+                        </a>
+                    </li>
+                
+            </ul>
+        </section>
+
+    
+        <section>
+            <ul class="links">
+                <header>
+                    <h3>Recent Posts</h3>
+                </header>
+                
+                    
+                
+
+                
+                    <li>
+                        <a href="http://www.ryanmukherjee.com/blog/logging-obd/"><p>logging obd</p></a>
+                    </li>
+                
+                    <li>
+                        <a href="http://www.ryanmukherjee.com/blog/engine-purchase/"><p>engine purchase</p></a>
+                    </li>
+                
+            </ul>
+        </section>
+
+    
+        
+</section>
+
+    <section id="share-menu">
+    <section id="social-share-nav">
+        <ul class="links">
+            <header>
+                <h3>Share this post <i class="fa fa-smile-o"></i></h3>
+            </header>
+            
+
+
+<li><a href="//twitter.com/share?url=http%3a%2f%2fwww.ryanmukherjee.com%2fblog%2flogging-obd%2f&text=logging%20obd&via=" target="_blank" class="share-btn twitter">
+    <i class="fa fa-twitter"></i>
+    <p>Twitter</p>
+</a></li>
+
+
+<li><a href="//plus.google.com/share?url=http%3a%2f%2fwww.ryanmukherjee.com%2fblog%2flogging-obd%2f" target="_blank" class="share-btn google-plus">
+    <i class="fa fa-google-plus"></i>
+    <p>Google+</p>
+</a></li>
+
+
+<li><a href="//www.facebook.com/sharer/sharer.php?u=http%3a%2f%2fwww.ryanmukherjee.com%2fblog%2flogging-obd%2f" target="_blank" class="share-btn facebook">
+    <i class="fa fa-facebook"></i>
+    <p>Facebook</p>
+</a></li>
+
+
+<li><a href="//reddit.com/submit?url=http%3a%2f%2fwww.ryanmukherjee.com%2fblog%2flogging-obd%2f&title=logging%20obd" target="_blank" class="share-btn reddit">
+    <i class="fa fa-reddit-alien"></i>
+    <p>Reddit</p>
+</a></li>
+
+
+<li><a href="//www.linkedin.com/shareArticle?url=http%3a%2f%2fwww.ryanmukherjee.com%2fblog%2flogging-obd%2f&title=logging%20obd" target="_blank" class="share-btn linkedin">
+    <i class="fa fa-linkedin"></i>
+    <p>LinkedIn</p>
+</a></li>
+
+
+<li><a href="//www.stumbleupon.com/submit?url=http%3a%2f%2fwww.ryanmukherjee.com%2fblog%2flogging-obd%2f&title=logging%20obd" target="_blank" class="share-btn stumbleupon">
+    <i class="fa fa-stumbleupon"></i>
+    <p>StumbleUpon</p>
+</a></li>
+
+
+<li><a href="mailto:?subject=Check out this post by Ryan%20Mukherjee&body=http%3a%2f%2fwww.ryanmukherjee.com%2fblog%2flogging-obd%2f" target="_blank" class="share-btn email">
+    <i class="fa fa-envelope"></i>
+    <p>Email</p>
+</a></li>
+
+        </ul>
+    </section>
+</section>
+
+    
+    <div id="main">
+        
+        
+        <article class="post">
+    <header>
+    <div class="title">
+        
+            <h1><a href="http://www.ryanmukherjee.com/blog/logging-obd/">logging obd</a></h1>
+            
+        
+        
+            <p>Developing an Android app</p>
+        
+    </div>
+    <div class="meta">
+		
+
+        <time class="published"
+            datetime='2016-09-22'>
+            September 22, 2016</time>
+        <span class="author">Ryan Mukherjee</span>
+        
+        
+    </div>
+</header>
+
+
+	
+	
+    
+
+    <div id="content">
+        
+
+<h2 id="obd-adapter">OBD Adapter</h2>
+
+<p>Back in 2009 I purchased an OBDLink USB adapter so that I could scan trouble codes from my car using a laptop. The hardware was very nice, but as I messed around with the tool I realized it had a major shortcoming. While I appreciated that ScanTool offered open source software, I was very disappointed that the software was incapable of handling my vehicle&rsquo;s proprietary protocols. This isn&rsquo;t really the fault of ScanTool but rather the industry itself. Standardized automotive communication protocols have come a long way over the years, but they still have a ways to go in terms of making things more standardized, open, and accessible.</p>
+
+<p>At any rate, I was able to upgrade to an OBDLink MX Bluetooth adapter in 2012. This little adapter is small, fast, and has nice power saving features. The STN11xx IC also supports a variety of different communication protocols to enable some potentially awesome applications.</p>
+
+
+<figure >
+    <a href="https://www.scantool.net/obdlink-mxbt/">
+        <img src="https://www.scantool.net/media/catalog/product/cache/1/image/650x/040ec09b1e35df139433887a97daa66f/m/x/mxbt_main_st_20140630.jpg" alt="OBDLink MX Bluetooth" />
+    </a>
+    
+</figure>
+
+
+<p>However, I&rsquo;ve seen a surprising lack of software options for the STN11xx chip. Most of the apps that I&rsquo;ve seen only support the ELM327 command set. This is certainly the best way to cover the widest variety of hardware, as the STN11xx chips also support the ELM327 v1.4 command set. But these apps miss out on some of the advanced features of the ST11xx chips.</p>
+
+<h2 id="building-an-android-application">Building an Android Application</h2>
+
+<p>After rebuilding my engine I&rsquo;m going to need tools to properly tune the engine. I surveyed commercial tuning products, however all of the viable options for an engine this new were too expensive. As such, I have begun to write my own software to interface with my OBDLink MX adapter with the goal of working towards a custom open-source solution to reading and flashing my ECU.</p>
+
+<p>You can follow my progress on the Android app <a href="https://github.com/mukhery/AudiECU">here</a>. My first step is to create a terminal program to interface with the OBDLink MX bluetooth adapter and allow for manual command entry. After testing out OBD command scripts and ensuring that they work on my vehicle, I plan to incorporate these scripts into the app as part of a diagnostics page. There will also be a logs page for importing and exporting terminal logs, and eventually (if possible) the app will also have functionality to dump and flash ECU memory.</p>
+
+<p>My current design for the app has all of the OBD command input and output being fed into a ContentProvider. This allows for fragments to more easily and seamlessly update with the latest terminal history. It also allows me to easily export and import command history by writing out the contents of the SQLite database to a file or vice versa. One of my goals is to ensure that no matter what diagnostic or ECU read/flash command a user runs, he or she can potentially export the terminal log that includes that raw OBD commands that allowed the software to perform these commands.</p>
+
+<p>To handle the Bluetooth connection, my current design is to use an IntentService. The class&rsquo;s onHandleIntent method is used to open a Bluetooth socket and instantiate an infinite loop receiving data through the socket. All received data is written into the ContentProvider and any fragments that are monitoring this data will be automatically notified to pull the latest data. Once the IntentService starts, it registers a BroadcastReceiver that listens for commands to send to the OBD adapter. As soon as it receives a BroadcastIntent, it writes the contents to the Bluetooth socket.</p>
+
+<p>By using an IntentService, I can quickly create a background service that maintains, reads, and writes from/to a Bluetooth connection. Services are required because some OBD commands simply put the adapter into a passive listen-only mode, and we would like to remain in this mode and collect data even when the app isn&rsquo;t in the foreground.</p>
+
+    </div>
+
+    <footer>
+        <ul class="stats">
+    
+        
+
+        
+        
+            <li>
+                
+                
+                    
+
+                    
+
+                    
+
+                    
+                        Category
+                    
+                
+            </li>
+        
+    
+
+    
+    
+        <li><a href='/categoriessoftware'>Software</a></li>
+    
+</ul>
+
+    </footer>
+</article>
+<ul class="actions pagination">
+    
+        <li><a href="http://www.ryanmukherjee.com/blog/engine-purchase/"
+                class="button big previous">engine purchase</a></li>
+    
+
+    
+</ul>
+
+
+
+
+    </div>
+    
+<section id="sidebar">
+
+    
+        <section id="intro">
+            
+            
+                <a href="/">
+                    <a href="/" class="logo"><img src="/img/main/profile.jpg" alt="Ryan Mukherjee" /></a>
+                </a>
+            
+            
+                <header>
+                    <h2>Ryan Mukherjee</h2>
+                    <p>Decompiling the world, one bit at a time</p>
+                </header>
+            
+            <ul class="icons">
+                
+                
+                    
+<li><a href="//github.com/mukhery" target="_blank" title="GitHub" class="fa fa-github"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="http://www.google.com/recaptcha/mailhide/d?k=01LJ5Btgbv6gfCqJ7-RbJztA==&amp;c=JGthR1BgkCATH8jFp2NrW9jm0Ohib1BcpGIJHQasmUY=" onclick="window.open('http://www.google.com/recaptcha/mailhide/d?k\x3d01LJ5Btgbv6gfCqJ7-RbJztA\x3d\x3d\x26c\x3dJGthR1BgkCATH8jFp2NrW9jm0Ohib1BcpGIJHQasmUY\x3d', '', 'toolbar=0,scrollbars=0,location=0,statusbar=0,menubar=0,resizable=0,width=500,height=300'); return false;" title="Email" class="fa fa-envelope"></a></li>
+
+
+                
+            </ul>
+        </section>
+
+    
+        <section id="recent-posts">
+            <ul class="posts">
+                <header>
+                    <h3>Recent Posts</h3>
+                </header>
+				
+
+                
+                    
+                
+
+                
+                    <li>
+                        <article>
+                            <header>
+                                <h3><a href="http://www.ryanmukherjee.com/blog/logging-obd/">logging obd</a></h3>
+								
+                                <time class="published" datetime=
+                                    '2016-09-22'>
+                                    September 22, 2016</time>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <h3><a href="http://www.ryanmukherjee.com/blog/engine-purchase/">engine purchase</a></h3>
+								
+                                <time class="published" datetime=
+                                    '2016-09-13'>
+                                    September 13, 2016</time>
+                            </header>
+                        </article>
+                    </li>
+                
+
+                
+                    <li>
+                        <ul class="actions">
+                            <li><a href=
+                            
+                                /blog/
+                            
+                            class="button">View more posts</a></li>
+                        </ul>
+                    </li>
+                
+            </ul>
+        </section>
+
+    
+    
+    
+    
+        <section id="categories">
+            <ul class="posts">
+                <header>
+                    <h3><a href="/categories/">Categories</a></h3>
+                </header>
+
+                
+                    
+                
+
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/hardware/">Hardware</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/software/">Software</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+            </ul>
+        </section>
+    
+
+    
+        
+        <section class="blurb">
+            <h2>About</h2>
+            <p>Documenting technical projects involving both software and hardware components. If you have any advice or ideas regarding one of my posts, let me know!</p>
+
+            <ul class="actions">
+                <li><a href="/about/" class="button">Learn More</a></li>
+            </ul>
+        </section>
+        
+
+    
+        <section id="footer">
+            <ul class="icons">
+                
+                
+                    
+<li><a href="//github.com/mukhery" target="_blank" title="GitHub" class="fa fa-github"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="http://www.google.com/recaptcha/mailhide/d?k=01LJ5Btgbv6gfCqJ7-RbJztA==&amp;c=JGthR1BgkCATH8jFp2NrW9jm0Ohib1BcpGIJHQasmUY=" onclick="window.open('http://www.google.com/recaptcha/mailhide/d?k\x3d01LJ5Btgbv6gfCqJ7-RbJztA\x3d\x3d\x26c\x3dJGthR1BgkCATH8jFp2NrW9jm0Ohib1BcpGIJHQasmUY\x3d', '', 'toolbar=0,scrollbars=0,location=0,statusbar=0,menubar=0,resizable=0,width=500,height=300'); return false;" title="Email" class="fa fa-envelope"></a></li>
+
+
+                
+            </ul>
+
+            <p class="copyright">&copy; Ryan Mukherjee. Design: <a href="http://html5up.net" target="_blank">HTML5 UP</a>. Ported by <a href="//github.com/jpescador" target="_blank">Julio Pescador</a>. Powered by <a href="//gohugo.io" target="_blank">Hugo</a></p>
+        </section>
+
+</section>
+
+            </div>
+        <a id="back-to-top" href="#" class="fa fa-arrow-up fa-border fa-2x"></a>
+        
+
+        
+        
+            
+        
+
+        
+        
+
+        
+            
+                
+                    <script src="/js/main.min.js"></script>
+                
+            
+        
+
+            
+            <script>hljs.initHighlightingOnLoad();</script>
+            
+    </body>
+</html>
+
