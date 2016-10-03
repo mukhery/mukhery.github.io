@@ -1,0 +1,703 @@
+<!DOCTYPE HTML>
+
+<html>
+    <head>
+        
+            
+                <title>android obd terminal</title>
+            
+        
+
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="generator" content="Hugo 0.16" />
+        
+    
+        
+    
+
+    
+
+    <link rel="apple-touch-icon-precomposed"
+        href='/favicon/apple-touch-icon.png'>
+    <link rel="icon" href='/favicon/favicon-32x32.png'>
+    
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="msapplication-TileImage"
+        content='/favicon/mstile-150x150.png'>
+
+
+
+        
+            <meta name="author" content="Ryan Mukherjee">
+        
+        
+            <meta name="description" content="Progress on creating an Android OBD terminal and testing with OBDSim">
+        
+
+        
+
+  <meta name="twitter:card" content="summary"/>
+
+
+
+<meta name="twitter:title" content="android obd terminal"/>
+<meta name="twitter:description" content="Progress on creating an Android OBD terminal and testing with OBDSim"/>
+
+
+
+        <meta property="og:title" content="android obd terminal" />
+<meta property="og:description" content="Progress on creating an Android OBD terminal and testing with OBDSim" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://www.ryanmukherjee.com/blog/android-obd-terminal/" />
+
+
+<meta property="og:updated_time" content="2016-10-01T00:00:00&#43;00:00"/>
+
+
+
+
+
+
+
+
+
+
+        
+<meta itemprop="name" content="android obd terminal">
+<meta itemprop="description" content="Progress on creating an Android OBD terminal and testing with OBDSim">
+
+
+<meta itemprop="dateModified" content="2016-10-01T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="589">
+
+
+
+<meta itemprop="keywords" content="Hardware,Software," />
+
+        
+
+        
+
+        
+        
+            
+        
+
+        
+        
+
+        
+            
+                
+                    <link rel="stylesheet" href="/css/main.min.css" />
+                
+            
+        
+
+        
+        
+        
+            
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-84061813-1', 'auto');
+ga('send', 'pageview');
+</script>
+
+        
+    </head>
+    <body>
+
+        
+        <div id="wrapper">
+
+    
+    
+<header id="header">
+    
+        <h2><a href="/">Ryan Mukherjee</i></a></h2>
+    
+
+    <nav class="links">
+        <ul>
+            
+                <li>
+                    <a href="/blog">
+                        
+                            <i class="fa fa-newspaper-o">&nbsp;</i>Blog
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/categories">
+                        Categories
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/about">
+                        About
+                    </a>
+                </li>
+            
+        </ul>
+    </nav>
+    <nav class="main">
+        <ul>
+            
+            <li id="share-nav" class="share-menu" style="display:none;">
+                <a class="fa-share-alt" href="#share-menu">Share</a>
+            </li>
+            
+            <li class="search">
+                <a class="fa-search" href="#search">Search</a>
+                <form id="search" method="get" action="//google.com/search">
+                    <input type="text" name="q" placeholder="Search" />
+                    <input type="hidden" name="q" value="site:http://www.ryanmukherjee.com/">
+                </form>
+            </li>
+            <li class="menu">
+                <a class="fa-bars" href="#menu">Menu</a>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+
+<section id="menu">
+
+    
+        <section>
+            <form class="search" method="get" action="//google.com/search">
+                <input type="text" name="q" placeholder="Search" />
+                <input type="hidden" name="q" value="site:http://www.ryanmukherjee.com/">
+            </form>
+        </section>
+
+    
+        <section>
+            <ul class="links">
+                
+                    <li>
+                        <a href="/blog">
+                            <h3>
+                                
+                                    <i class="fa fa-newspaper-o">&nbsp;</i>
+                                
+                                Blog
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/categories">
+                            <h3>
+                                
+                                Categories
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/about">
+                            <h3>
+                                
+                                About
+                            </h3>
+                        </a>
+                    </li>
+                
+            </ul>
+        </section>
+
+    
+        <section>
+            <ul class="links">
+                <header>
+                    <h3>Recent Posts</h3>
+                </header>
+                
+                    
+                
+
+                
+                    <li>
+                        <a href="http://www.ryanmukherjee.com/blog/android-obd-terminal/"><p>android obd terminal</p></a>
+                    </li>
+                
+                    <li>
+                        <a href="http://www.ryanmukherjee.com/blog/logging-obd/"><p>logging obd</p></a>
+                    </li>
+                
+            </ul>
+        </section>
+
+    
+        
+</section>
+
+    <section id="share-menu">
+    <section id="social-share-nav">
+        <ul class="links">
+            <header>
+                <h3>Share this post <i class="fa fa-smile-o"></i></h3>
+            </header>
+            
+
+
+<li><a href="//twitter.com/share?url=http%3a%2f%2fwww.ryanmukherjee.com%2fblog%2fandroid-obd-terminal%2f&text=android%20obd%20terminal&via=" target="_blank" class="share-btn twitter">
+    <i class="fa fa-twitter"></i>
+    <p>Twitter</p>
+</a></li>
+
+
+<li><a href="//plus.google.com/share?url=http%3a%2f%2fwww.ryanmukherjee.com%2fblog%2fandroid-obd-terminal%2f" target="_blank" class="share-btn google-plus">
+    <i class="fa fa-google-plus"></i>
+    <p>Google+</p>
+</a></li>
+
+
+<li><a href="//www.facebook.com/sharer/sharer.php?u=http%3a%2f%2fwww.ryanmukherjee.com%2fblog%2fandroid-obd-terminal%2f" target="_blank" class="share-btn facebook">
+    <i class="fa fa-facebook"></i>
+    <p>Facebook</p>
+</a></li>
+
+
+<li><a href="//reddit.com/submit?url=http%3a%2f%2fwww.ryanmukherjee.com%2fblog%2fandroid-obd-terminal%2f&title=android%20obd%20terminal" target="_blank" class="share-btn reddit">
+    <i class="fa fa-reddit-alien"></i>
+    <p>Reddit</p>
+</a></li>
+
+
+<li><a href="//www.linkedin.com/shareArticle?url=http%3a%2f%2fwww.ryanmukherjee.com%2fblog%2fandroid-obd-terminal%2f&title=android%20obd%20terminal" target="_blank" class="share-btn linkedin">
+    <i class="fa fa-linkedin"></i>
+    <p>LinkedIn</p>
+</a></li>
+
+
+<li><a href="//www.stumbleupon.com/submit?url=http%3a%2f%2fwww.ryanmukherjee.com%2fblog%2fandroid-obd-terminal%2f&title=android%20obd%20terminal" target="_blank" class="share-btn stumbleupon">
+    <i class="fa fa-stumbleupon"></i>
+    <p>StumbleUpon</p>
+</a></li>
+
+
+<li><a href="mailto:?subject=Check out this post by Ryan%20Mukherjee&body=http%3a%2f%2fwww.ryanmukherjee.com%2fblog%2fandroid-obd-terminal%2f" target="_blank" class="share-btn email">
+    <i class="fa fa-envelope"></i>
+    <p>Email</p>
+</a></li>
+
+        </ul>
+    </section>
+</section>
+
+    
+    <div id="main">
+        
+        
+        <article class="post">
+    <header>
+    <div class="title">
+        
+            <h1><a href="http://www.ryanmukherjee.com/blog/android-obd-terminal/">android obd terminal</a></h1>
+            
+        
+        
+            <p>Progress on creating an Android OBD terminal and testing with OBDSim</p>
+        
+    </div>
+    <div class="meta">
+		
+
+        <time class="published"
+            datetime='2016-10-01'>
+            October 1, 2016</time>
+        <span class="author">Ryan Mukherjee</span>
+        
+        
+    </div>
+</header>
+
+
+	
+	
+    
+    
+
+    
+        
+        
+
+
+
+
+    
+    
+        
+    
+
+
+        
+
+        <a href="http://www.ryanmukherjee.com/blog/android-obd-terminal/" class="image featured">
+            <img src="/img/2016/10/terminal_screenshot.png" alt="Terminal screen" />
+        </a>
+    
+
+
+    <div id="content">
+        
+
+<h2 id="terminal">Terminal</h2>
+
+<p>The first step to interfacing with the ECU is communicating with the OBD adapter that&rsquo;s plugged into my car. As I mentioned in a previous blog post, I&rsquo;m using an OBDLink MX Bluetooth adapter to communicate with the car. As this will be my first foray into raw OBD commands, I figured the best place to start would be a terminal interface that would allow me to enter commands manually so that I can test things out. I&rsquo;d also like to do some general logging of OBD/CAN traffic on my car&rsquo;s network so that I can start to understand how things are connected and what normal communications look like.</p>
+
+<p>Towards that goal, I&rsquo;ve just about finished up the terminal interface. I ran into a few snags using an IntentService to handle the Bluetooth connection, but so far I&rsquo;ve been able to tackle them. I was successfully able to use a BroadcastReceiver to handle user input and send it to the Bluetooth device, while using the main onHandleIntent function to wait for input from the Bluetooth connection. I initially tried to use service binding to support notifying the main Activity when the Bluetooth connection was successfully connected or not. However, I couldn&rsquo;t find a way to support delaying the onServiceConnected callback until the Bluetooth connection was fully connected. As such, I switched to using a ResultReceiver, which is Parcelable and can be passed in to the IntentService as an extra.</p>
+
+<h2 id="obdsim">OBDSim</h2>
+
+<p>While I was looking for a way to test the current version of my app, I stumbled upon <a href="https://icculus.org/obdgpslogger/obdsim.html">OBDSim</a>. Written by a guy named Gary, or so it seems, this tool is pretty awesome. Most of the other software ECU simulators I could find are paid and seemed to have pretty clunky interfaces.</p>
+
+<p>I downloaded the latest <a href="https://icculus.org/obdgpslogger/">OBD GPS Logger</a> source code, which was apparently from 6 years ago, and let out a sigh of relief when I saw that Gary used CMake. So I quickly created a build directory and got to compiling. Unfortunately, it looks like there might be some errors in the main OBD GPS Logger application. However, OBDSim is a separate target, so with a quick &ldquo;make obdsim&rdquo; command I was able to compile just the simulator. There were a few linking dependencies that weren&rsquo;t called out in the CMakeLists.txt file, but it was trivial to install them via apt-get.</p>
+
+<p>Next thing I knew, I had a living breathing OBD simulator. A quick Google search led me to a <a href="http://unix.stackexchange.com/questions/92255/how-do-i-connect-and-send-data-to-a-bluetooth-serial-port-on-linux">Stack Overflow</a> article that allowed me to get my phone connected to OBDSim. I&rsquo;ve replicated the necessary commands below:</p>
+
+<pre><code class="language-bash"># Check if serial service is currently supported
+sdptool browse local
+# If not, create a serial service on channel 22
+sdptool add --channel=22 SP
+# Watch channel 22 with rfcomm, create /dev/rfcomm0 when a device connects
+sudo rfcomm watch /dev/rfcomm0 22
+# Start obdsim on /dev/rfcomm0 once a device connects
+obdsim -t /dev/rfcomm0
+</code></pre>
+
+<p>Once connected, I was able to send commands as you can see from the screenshot in this post. My initial thought is that I need to hide the extra return carriage and terminal prompt that are being returning by the OBD adapter. However, it looks like OBDSim isn&rsquo;t 100% consistent about sending these characters, so I&rsquo;ll need to test on my real device to verify. My next steps will probably be to put logic like this in the Settings dialog, and then I&rsquo;ll want to implement the Log tab so that I can create log files to start understanding my car&rsquo;s network.</p>
+
+    </div>
+
+    <footer>
+        <ul class="stats">
+    
+        
+
+        
+        
+            <li>
+                
+                
+                    
+
+                    
+
+                    
+
+                    
+                        Category
+                    
+                
+            </li>
+        
+    
+
+    
+    
+        <li><a href='/categoriessoftware'>Software</a></li>
+    
+</ul>
+
+    </footer>
+</article>
+<ul class="actions pagination">
+    
+        <li><a href="http://www.ryanmukherjee.com/blog/logging-obd/"
+                class="button big previous">logging obd</a></li>
+    
+
+    
+</ul>
+
+
+
+
+    </div>
+    
+<section id="sidebar">
+
+    
+        <section id="intro">
+            
+            
+                <a href="/">
+                    <a href="/" class="logo"><img src="/img/main/profile.jpg" alt="Ryan Mukherjee" /></a>
+                </a>
+            
+            
+                <header>
+                    <h2>Ryan Mukherjee</h2>
+                    <p>Decompiling the world, one bit at a time</p>
+                </header>
+            
+            <ul class="icons">
+                
+                
+                    
+<li><a href="//github.com/mukhery" target="_blank" title="GitHub" class="fa fa-github"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="http://www.google.com/recaptcha/mailhide/d?k=01LJ5Btgbv6gfCqJ7-RbJztA==&amp;c=JGthR1BgkCATH8jFp2NrW9jm0Ohib1BcpGIJHQasmUY=" onclick="window.open('http://www.google.com/recaptcha/mailhide/d?k\x3d01LJ5Btgbv6gfCqJ7-RbJztA\x3d\x3d\x26c\x3dJGthR1BgkCATH8jFp2NrW9jm0Ohib1BcpGIJHQasmUY\x3d', '', 'toolbar=0,scrollbars=0,location=0,statusbar=0,menubar=0,resizable=0,width=500,height=300'); return false;" title="Email" class="fa fa-envelope"></a></li>
+
+
+                
+            </ul>
+        </section>
+
+    
+        <section id="recent-posts">
+            <ul class="posts">
+                <header>
+                    <h3>Recent Posts</h3>
+                </header>
+				
+
+                
+                    
+                
+
+                
+                    <li>
+                        <article>
+                            <header>
+                                <h3><a href="http://www.ryanmukherjee.com/blog/android-obd-terminal/">android obd terminal</a></h3>
+								
+                                <time class="published" datetime=
+                                    '2016-10-01'>
+                                    October 1, 2016</time>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <h3><a href="http://www.ryanmukherjee.com/blog/logging-obd/">logging obd</a></h3>
+								
+                                <time class="published" datetime=
+                                    '2016-09-22'>
+                                    September 22, 2016</time>
+                            </header>
+                        </article>
+                    </li>
+                
+
+                
+                    <li>
+                        <ul class="actions">
+                            <li><a href=
+                            
+                                /blog/
+                            
+                            class="button">View more posts</a></li>
+                        </ul>
+                    </li>
+                
+            </ul>
+        </section>
+
+    
+    
+    
+    
+        <section id="categories">
+            <ul class="posts">
+                <header>
+                    <h3><a href="/categories/">Categories</a></h3>
+                </header>
+
+                
+                    
+                
+
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/software/">Software</a>
+                                <span style="float:right;">2</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/hardware/">Hardware</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+            </ul>
+        </section>
+    
+
+    
+        
+        <section class="blurb">
+            <h2>About</h2>
+            <p>Documenting technical projects involving both software and hardware components. If you have any advice or ideas regarding one of my posts, let me know!</p>
+
+            <ul class="actions">
+                <li><a href="/about/" class="button">Learn More</a></li>
+            </ul>
+        </section>
+        
+
+    
+        <section id="footer">
+            <ul class="icons">
+                
+                
+                    
+<li><a href="//github.com/mukhery" target="_blank" title="GitHub" class="fa fa-github"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="http://www.google.com/recaptcha/mailhide/d?k=01LJ5Btgbv6gfCqJ7-RbJztA==&amp;c=JGthR1BgkCATH8jFp2NrW9jm0Ohib1BcpGIJHQasmUY=" onclick="window.open('http://www.google.com/recaptcha/mailhide/d?k\x3d01LJ5Btgbv6gfCqJ7-RbJztA\x3d\x3d\x26c\x3dJGthR1BgkCATH8jFp2NrW9jm0Ohib1BcpGIJHQasmUY\x3d', '', 'toolbar=0,scrollbars=0,location=0,statusbar=0,menubar=0,resizable=0,width=500,height=300'); return false;" title="Email" class="fa fa-envelope"></a></li>
+
+
+                
+            </ul>
+
+            <p class="copyright">&copy; Ryan Mukherjee. Design: <a href="http://html5up.net" target="_blank">HTML5 UP</a>. Ported by <a href="//github.com/jpescador" target="_blank">Julio Pescador</a>. Powered by <a href="//gohugo.io" target="_blank">Hugo</a></p>
+        </section>
+
+</section>
+
+            </div>
+        <a id="back-to-top" href="#" class="fa fa-arrow-up fa-border fa-2x"></a>
+        
+
+        
+        
+            
+        
+
+        
+        
+
+        
+            
+                
+                    <script src="/js/main.min.js"></script>
+                
+            
+        
+
+            
+            <script>hljs.initHighlightingOnLoad();</script>
+            
+    </body>
+</html>
+
