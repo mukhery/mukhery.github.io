@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Blogs on Ryan Mukherjee</title>
-    <link>http://www.ryanmukherjee.com/blog/</link>
+    <link>http://www.ryanmukherjee.com/blog/index.xml</link>
     <description>Recent content in Blogs on Ryan Mukherjee</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
@@ -60,7 +60,7 @@ obdsim -t /dev/rfcomm0
 &lt;p&gt;At any rate, I was able to upgrade to an OBDLink MX Bluetooth adapter in 2012. This little adapter is small, fast, and has nice power saving features. The STN11xx IC also supports a variety of different communication protocols to enable some potentially awesome applications.&lt;/p&gt;
 
 
-&lt;figure &gt;
+&lt;figure class=&#34;image center-image&#34;&gt;
     &lt;a href=&#34;https://www.scantool.net/obdlink-mxbt/&#34;&gt;
         &lt;img src=&#34;http://www.obdlink.com/wp-content/uploads/2014/05/mxbt_main1.png&#34; alt=&#34;OBDLink MX Bluetooth&#34; /&gt;
     &lt;/a&gt;

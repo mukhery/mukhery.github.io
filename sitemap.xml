@@ -2,11 +2,6 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://www.ryanmukherjee.com/</loc>
-    <lastmod>2016-10-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>http://www.ryanmukherjee.com/blog/android-obd-terminal/</loc>
     <lastmod>2016-10-01T00:00:00+00:00</lastmod>
   </url>
@@ -24,6 +19,35 @@
   <url>
     <loc>http://www.ryanmukherjee.com/about/</loc>
     <lastmod>2016-09-12T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.ryanmukherjee.com/blog/</loc>
+    <lastmod>2016-10-01T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.ryanmukherjee.com/categories/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.ryanmukherjee.com/</loc>
+    <lastmod>2016-10-01T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.ryanmukherjee.com/categories/hardware/</loc>
+    <lastmod>2016-09-13T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.ryanmukherjee.com/categories/software/</loc>
+    <lastmod>2016-10-01T00:00:00+00:00</lastmod>
+    <priority>0</priority>
   </url>
   
 </urlset>
