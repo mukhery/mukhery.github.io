@@ -18,7 +18,7 @@ Back in 2009 I purchased an OBDLink USB adapter so that I could scan trouble cod
 
 At any rate, I was able to upgrade to an OBDLink MX Bluetooth adapter in 2012. This little adapter is small, fast, and has nice power saving features. The STN11xx IC also supports a variety of different communication protocols to enable some potentially awesome applications.
 
-{{< figure src="http://www.obdlink.com/wp-content/uploads/2014/05/mxbt_main1.png" link="https://www.scantool.net/obdlink-mxbt/" alt="OBDLink MX Bluetooth" >}}
+{{< figure src="http://www.obdlink.com/wp-content/uploads/2014/05/mxbt_main1.png" link="https://www.scantool.net/obdlink-mxbt/" alt="OBDLink MX Bluetooth" class="image center-image" >}}
 
 However, I've seen a surprising lack of software options for the STN11xx chip. Most of the apps that I've seen only support the ELM327 command set. This is certainly the best way to cover the widest variety of hardware, as the STN11xx chips also support the ELM327 v1.4 command set. But these apps miss out on some of the advanced features of the ST11xx chips. 
 
