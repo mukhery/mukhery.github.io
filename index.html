@@ -42,7 +42,7 @@
 <meta property="og:url" content="http://www.ryanmukherjee.com/" />
 
 
-<meta property="og:updated_time" content="2016-10-01T00:00:00&#43;00:00"/>
+<meta property="og:updated_time" content="2017-01-20T00:00:00&#43;00:00"/>
 
 
 
@@ -209,11 +209,11 @@ ga('send', 'pageview');
 
                 
                     <li>
-                        <a href="http://www.ryanmukherjee.com/blog/android-obd-terminal/"><p>android obd terminal</p></a>
+                        <a href="http://www.ryanmukherjee.com/blog/engine-teardown/"><p>engine teardown</p></a>
                     </li>
                 
                     <li>
-                        <a href="http://www.ryanmukherjee.com/blog/logging-obd/"><p>logging obd</p></a>
+                        <a href="http://www.ryanmukherjee.com/blog/android-obd-terminal/"><p>android obd terminal</p></a>
                     </li>
                 
             </ul>
@@ -230,18 +230,18 @@ ga('send', 'pageview');
     <header>
     <div class="title">
         
-            <h2><a href="http://www.ryanmukherjee.com/blog/android-obd-terminal/">android obd terminal</a></h2>
+            <h2><a href="http://www.ryanmukherjee.com/blog/engine-teardown/">engine teardown</a></h2>
         
         
-            <p>Progress on creating an Android OBD terminal and testing with OBDSim</p>
+            <p>Engine teardown</p>
         
     </div>
     <div class="meta">
 		
 
         <time class="published"
-            datetime='2016-10-01'>
-            October 1, 2016</time>
+            datetime='2017-01-20'>
+            January 20, 2017</time>
         <span class="author">Ryan Mukherjee</span>
         
         
@@ -262,15 +262,12 @@ ga('send', 'pageview');
 
 
     
-    
-        
-    
 
 
         
 
-        <a href="http://www.ryanmukherjee.com/blog/android-obd-terminal/" class="image featured">
-            <img src="/img/2016/10/terminal_screenshot.png" alt="Terminal screen" />
+        <a href="http://www.ryanmukherjee.com/blog/engine-teardown/" class="image featured">
+            <img src="/img/engine/crank_removed.jpg" alt="Bare block" />
         </a>
     
 
@@ -278,31 +275,481 @@ ga('send', 'pageview');
     <div id="content">
         
 
-<h2 id="terminal">Terminal</h2>
+<h2 id="initial-impressions">Initial Impressions</h2>
 
-<p>The first step to interfacing with the ECU is communicating with the OBD adapter that&rsquo;s plugged into my car. As I mentioned in a previous blog post, I&rsquo;m using an OBDLink MX Bluetooth adapter to communicate with the car. As this will be my first foray into raw OBD commands, I figured the best place to start would be a terminal interface that would allow me to enter commands manually so that I can test things out. I&rsquo;d also like to do some general logging of OBD/CAN traffic on my car&rsquo;s network so that I can start to understand how things are connected and what normal communications look like.</p>
+<p>The first thing I noticed when inspecting the engine I received is that it&rsquo;s noticeable more complete than I had expected. I was expecting the engine assembly that I ordered to be stripped all the way down to the long block. Fortunately, the engine arrived with intake and exhuast manifolds, turbo, fuel system, full wiring harness, and basically any other component that is bolted directly to the block.</p>
 
-<p>Towards that goal, I&rsquo;ve just about finished up the terminal interface. I ran into a few snags using an IntentService to handle the Bluetooth connection, but so far I&rsquo;ve been able to tackle them. I was successfully able to use a BroadcastReceiver to handle user input and send it to the Bluetooth device, while using the main onHandleIntent function to wait for input from the Bluetooth connection. I initially tried to use service binding to support notifying the main Activity when the Bluetooth connection was successfully connected or not. However, I couldn&rsquo;t find a way to support delaying the onServiceConnected callback until the Bluetooth connection was fully connected. As such, I switched to using a ResultReceiver, which is Parcelable and can be passed in to the IntentService as an extra.</p>
+<p>A few components looked like they were either damaged during transport or during engine removal. The after run pump that supplies coolant to the turbo after turning off a hot engine was smashed. There were also a few coolant hoses that were cut. However, a majority of the components were in decent condition, or at least structurally.</p>
 
-<h2 id="obdsim">OBDSim</h2>
 
-<p>While I was looking for a way to test the current version of my app, I stumbled upon <a href="https://icculus.org/obdgpslogger/obdsim.html">OBDSim</a>. Written by a guy named Gary, or so it seems, this tool is pretty awesome. Most of the other software ECU simulators I could find are paid and seemed to have pretty clunky interfaces.</p>
 
-<p>I downloaded the latest <a href="https://icculus.org/obdgpslogger/">OBD GPS Logger</a> source code, which was apparently from 6 years ago, and let out a sigh of relief when I saw that Gary used CMake. So I quickly created a build directory and got to compiling. Unfortunately, it looks like there might be some errors in the main OBD GPS Logger application. However, OBDSim is a separate target, so with a quick &ldquo;make obdsim&rdquo; command I was able to compile just the simulator. There were a few linking dependencies that weren&rsquo;t called out in the CMakeLists.txt file, but it was trivial to install them via apt-get.</p>
 
-<p>Next thing I knew, I had a living breathing OBD simulator. A quick Google search led me to a <a href="http://unix.stackexchange.com/questions/92255/how-do-i-connect-and-send-data-to-a-bluetooth-serial-port-on-linux">Stack Overflow</a> article that allowed me to get my phone connected to OBDSim. I&rsquo;ve replicated the necessary commands below:</p>
+    
+    
+        
+        
+        
+        
+    
 
-<pre><code class="language-bash"># Check if serial service is currently supported
-sdptool browse local
-# If not, create a serial service on channel 22
-sdptool add --channel=22 SP
-# Watch channel 22 with rfcomm, create /dev/rfcomm0 when a device connects
-sudo rfcomm watch /dev/rfcomm0 22
-# Start obdsim on /dev/rfcomm0 once a device connects
-obdsim -t /dev/rfcomm0
-</code></pre>
+    
+    
+    
 
-<p>Once connected, I was able to send commands as you can see from the screenshot in this post. My initial thought is that I need to hide the extra return carriage and terminal prompt that are being returning by the OBD adapter. However, it looks like OBDSim isn&rsquo;t 100% consistent about sending these characters, so I&rsquo;ll need to test on my real device to verify. My next steps will probably be to put logic like this in the Settings dialog, and then I&rsquo;ll want to implement the Log tab so that I can create log files to start understanding my car&rsquo;s network.</p>
+    
+    
+
+
+
+
+    
+
+
+    
+
+    
+        <p><span class="image center-image">
+            <img src="/img/engine/block_front.jpg" alt="Block rust" />
+        </span></p>
+    
+
+
+
+<p>The engine did have decent amount of oxidation on it. I imagine that the engine was poorly maintained by the owner(s), left outside in the crashed vehicle it came from for a decent amount of time, left outside after being pulled out of the vehicle, or more likely some combination of all of these things. A majority of the oxidation should be relatively easy to remove with a wire brush, though. I&rsquo;ll just have to be careful to ensure that I don&rsquo;t marr any critical surfaces.</p>
+
+<h2 id="disassembly">Disassembly</h2>
+
+<p>I started with the ignition coils and spark plugs. All the ignition coils look good, not that I was expecting anything to be wrong with them, and most of the spark plugs looked normal. The spark plug from cylinder three looks slightly fouled from carbon.</p>
+
+
+
+
+    
+    
+        
+        
+        
+        
+    
+
+    
+    
+    
+
+    
+    
+
+
+
+
+    
+
+
+    
+
+    
+        <p><span class="image center-image">
+            <img src="/img/engine/plugs_and_coilpacks.jpg" alt="Plugs and coilpacks" />
+        </span></p>
+    
+
+
+
+<p>Next I removed the PCV valve on top of the valve/cam cover. This provided a look inside the head at the cams. There&rsquo;s a little bit of oil glazing on the vent tube that comes up from the secondary PCV, as well as on the oil return (both on the right side of the picture). The intake cam lobes (bottom) and exhaust cam lobe that are visible both look good at this point.</p>
+
+
+
+
+    
+    
+        
+        
+        
+        
+    
+
+    
+    
+    
+
+    
+    
+
+
+
+
+    
+
+
+    
+
+    
+        <p><span class="image center-image">
+            <img src="/img/engine/pcv_valve_cover.jpg" alt="PCV removed" />
+        </span></p>
+    
+
+
+
+<p>Next up I removed the intake and exhaust manifolds. On this engine, the exhaust manifold and turbo are integrated into a single piece. From the back of the engine, you can also see the exhaust cam shift actuators on the valve cover (top of the middle picture). The EA888 Gen 2 is one of the first engines to receive Audi&rsquo;s Valvelift variable valve lift system, which adds a decent amount of low-end torque.</p>
+
+
+
+
+    
+
+    
+    
+
+
+
+
+    
+
+
+    
+
+    <div class="box alt">
+        <div class="row uniform">
+        
+        
+        
+            
+                <div class="4u">
+            
+            
+        
+            
+                
+                    
+                    <span class="image fit">
+                
+            
+            
+        
+            
+                
+                        <img src='/img/engine/intake_valves_1.jpg'
+                            alt="Intake valves cylinder 1" />
+                    </span></div>
+                
+                
+            
+            
+        
+            
+                <div class="4u">
+            
+            
+        
+            
+                
+                    
+                    <span class="image fit">
+                
+            
+            
+        
+            
+                
+                        <img src='/img/engine/mounted_exhaust_manifold.jpg'
+                            alt="Exhaust manifold" />
+                    </span></div>
+                
+                
+            
+            
+        
+            
+                <div class="4u$">
+            
+            
+        
+            
+                
+                    
+                    <span class="image fit">
+                
+            
+            
+        
+            
+                
+                        <img src='/img/engine/block_exhaust_manifold_removed.jpg'
+                            alt="Exhaust manifold removed" />
+                    </span></div>
+                
+                
+            
+            
+        
+        </div>
+    </div>
+
+
+
+<p>Taking a closer look at the intake valves, you can see that there&rsquo;s a significant amount of carbon buildup. Direct injection engines are great from an efficiency standpoint, but the lack of port injection causes rapid carbon buildup. Some newer VW/Audi engines have port injection and most people believe that this is the solution to the problem. However, from what I&rsquo;ve read, the US-spec EA888 Gen 3 engines don&rsquo;t actually have port injection, but they do seem to have mitigated the carbon buildup issue.</p>
+
+
+
+
+    
+
+    
+    
+
+
+
+
+    
+
+
+    
+
+    <div class="box alt">
+        <div class="row uniform">
+        
+        
+        
+            
+                <div class="3u">
+            
+            
+        
+            
+                
+                    
+                    <span class="image fit">
+                
+            
+            
+        
+            
+                
+                        <img src='/img/engine/intake_valves_1_grime.jpg'
+                            alt="Intake valves cylinder 1" />
+                    </span></div>
+                
+                
+            
+            
+        
+            
+                <div class="3u">
+            
+            
+        
+            
+                
+                    
+                    <span class="image fit">
+                
+            
+            
+        
+            
+                
+                        <img src='/img/engine/intake_valves_2.jpg'
+                            alt="Intake valves cylinder 2" />
+                    </span></div>
+                
+                
+            
+            
+        
+            
+                <div class="3u">
+            
+            
+        
+            
+                
+                    
+                    <span class="image fit">
+                
+            
+            
+        
+            
+                
+                        <img src='/img/engine/intake_valves_3.jpg'
+                            alt="Intake valves cylinder 3" />
+                    </span></div>
+                
+                
+            
+            
+        
+            
+                <div class="3u$">
+            
+            
+        
+            
+                
+                    
+                    <span class="image fit">
+                
+            
+            
+        
+            
+                
+                        <img src='/img/engine/intake_valves_4.jpg'
+                            alt="Intake valves cylinder 4" />
+                    </span></div>
+                
+                
+            
+            
+        
+            
+                <div class="3u">
+            
+            
+        
+            
+                
+                    
+                    <span class="image fit">
+                
+            
+            
+        
+            
+                
+                        <img src='/img/engine/exhaust_valves_1.jpg'
+                            alt="Exhaust valves cylinder 1" />
+                    </span></div>
+                
+                
+            
+            
+        
+            
+                <div class="3u">
+            
+            
+        
+            
+                
+                    
+                    <span class="image fit">
+                
+            
+            
+        
+            
+                
+                        <img src='/img/engine/exhaust_valves_2.jpg'
+                            alt="Exhaust valves cylinder 2" />
+                    </span></div>
+                
+                
+            
+            
+        
+            
+                <div class="3u">
+            
+            
+        
+            
+                
+                    
+                    <span class="image fit">
+                
+            
+            
+        
+            
+                
+                        <img src='/img/engine/exhaust_valves_3.jpg'
+                            alt="Exhaust valves cylinder 3" />
+                    </span></div>
+                
+                
+            
+            
+        
+            
+                <div class="3u$">
+            
+            
+        
+            
+                
+                    
+                    <span class="image fit">
+                
+            
+            
+        
+            
+                
+                        <img src='/img/engine/exhaust_valves_4.jpg'
+                            alt="Exhaust valves cylinder 4" />
+                    </span></div>
+                
+                
+            
+            
+        
+        </div>
+    </div>
+
+
+
+<p>I&rsquo;ve read different reasons for the intake valve buildup. Some people think it&rsquo;s solely related to the PCV valve and, more specifically, blowby being fed back into the intake where it can attach to the valves. As such, it&rsquo;s suggested that using a catch can can mitigate and/or eliminate the intake valve buildup, however I haven&rsquo;t seen any definitive evidence.</p>
+
+<p>I have seen an example of someone who had their intake valves cleaned, installed a catch can, and then posted images of their valves several thousand miles later. Unfortunately, they still had a decent amount of buildup. I think one of the big flaws with this test was in the catch can that the individual used. Many of the catch can designs that I&rsquo;ve seen don&rsquo;t seem very efficient, in that they likely leave enough oil in the crankcase vapor to recoat the valves. In my opinion, the Mishimoto MMBCC-UNI is one of the few efficient designs with cyclonic separation and a metal filter to condense remaining particles.</p>
+
+<p>
+<figure class="image center-image">
+    <a href="https://www.mishimoto.com/mishimoto-baffled-oil-catch-can.html">
+        <img src="https://i.ytimg.com/vi/WJfwc6tMoSc/maxresdefault.jpg" alt="Mishimoto MMBCC-UNI" />
+    </a>
+    
+</figure>
+</p>
+
+<p>I don&rsquo;t know much about exhaust valve wear, so there&rsquo;s not much for me to say. The valves for cylinder three do seem to be different than the other cylinders, though. I wonder if this is related to the carbon fouling on the spark plug for cylinder three?</p>
+
+<p>The intake manifold flaps and fuel injectors also seem to have a decent amount of carbon on them. The flaps, also known as <a href="https://en.wikipedia.org/wiki/Swirl_flap">swirl flaps</a>, are designed to help swirl the air entering each cylinder so that it mixes with the injected fuel better at low RPM. There are a few aftermarket options for deleting these flaps as they present an airflow obstruction, which can affect power at high RPM. Seeing this carbon buildup is making me consider one of these options.</p>
+
+
+
+
+    
+    
+        
+        
+        
+        
+    
+
+    
+    
+    
+
+    
+    
+
+
+
+
+    
+
+
+    
+
+    
+        <p><span class="image center-image">
+            <img src="/img/engine/intake_flaps_4.jpg" alt="Intake manifold flaps" />
+        </span></p>
+    
+
+
 
     </div>
 
@@ -332,7 +779,7 @@ obdsim -t /dev/rfcomm0
 
     
     
-        <li><a href='/categoriessoftware'>Software</a></li>
+        <li><a href='/categorieshardware'>Hardware</a></li>
     
 </ul>
 
@@ -340,8 +787,8 @@ obdsim -t /dev/rfcomm0
 </article>
 <ul class="actions pagination">
     
-        <li><a href="http://www.ryanmukherjee.com/blog/logging-obd/"
-                class="button big previous">logging obd</a></li>
+        <li><a href="http://www.ryanmukherjee.com/blog/android-obd-terminal/"
+                class="button big previous">android obd terminal</a></li>
     
 
     
@@ -360,43 +807,43 @@ obdsim -t /dev/rfcomm0
             
 
 
-<li><a href="//twitter.com/share?url=http%3a%2f%2fwww.ryanmukherjee.com%2fblog%2fandroid-obd-terminal%2f&text=android%20obd%20terminal&via=" target="_blank" class="share-btn twitter">
+<li><a href="//twitter.com/share?url=http%3a%2f%2fwww.ryanmukherjee.com%2fblog%2fengine-teardown%2f&text=engine%20teardown&via=" target="_blank" class="share-btn twitter">
     <i class="fa fa-twitter"></i>
     <p>Twitter</p>
 </a></li>
 
 
-<li><a href="//plus.google.com/share?url=http%3a%2f%2fwww.ryanmukherjee.com%2fblog%2fandroid-obd-terminal%2f" target="_blank" class="share-btn google-plus">
+<li><a href="//plus.google.com/share?url=http%3a%2f%2fwww.ryanmukherjee.com%2fblog%2fengine-teardown%2f" target="_blank" class="share-btn google-plus">
     <i class="fa fa-google-plus"></i>
     <p>Google+</p>
 </a></li>
 
 
-<li><a href="//www.facebook.com/sharer/sharer.php?u=http%3a%2f%2fwww.ryanmukherjee.com%2fblog%2fandroid-obd-terminal%2f" target="_blank" class="share-btn facebook">
+<li><a href="//www.facebook.com/sharer/sharer.php?u=http%3a%2f%2fwww.ryanmukherjee.com%2fblog%2fengine-teardown%2f" target="_blank" class="share-btn facebook">
     <i class="fa fa-facebook"></i>
     <p>Facebook</p>
 </a></li>
 
 
-<li><a href="//reddit.com/submit?url=http%3a%2f%2fwww.ryanmukherjee.com%2fblog%2fandroid-obd-terminal%2f&title=android%20obd%20terminal" target="_blank" class="share-btn reddit">
+<li><a href="//reddit.com/submit?url=http%3a%2f%2fwww.ryanmukherjee.com%2fblog%2fengine-teardown%2f&title=engine%20teardown" target="_blank" class="share-btn reddit">
     <i class="fa fa-reddit-alien"></i>
     <p>Reddit</p>
 </a></li>
 
 
-<li><a href="//www.linkedin.com/shareArticle?url=http%3a%2f%2fwww.ryanmukherjee.com%2fblog%2fandroid-obd-terminal%2f&title=android%20obd%20terminal" target="_blank" class="share-btn linkedin">
+<li><a href="//www.linkedin.com/shareArticle?url=http%3a%2f%2fwww.ryanmukherjee.com%2fblog%2fengine-teardown%2f&title=engine%20teardown" target="_blank" class="share-btn linkedin">
     <i class="fa fa-linkedin"></i>
     <p>LinkedIn</p>
 </a></li>
 
 
-<li><a href="//www.stumbleupon.com/submit?url=http%3a%2f%2fwww.ryanmukherjee.com%2fblog%2fandroid-obd-terminal%2f&title=android%20obd%20terminal" target="_blank" class="share-btn stumbleupon">
+<li><a href="//www.stumbleupon.com/submit?url=http%3a%2f%2fwww.ryanmukherjee.com%2fblog%2fengine-teardown%2f&title=engine%20teardown" target="_blank" class="share-btn stumbleupon">
     <i class="fa fa-stumbleupon"></i>
     <p>StumbleUpon</p>
 </a></li>
 
 
-<li><a href="mailto:?subject=Check out this post by Ryan%20Mukherjee&body=http%3a%2f%2fwww.ryanmukherjee.com%2fblog%2fandroid-obd-terminal%2f" target="_blank" class="share-btn email">
+<li><a href="mailto:?subject=Check out this post by Ryan%20Mukherjee&body=http%3a%2f%2fwww.ryanmukherjee.com%2fblog%2fengine-teardown%2f" target="_blank" class="share-btn email">
     <i class="fa fa-envelope"></i>
     <p>Email</p>
 </a></li>
@@ -506,11 +953,11 @@ obdsim -t /dev/rfcomm0
                     <li>
                         <article>
                             <header>
-                                <h3><a href="http://www.ryanmukherjee.com/blog/android-obd-terminal/">android obd terminal</a></h3>
+                                <h3><a href="http://www.ryanmukherjee.com/blog/engine-teardown/">engine teardown</a></h3>
 								
                                 <time class="published" datetime=
-                                    '2016-10-01'>
-                                    October 1, 2016</time>
+                                    '2017-01-20'>
+                                    January 20, 2017</time>
                             </header>
                         </article>
                     </li>
@@ -518,11 +965,11 @@ obdsim -t /dev/rfcomm0
                     <li>
                         <article>
                             <header>
-                                <h3><a href="http://www.ryanmukherjee.com/blog/logging-obd/">logging obd</a></h3>
+                                <h3><a href="http://www.ryanmukherjee.com/blog/android-obd-terminal/">android obd terminal</a></h3>
 								
                                 <time class="published" datetime=
-                                    '2016-09-22'>
-                                    September 22, 2016</time>
+                                    '2016-10-01'>
+                                    October 1, 2016</time>
                             </header>
                         </article>
                     </li>
@@ -560,7 +1007,7 @@ obdsim -t /dev/rfcomm0
                     <li>
                         <article>
                             <header>
-                                <a href="/categories/software/">Software</a>
+                                <a href="/categories/hardware/">Hardware</a>
                                 <span style="float:right;">2</span>
                             </header>
                         </article>
@@ -569,8 +1016,8 @@ obdsim -t /dev/rfcomm0
                     <li>
                         <article>
                             <header>
-                                <a href="/categories/hardware/">Hardware</a>
-                                <span style="float:right;">1</span>
+                                <a href="/categories/software/">Software</a>
+                                <span style="float:right;">2</span>
                             </header>
                         </article>
                     </li>

@@ -9,6 +9,492 @@
     <atom:link href="http://www.ryanmukherjee.com/categories/hardware/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>engine teardown</title>
+      <link>http://www.ryanmukherjee.com/blog/engine-teardown/</link>
+      <pubDate>Fri, 20 Jan 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.ryanmukherjee.com/blog/engine-teardown/</guid>
+      <description>
+
+&lt;h2 id=&#34;initial-impressions&#34;&gt;Initial Impressions&lt;/h2&gt;
+
+&lt;p&gt;The first thing I noticed when inspecting the engine I received is that it&amp;rsquo;s noticeable more complete than I had expected. I was expecting the engine assembly that I ordered to be stripped all the way down to the long block. Fortunately, the engine arrived with intake and exhuast manifolds, turbo, fuel system, full wiring harness, and basically any other component that is bolted directly to the block.&lt;/p&gt;
+
+&lt;p&gt;A few components looked like they were either damaged during transport or during engine removal. The after run pump that supplies coolant to the turbo after turning off a hot engine was smashed. There were also a few coolant hoses that were cut. However, a majority of the components were in decent condition, or at least structurally.&lt;/p&gt;
+
+
+
+
+    
+    
+        
+        
+        
+        
+    
+
+    
+    
+    
+
+    
+    
+
+
+
+
+    
+
+
+    
+
+    
+        &lt;p&gt;&lt;span class=&#34;image center-image&#34;&gt;
+            &lt;img src=&#34;http://www.ryanmukherjee.com/img/engine/block_front.jpg&#34; alt=&#34;Block rust&#34; /&gt;
+        &lt;/span&gt;&lt;/p&gt;
+    
+
+
+
+&lt;p&gt;The engine did have decent amount of oxidation on it. I imagine that the engine was poorly maintained by the owner(s), left outside in the crashed vehicle it came from for a decent amount of time, left outside after being pulled out of the vehicle, or more likely some combination of all of these things. A majority of the oxidation should be relatively easy to remove with a wire brush, though. I&amp;rsquo;ll just have to be careful to ensure that I don&amp;rsquo;t marr any critical surfaces.&lt;/p&gt;
+
+&lt;h2 id=&#34;disassembly&#34;&gt;Disassembly&lt;/h2&gt;
+
+&lt;p&gt;I started with the ignition coils and spark plugs. All the ignition coils look good, not that I was expecting anything to be wrong with them, and most of the spark plugs looked normal. The spark plug from cylinder three looks slightly fouled from carbon.&lt;/p&gt;
+
+
+
+
+    
+    
+        
+        
+        
+        
+    
+
+    
+    
+    
+
+    
+    
+
+
+
+
+    
+
+
+    
+
+    
+        &lt;p&gt;&lt;span class=&#34;image center-image&#34;&gt;
+            &lt;img src=&#34;http://www.ryanmukherjee.com/img/engine/plugs_and_coilpacks.jpg&#34; alt=&#34;Plugs and coilpacks&#34; /&gt;
+        &lt;/span&gt;&lt;/p&gt;
+    
+
+
+
+&lt;p&gt;Next I removed the PCV valve on top of the valve/cam cover. This provided a look inside the head at the cams. There&amp;rsquo;s a little bit of oil glazing on the vent tube that comes up from the secondary PCV, as well as on the oil return (both on the right side of the picture). The intake cam lobes (bottom) and exhaust cam lobe that are visible both look good at this point.&lt;/p&gt;
+
+
+
+
+    
+    
+        
+        
+        
+        
+    
+
+    
+    
+    
+
+    
+    
+
+
+
+
+    
+
+
+    
+
+    
+        &lt;p&gt;&lt;span class=&#34;image center-image&#34;&gt;
+            &lt;img src=&#34;http://www.ryanmukherjee.com/img/engine/pcv_valve_cover.jpg&#34; alt=&#34;PCV removed&#34; /&gt;
+        &lt;/span&gt;&lt;/p&gt;
+    
+
+
+
+&lt;p&gt;Next up I removed the intake and exhaust manifolds. On this engine, the exhaust manifold and turbo are integrated into a single piece. From the back of the engine, you can also see the exhaust cam shift actuators on the valve cover (top of the middle picture). The EA888 Gen 2 is one of the first engines to receive Audi&amp;rsquo;s Valvelift variable valve lift system, which adds a decent amount of low-end torque.&lt;/p&gt;
+
+
+
+
+    
+
+    
+    
+
+
+
+
+    
+
+
+    
+
+    &lt;div class=&#34;box alt&#34;&gt;
+        &lt;div class=&#34;row uniform&#34;&gt;
+        
+        
+        
+            
+                &lt;div class=&#34;4u&#34;&gt;
+            
+            
+        
+            
+                
+                    
+                    &lt;span class=&#34;image fit&#34;&gt;
+                
+            
+            
+        
+            
+                
+                        &lt;img src=&#39;http://www.ryanmukherjee.com/img/engine/intake_valves_1.jpg&#39;
+                            alt=&#34;Intake valves cylinder 1&#34; /&gt;
+                    &lt;/span&gt;&lt;/div&gt;
+                
+                
+            
+            
+        
+            
+                &lt;div class=&#34;4u&#34;&gt;
+            
+            
+        
+            
+                
+                    
+                    &lt;span class=&#34;image fit&#34;&gt;
+                
+            
+            
+        
+            
+                
+                        &lt;img src=&#39;http://www.ryanmukherjee.com/img/engine/mounted_exhaust_manifold.jpg&#39;
+                            alt=&#34;Exhaust manifold&#34; /&gt;
+                    &lt;/span&gt;&lt;/div&gt;
+                
+                
+            
+            
+        
+            
+                &lt;div class=&#34;4u$&#34;&gt;
+            
+            
+        
+            
+                
+                    
+                    &lt;span class=&#34;image fit&#34;&gt;
+                
+            
+            
+        
+            
+                
+                        &lt;img src=&#39;http://www.ryanmukherjee.com/img/engine/block_exhaust_manifold_removed.jpg&#39;
+                            alt=&#34;Exhaust manifold removed&#34; /&gt;
+                    &lt;/span&gt;&lt;/div&gt;
+                
+                
+            
+            
+        
+        &lt;/div&gt;
+    &lt;/div&gt;
+
+
+
+&lt;p&gt;Taking a closer look at the intake valves, you can see that there&amp;rsquo;s a significant amount of carbon buildup. Direct injection engines are great from an efficiency standpoint, but the lack of port injection causes rapid carbon buildup. Some newer VW/Audi engines have port injection and most people believe that this is the solution to the problem. However, from what I&amp;rsquo;ve read, the US-spec EA888 Gen 3 engines don&amp;rsquo;t actually have port injection, but they do seem to have mitigated the carbon buildup issue.&lt;/p&gt;
+
+
+
+
+    
+
+    
+    
+
+
+
+
+    
+
+
+    
+
+    &lt;div class=&#34;box alt&#34;&gt;
+        &lt;div class=&#34;row uniform&#34;&gt;
+        
+        
+        
+            
+                &lt;div class=&#34;3u&#34;&gt;
+            
+            
+        
+            
+                
+                    
+                    &lt;span class=&#34;image fit&#34;&gt;
+                
+            
+            
+        
+            
+                
+                        &lt;img src=&#39;http://www.ryanmukherjee.com/img/engine/intake_valves_1_grime.jpg&#39;
+                            alt=&#34;Intake valves cylinder 1&#34; /&gt;
+                    &lt;/span&gt;&lt;/div&gt;
+                
+                
+            
+            
+        
+            
+                &lt;div class=&#34;3u&#34;&gt;
+            
+            
+        
+            
+                
+                    
+                    &lt;span class=&#34;image fit&#34;&gt;
+                
+            
+            
+        
+            
+                
+                        &lt;img src=&#39;http://www.ryanmukherjee.com/img/engine/intake_valves_2.jpg&#39;
+                            alt=&#34;Intake valves cylinder 2&#34; /&gt;
+                    &lt;/span&gt;&lt;/div&gt;
+                
+                
+            
+            
+        
+            
+                &lt;div class=&#34;3u&#34;&gt;
+            
+            
+        
+            
+                
+                    
+                    &lt;span class=&#34;image fit&#34;&gt;
+                
+            
+            
+        
+            
+                
+                        &lt;img src=&#39;http://www.ryanmukherjee.com/img/engine/intake_valves_3.jpg&#39;
+                            alt=&#34;Intake valves cylinder 3&#34; /&gt;
+                    &lt;/span&gt;&lt;/div&gt;
+                
+                
+            
+            
+        
+            
+                &lt;div class=&#34;3u$&#34;&gt;
+            
+            
+        
+            
+                
+                    
+                    &lt;span class=&#34;image fit&#34;&gt;
+                
+            
+            
+        
+            
+                
+                        &lt;img src=&#39;http://www.ryanmukherjee.com/img/engine/intake_valves_4.jpg&#39;
+                            alt=&#34;Intake valves cylinder 4&#34; /&gt;
+                    &lt;/span&gt;&lt;/div&gt;
+                
+                
+            
+            
+        
+            
+                &lt;div class=&#34;3u&#34;&gt;
+            
+            
+        
+            
+                
+                    
+                    &lt;span class=&#34;image fit&#34;&gt;
+                
+            
+            
+        
+            
+                
+                        &lt;img src=&#39;http://www.ryanmukherjee.com/img/engine/exhaust_valves_1.jpg&#39;
+                            alt=&#34;Exhaust valves cylinder 1&#34; /&gt;
+                    &lt;/span&gt;&lt;/div&gt;
+                
+                
+            
+            
+        
+            
+                &lt;div class=&#34;3u&#34;&gt;
+            
+            
+        
+            
+                
+                    
+                    &lt;span class=&#34;image fit&#34;&gt;
+                
+            
+            
+        
+            
+                
+                        &lt;img src=&#39;http://www.ryanmukherjee.com/img/engine/exhaust_valves_2.jpg&#39;
+                            alt=&#34;Exhaust valves cylinder 2&#34; /&gt;
+                    &lt;/span&gt;&lt;/div&gt;
+                
+                
+            
+            
+        
+            
+                &lt;div class=&#34;3u&#34;&gt;
+            
+            
+        
+            
+                
+                    
+                    &lt;span class=&#34;image fit&#34;&gt;
+                
+            
+            
+        
+            
+                
+                        &lt;img src=&#39;http://www.ryanmukherjee.com/img/engine/exhaust_valves_3.jpg&#39;
+                            alt=&#34;Exhaust valves cylinder 3&#34; /&gt;
+                    &lt;/span&gt;&lt;/div&gt;
+                
+                
+            
+            
+        
+            
+                &lt;div class=&#34;3u$&#34;&gt;
+            
+            
+        
+            
+                
+                    
+                    &lt;span class=&#34;image fit&#34;&gt;
+                
+            
+            
+        
+            
+                
+                        &lt;img src=&#39;http://www.ryanmukherjee.com/img/engine/exhaust_valves_4.jpg&#39;
+                            alt=&#34;Exhaust valves cylinder 4&#34; /&gt;
+                    &lt;/span&gt;&lt;/div&gt;
+                
+                
+            
+            
+        
+        &lt;/div&gt;
+    &lt;/div&gt;
+
+
+
+&lt;p&gt;I&amp;rsquo;ve read different reasons for the intake valve buildup. Some people think it&amp;rsquo;s solely related to the PCV valve and, more specifically, blowby being fed back into the intake where it can attach to the valves. As such, it&amp;rsquo;s suggested that using a catch can can mitigate and/or eliminate the intake valve buildup, however I haven&amp;rsquo;t seen any definitive evidence.&lt;/p&gt;
+
+&lt;p&gt;I have seen an example of someone who had their intake valves cleaned, installed a catch can, and then posted images of their valves several thousand miles later. Unfortunately, they still had a decent amount of buildup. I think one of the big flaws with this test was in the catch can that the individual used. Many of the catch can designs that I&amp;rsquo;ve seen don&amp;rsquo;t seem very efficient, in that they likely leave enough oil in the crankcase vapor to recoat the valves. In my opinion, the Mishimoto MMBCC-UNI is one of the few efficient designs with cyclonic separation and a metal filter to condense remaining particles.&lt;/p&gt;
+
+&lt;p&gt;
+&lt;figure class=&#34;image center-image&#34;&gt;
+    &lt;a href=&#34;https://www.mishimoto.com/mishimoto-baffled-oil-catch-can.html&#34;&gt;
+        &lt;img src=&#34;https://i.ytimg.com/vi/WJfwc6tMoSc/maxresdefault.jpg&#34; alt=&#34;Mishimoto MMBCC-UNI&#34; /&gt;
+    &lt;/a&gt;
+    
+&lt;/figure&gt;
+&lt;/p&gt;
+
+&lt;p&gt;I don&amp;rsquo;t know much about exhaust valve wear, so there&amp;rsquo;s not much for me to say. The valves for cylinder three do seem to be different than the other cylinders, though. I wonder if this is related to the carbon fouling on the spark plug for cylinder three?&lt;/p&gt;
+
+&lt;p&gt;The intake manifold flaps and fuel injectors also seem to have a decent amount of carbon on them. The flaps, also known as &lt;a href=&#34;https://en.wikipedia.org/wiki/Swirl_flap&#34;&gt;swirl flaps&lt;/a&gt;, are designed to help swirl the air entering each cylinder so that it mixes with the injected fuel better at low RPM. There are a few aftermarket options for deleting these flaps as they present an airflow obstruction, which can affect power at high RPM. Seeing this carbon buildup is making me consider one of these options.&lt;/p&gt;
+
+
+
+
+    
+    
+        
+        
+        
+        
+    
+
+    
+    
+    
+
+    
+    
+
+
+
+
+    
+
+
+    
+
+    
+        &lt;p&gt;&lt;span class=&#34;image center-image&#34;&gt;
+            &lt;img src=&#34;http://www.ryanmukherjee.com/img/engine/intake_flaps_4.jpg&#34; alt=&#34;Intake manifold flaps&#34; /&gt;
+        &lt;/span&gt;&lt;/p&gt;
+    
+
+
+</description>
+    </item>
+    
+    <item>
       <title>engine purchase</title>
       <link>http://www.ryanmukherjee.com/blog/engine-purchase/</link>
       <pubDate>Tue, 13 Sep 2016 00:00:00 +0000</pubDate>
