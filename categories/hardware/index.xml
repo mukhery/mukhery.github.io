@@ -445,14 +445,14 @@
 
 &lt;p&gt;I have seen an example of someone who had their intake valves cleaned, installed a catch can, and then posted images of their valves several thousand miles later. Unfortunately, they still had a decent amount of buildup. I think one of the big flaws with this test was in the catch can that the individual used. Many of the catch can designs that I&amp;rsquo;ve seen don&amp;rsquo;t seem very efficient, in that they likely leave enough oil in the crankcase vapor to recoat the valves. In my opinion, the Mishimoto MMBCC-UNI is one of the few efficient designs with cyclonic separation and a metal filter to condense remaining particles.&lt;/p&gt;
 
-&lt;p&gt;
+
 &lt;figure class=&#34;image center-image&#34;&gt;
     &lt;a href=&#34;https://www.mishimoto.com/mishimoto-baffled-oil-catch-can.html&#34;&gt;
         &lt;img src=&#34;https://i.ytimg.com/vi/WJfwc6tMoSc/maxresdefault.jpg&#34; alt=&#34;Mishimoto MMBCC-UNI&#34; /&gt;
     &lt;/a&gt;
     
 &lt;/figure&gt;
-&lt;/p&gt;
+
 
 &lt;p&gt;I don&amp;rsquo;t know much about exhaust valve wear, so there&amp;rsquo;s not much for me to say. The valves for cylinder three do seem to be different than the other cylinders, though. I wonder if this is related to the carbon fouling on the spark plug for cylinder three?&lt;/p&gt;
 
@@ -491,6 +491,447 @@
     
 
 
+
+&lt;p&gt;My next step was to remove the valve/cam cover. After doing this, I realized that I should&amp;rsquo;ve removed the timing chain first. The timing chain applies a downward pull to the end of the intake and exhaust cams, so once I removed the valve cover the cams lifted out of their saddles. Later I noticed a small corner dent in one of the saddles that I think was caused by removing the cover before the timing chain. The dent isn&amp;rsquo;t a big deal, but it does show that removing the cover is a reasonably complex job when the engine is in the car because the timing chain is involved.&lt;/p&gt;
+
+
+
+
+    
+
+    
+    
+
+
+
+
+    
+
+
+    
+
+    &lt;div class=&#34;box alt&#34;&gt;
+        &lt;div class=&#34;row uniform&#34;&gt;
+        
+        
+        
+            
+                &lt;div class=&#34;6u&#34;&gt;
+            
+            
+        
+            
+                
+                    
+                    &lt;span class=&#34;image fit&#34;&gt;
+                
+            
+            
+        
+            
+                
+                        &lt;img src=&#39;http://www.ryanmukherjee.com/img/engine/cams_top.jpg&#39;
+                            alt=&#34;Camshafts&#34; /&gt;
+                    &lt;/span&gt;&lt;/div&gt;
+                
+                
+            
+            
+        
+            
+                &lt;div class=&#34;6u$&#34;&gt;
+            
+            
+        
+            
+                
+                    
+                    &lt;span class=&#34;image fit&#34;&gt;
+                
+            
+            
+        
+            
+                
+                        &lt;img src=&#39;http://www.ryanmukherjee.com/img/engine/top_valve_cover.jpg&#39;
+                            alt=&#34;Valve cover&#34; /&gt;
+                    &lt;/span&gt;&lt;/div&gt;
+                
+                
+            
+            
+        
+        &lt;/div&gt;
+    &lt;/div&gt;
+
+
+
+&lt;p&gt;Removing the timing chain and cams was fairly straightforward. I had to use a crankshaft pulley counterhold tool (&lt;a href=&#34;http://a.co/1MjnkLO&#34;&gt;T10355&lt;/a&gt;) to remove the crankshaft pulley bolt, but then it was relatively easy to remove the chain cover, tensioner, guides, and chain. After that, the cams just lift right out.&lt;/p&gt;
+
+
+
+
+    
+
+    
+    
+
+
+
+
+    
+
+
+    
+
+    &lt;div class=&#34;box alt&#34;&gt;
+        &lt;div class=&#34;row uniform&#34;&gt;
+        
+        
+        
+            
+                &lt;div class=&#34;6u&#34;&gt;
+            
+            
+        
+            
+                
+                    
+                    &lt;span class=&#34;image fit&#34;&gt;
+                
+            
+            
+        
+            
+                
+                        &lt;img src=&#39;http://www.ryanmukherjee.com/img/engine/balance_shaft_chain.jpg&#39;
+                            alt=&#34;Timing chain removed&#34; /&gt;
+                    &lt;/span&gt;&lt;/div&gt;
+                
+                
+            
+            
+        
+            
+                &lt;div class=&#34;6u$&#34;&gt;
+            
+            
+        
+            
+                
+                    
+                    &lt;span class=&#34;image fit&#34;&gt;
+                
+            
+            
+        
+            
+                
+                        &lt;img src=&#39;http://www.ryanmukherjee.com/img/engine/cams_removed_side.jpg&#39;
+                            alt=&#34;Cams removed&#34; /&gt;
+                    &lt;/span&gt;&lt;/div&gt;
+                
+                
+            
+            
+        
+        &lt;/div&gt;
+    &lt;/div&gt;
+
+
+
+&lt;p&gt;After removing the cams, I removed the head bolts using &lt;a href=&#34;http://a.co/8iSRv3J&#34;&gt;this tool&lt;/a&gt; and then lifted the head off the block. In hindsight, it probably would have been cleaner to leave the valve cover on the head. The cover has holes in it that lead directory to the head bolts allowing you to unbolt the head without removing the valve cover.&lt;/p&gt;
+
+
+
+
+    
+
+    
+    
+
+
+
+
+    
+
+
+    
+
+    &lt;div class=&#34;box alt&#34;&gt;
+        &lt;div class=&#34;row uniform&#34;&gt;
+        
+        
+        
+            
+                &lt;div class=&#34;4u&#34;&gt;
+            
+            
+        
+            
+                
+                    
+                    &lt;span class=&#34;image fit&#34;&gt;
+                
+            
+            
+        
+            
+                
+                        &lt;img src=&#39;http://www.ryanmukherjee.com/img/engine/valves.jpg&#39;
+                            alt=&#34;Cams removed&#34; /&gt;
+                    &lt;/span&gt;&lt;/div&gt;
+                
+                
+            
+            
+        
+            
+                &lt;div class=&#34;4u&#34;&gt;
+            
+            
+        
+            
+                
+                    
+                    &lt;span class=&#34;image fit&#34;&gt;
+                
+            
+            
+        
+            
+                
+                        &lt;img src=&#39;http://www.ryanmukherjee.com/img/engine/head_standalone.jpg&#39;
+                            alt=&#34;Head standalone&#34; /&gt;
+                    &lt;/span&gt;&lt;/div&gt;
+                
+                
+            
+            
+        
+            
+                &lt;div class=&#34;4u$&#34;&gt;
+            
+            
+        
+            
+                
+                    
+                    &lt;span class=&#34;image fit&#34;&gt;
+                
+            
+            
+        
+            
+                
+                        &lt;img src=&#39;http://www.ryanmukherjee.com/img/engine/head_removed_3.jpg&#39;
+                            alt=&#34;Head removed&#34; /&gt;
+                    &lt;/span&gt;&lt;/div&gt;
+                
+                
+            
+            
+        
+        &lt;/div&gt;
+    &lt;/div&gt;
+
+
+
+&lt;p&gt;Next I unbolted the rods and removed the pistons. The cylinder walls are in decent condition aside from some surface rust and a decent amount of carbon buildup. Taking a closer look at the pistons, I didn&amp;rsquo;t see any cracked ring lands or other major structural damage. Thinking back to the engine that&amp;rsquo;s currently in my car, it&amp;rsquo;s possible that it has a similar amount of carbon buildup to this engine. The carbon on the oil control rings here looks like it could be enough to reduce the effectiveness of the oil control rings.&lt;/p&gt;
+
+
+
+
+    
+
+    
+    
+
+
+
+
+    
+
+
+    
+
+    &lt;div class=&#34;box alt&#34;&gt;
+        &lt;div class=&#34;row uniform&#34;&gt;
+        
+        
+        
+            
+                &lt;div class=&#34;6u&#34;&gt;
+            
+            
+        
+            
+                
+                    
+                    &lt;span class=&#34;image fit&#34;&gt;
+                
+            
+            
+        
+            
+                
+                        &lt;img src=&#39;http://www.ryanmukherjee.com/img/engine/pistons_and_rods.jpg&#39;
+                            alt=&#34;Pistons and rods&#34; /&gt;
+                    &lt;/span&gt;&lt;/div&gt;
+                
+                
+            
+            
+        
+            
+                &lt;div class=&#34;6u$&#34;&gt;
+            
+            
+        
+            
+                
+                    
+                    &lt;span class=&#34;image fit&#34;&gt;
+                
+            
+            
+        
+            
+                
+                        &lt;img src=&#39;http://www.ryanmukherjee.com/img/engine/piston_carbon.jpg&#39;
+                            alt=&#34;Cylinder 1 piston&#34; /&gt;
+                    &lt;/span&gt;&lt;/div&gt;
+                
+                
+            
+            
+        
+        &lt;/div&gt;
+    &lt;/div&gt;
+
+
+
+&lt;p&gt;Removing the cross-bolted main caps in this engine required removing both the two main bolts as well as the perpendicularly-positioned bolts through the outside of the block. The caps use dots on a raised right trapezoid indicating the location and rotation that the cap is supposed to be installed.&lt;/p&gt;
+
+
+
+
+    
+
+    
+    
+
+
+
+
+    
+
+
+    
+
+    &lt;div class=&#34;box alt&#34;&gt;
+        &lt;div class=&#34;row uniform&#34;&gt;
+        
+        
+        
+            
+                &lt;div class=&#34;3u&#34;&gt;
+            
+            
+        
+            
+                
+                    
+                    &lt;span class=&#34;image fit&#34;&gt;
+                
+            
+            
+        
+            
+                
+                        &lt;img src=&#39;http://www.ryanmukherjee.com/img/engine/main_bearings_1_2_3.jpg&#39;
+                            alt=&#34;Main bearings 1, 2, and 3&#34; /&gt;
+                    &lt;/span&gt;&lt;/div&gt;
+                
+                
+            
+            
+        
+            
+                &lt;div class=&#34;3u&#34;&gt;
+            
+            
+        
+            
+                
+                    
+                    &lt;span class=&#34;image fit&#34;&gt;
+                
+            
+            
+        
+            
+                
+                        &lt;img src=&#39;http://www.ryanmukherjee.com/img/engine/main_bearings_2_3_horiz.jpg&#39;
+                            alt=&#34;Main bearings 2 and 3&#34; /&gt;
+                    &lt;/span&gt;&lt;/div&gt;
+                
+                
+            
+            
+        
+            
+                &lt;div class=&#34;3u&#34;&gt;
+            
+            
+        
+            
+                
+                    
+                    &lt;span class=&#34;image fit&#34;&gt;
+                
+            
+            
+        
+            
+                
+                        &lt;img src=&#39;http://www.ryanmukherjee.com/img/engine/main_bearings_3_4_horiz.jpg&#39;
+                            alt=&#34;Main bearings 3 and 4&#34; /&gt;
+                    &lt;/span&gt;&lt;/div&gt;
+                
+                
+            
+            
+        
+            
+                &lt;div class=&#34;3u$&#34;&gt;
+            
+            
+        
+            
+                
+                    
+                    &lt;span class=&#34;image fit&#34;&gt;
+                
+            
+            
+        
+            
+                
+                        &lt;img src=&#39;http://www.ryanmukherjee.com/img/engine/main_bearings_4_5_horiz.jpg&#39;
+                            alt=&#34;Main bearings 4 and 5&#34; /&gt;
+                    &lt;/span&gt;&lt;/div&gt;
+                
+                
+            
+            
+        
+        &lt;/div&gt;
+    &lt;/div&gt;
+
+
+
+&lt;p&gt;After removing the main caps, I was able to inspect the main bearings. The bearings look very good, I don&amp;rsquo;t see any major marks on the bearings, nor was I able to feel any with my fingernail. Next step is to get the engine into the machine shop so that they can clean everything up and get it ready for me to reassemble.&lt;/p&gt;
 </description>
     </item>
     
