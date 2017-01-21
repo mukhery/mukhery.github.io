@@ -63,3 +63,37 @@ The intake manifold flaps and fuel injectors also seem to have a decent amount o
 
 {{< img-post path="/img/engine" file="intake_flaps_4.jpg" alt="Intake manifold flaps" type="center" >}}
 
+My next step was to remove the valve/cam cover. After doing this, I realized that I should've removed the timing chain first. The timing chain applies a downward pull to the end of the intake and exhaust cams, so once I removed the valve cover the cams lifted out of their saddles. Later I noticed a small corner dent in one of the saddles that I think was caused by removing the cover before the timing chain. The dent isn't a big deal, but it does show that removing the cover is a reasonably complex job when the engine is in the car because the timing chain is involved.
+
+{{< img-fit "6u" "cams_top.jpg" "Camshafts" 
+"6u$" "top_valve_cover.jpg" "Valve cover"
+"/img/engine" >}}
+
+Removing the timing chain and cams was fairly straightforward. I had to use a crankshaft pulley counterhold tool ([T10355](http://a.co/1MjnkLO)) to remove the crankshaft pulley bolt, but then it was relatively easy to remove the chain cover, tensioner, guides, and chain. After that, the cams just lift right out.
+
+{{< img-fit "6u" "balance_shaft_chain.jpg" "Timing chain removed" 
+"6u$" "cams_removed_side.jpg" "Cams removed"
+"/img/engine" >}}
+
+After removing the cams, I removed the head bolts using [this tool](http://a.co/8iSRv3J) and then lifted the head off the block. In hindsight, it probably would have been cleaner to leave the valve cover on the head. The cover has holes in it that lead directory to the head bolts allowing you to unbolt the head without removing the valve cover.
+
+{{< img-fit "4u" "valves.jpg" "Cams removed" 
+"4u" "head_standalone.jpg" "Head standalone"
+"4u$" "head_removed_3.jpg" "Head removed"
+"/img/engine" >}}
+
+Next I unbolted the rods and removed the pistons. The cylinder walls are in decent condition aside from some surface rust and a decent amount of carbon buildup. Taking a closer look at the pistons, I didn't see any cracked ring lands or other major structural damage. Thinking back to the engine that's currently in my car, it's possible that it has a similar amount of carbon buildup to this engine. The carbon on the oil control rings here looks like it could be enough to reduce the effectiveness of the oil control rings.
+
+{{< img-fit "6u" "pistons_and_rods.jpg" "Pistons and rods" 
+"6u$" "piston_carbon.jpg" "Cylinder 1 piston"
+"/img/engine" >}}
+
+Removing the cross-bolted main caps in this engine required removing both the two main bolts as well as the perpendicularly-positioned bolts through the outside of the block. The caps use dots on a raised right trapezoid indicating the location and rotation that the cap is supposed to be installed.
+
+{{< img-fit "3u" "main_bearings_1_2_3.jpg" "Main bearings 1, 2, and 3" 
+"3u" "main_bearings_2_3_horiz.jpg" "Main bearings 2 and 3"
+"3u" "main_bearings_3_4_horiz.jpg" "Main bearings 3 and 4"
+"3u$" "main_bearings_4_5_horiz.jpg" "Main bearings 4 and 5"
+"/img/engine" >}}
+
+After removing the main caps, I was able to inspect the main bearings. The bearings look very good, I don't see any major marks on the bearings, nor was I able to feel any with my fingernail. Next step is to get the engine into the machine shop so that they can clean everything up and get it ready for me to reassemble.
