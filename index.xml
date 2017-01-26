@@ -6,8 +6,41 @@
     <description>Recent content on Ryan Mukherjee</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 20 Jan 2017 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 25 Jan 2017 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://www.ryanmukherjee.com/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>engine failure</title>
+      <link>http://www.ryanmukherjee.com/blog/engine-failure/</link>
+      <pubDate>Wed, 25 Jan 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.ryanmukherjee.com/blog/engine-failure/</guid>
+      <description>&lt;p&gt;Well, my engine finally failed&amp;hellip; I noticed it running a little rougher than usual at high load and low RPM on Monday morning, but didn&amp;rsquo;t really think anything of it. I actually stopped at the machine shop before work to drop off a few additional components and discuss some custom work that I&amp;rsquo;ll hopefully create a post about soon.&lt;/p&gt;
+
+&lt;p&gt;When I went to start my car after work, it started idling really rough like a cylinder was misfiring and my check engine light started flashing. Just my luck, it was also raining. I got my scan tool out of the trunk and read the codes: P0300 random misfire and P0303 cylinder 3 misfire.&lt;/p&gt;
+
+&lt;p&gt;I had a coil pack fail a little over a year ago, which was diagnosed and replaced by the dealer. Since then, I replaced all my coil packs just in case any other old ones were close to failure. I did keep one on hand for emergencies like this, though. I swapped out the coil pack for cylinder 3 in the rain, but alas that didn&amp;rsquo;t solve the problem.&lt;/p&gt;
+
+&lt;p&gt;As my gas tank was nearing empty, I thought maybe a failing low pressure fuel pump could be causing my issue. There&amp;rsquo;s a gas station less than a minute from where I was parked, so I hobbled over and filled up the tank. While I was at it, I also checked and topped off my oil. Nothing worked.&lt;/p&gt;
+
+&lt;p&gt;Fortunately, a co-worker was kind enough to give me a ride home. I made an appointment at my local Audi dealership and dropped the car off the next morning. I got a call about two hours after I dropped the car off: extremely low compression in cylinder 3 and they suspect piston failure.&lt;/p&gt;
+
+&lt;p&gt;I always suspected that my engine had a cracked ringland or broken piston ring, which was causing excessive blow by, but I was hoping that my little TFSI would survive long enough for me to complete my engine build. Regardless, an engine really shouldn&amp;rsquo;t fail this early. I also tried to bring the issue to the attention of my dealership while it was still simply blow by and not catastrophic failure.&lt;/p&gt;
+
+&lt;p&gt;At any rate, I got in touch with Audi of America and expressed my concern. Even though my car is now out of warranty, engines shouldn&amp;rsquo;t fail at 60,000 miles. My initial conversations seemed promising, so hopefully they step up to fix the situation.&lt;/p&gt;
+
+&lt;p&gt;In the meantime, I&amp;rsquo;ve got a sweet 2017 A4 loaner. I&amp;rsquo;m normally not a huge fan of these bigger vehicles, especially coming from a small, maneuverable TT, but the transmission on this thing is amazing! The 7-speed dual-clutch downshifts faster than my car or any of the other loaners I&amp;rsquo;ve had over the years. Now I&amp;rsquo;m wondering if a DSG tune will make my car&amp;rsquo;s transmission this fast&amp;hellip;&lt;/p&gt;
+
+
+&lt;figure class=&#34;image center-image&#34;&gt;
+    &lt;a href=&#34;https://www.audiusa.com/models/audi-a4&#34;&gt;
+        &lt;img src=&#34;https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Audi_A4_2.0_TFSI_quattro.jpg/640px-Audi_A4_2.0_TFSI_quattro.jpg&#34; alt=&#34;Audi A4&#34; /&gt;
+    &lt;/a&gt;
+    
+&lt;/figure&gt;
+
+</description>
+    </item>
     
     <item>
       <title>engine teardown</title>
@@ -1023,7 +1056,7 @@ obdsim -t /dev/rfcomm0
 
 &lt;p&gt;An oil consumption issue with my current engine is what caused me to start researching engine technology and possible solutions. I initially noticed the oil consumption issue while my vehicle was still under warranty and brought the issue to the attention of my local Audi dealer. They performed an oil consumption test a little over a year ago and only measured consumption of about 0.13 liters of oil per 1000 miles.&lt;/p&gt;
 
-&lt;p&gt;Several months after my oil consumption test, the turbocharger on my vehicle failed. Fortunately, my car&amp;rsquo;s warranty period had not yet ended and my dealer replaced the entire turbocharger unit. Reflecting about this failure now makes me wonder whether or not this failure is connected with the increased oil consumption issue that I am seeing now. However, at the time I did not suspect that my engine had any major issues (especially given that it only had 40,000 miles at the time).&lt;/p&gt;
+&lt;p&gt;Several months after my oil consumption test, the turbocharger on my vehicle failed. Fortunately, my car&amp;rsquo;s warranty period had not yet ended and my dealer replaced the entire turbocharger unit. Reflecting about this failure now makes me wonder whether or not this failure is connected with the increased oil consumption issue that I am seeing now. However, at the time I did not suspect that my engine had any major issues (especially given that it only had 40,000 miles on it).&lt;/p&gt;
 
 &lt;p&gt;As my warranty was ending, I decided to install an oil catch can to help prolong the life of my engine. Unfortunately (or fortunately, depending on how you look at it), this catch can is what revealed the greater issue with my engine. My engine was filling my catch can almost completely with oil in a little over one week of daily driving. My commute isn&amp;rsquo;t anything crazy, either. I drive about 30 minutes and 20 miles each day.&lt;/p&gt;
 
