@@ -2,7 +2,7 @@
 author = "Ryan Mukherjee"
 categories = ["Hardware"]
 date = "2017-01-25"
-description = "Engine failure at 60,000 miles"
+description = "Only 60,000 miles on the odometer"
 featured = ""
 featuredalt = ""
 featuredpath = ""
