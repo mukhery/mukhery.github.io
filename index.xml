@@ -6,8 +6,76 @@
     <description>Recent content on Ryan Mukherjee</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 25 Jan 2017 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 26 Jan 2017 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://www.ryanmukherjee.com/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>balance shaft delete</title>
+      <link>http://www.ryanmukherjee.com/blog/balance-shaft-delete/</link>
+      <pubDate>Thu, 26 Jan 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.ryanmukherjee.com/blog/balance-shaft-delete/</guid>
+      <description>
+
+&lt;h2 id=&#34;basics&#34;&gt;Basics&lt;/h2&gt;
+
+&lt;p&gt;If you don&amp;rsquo;t know what a balance shaft is, it&amp;rsquo;s worth checking out this video first:
+&lt;div class=&#34;aspect-ratio&#34;&gt;
+&lt;iframe width=&#34;560&#34; height=&#34;315&#34; src=&#34;https://www.youtube.com/embed/hwigSbyQ7AI&#34; frameborder=&#34;0&#34; allowfullscreen&gt;&lt;/iframe&gt;
+&lt;/div&gt;&lt;/p&gt;
+
+&lt;p&gt;The EA888 Gen 2 has two balance shafts that are located on the front and back of the engine. In the picture below, you can see a single chain that remains connected to the crankshaft sprocket. This chain connects to the two balance shafts.&lt;/p&gt;
+
+
+
+
+    
+    
+        
+        
+        
+        
+    
+
+    
+    
+    
+
+    
+    
+
+
+
+
+    
+
+
+    
+
+    
+        &lt;p&gt;&lt;span class=&#34;image center-image&#34;&gt;
+    
+	&lt;a href=&#34;http://www.ryanmukherjee.com/img/engine/balance_shaft_chain.jpg&#34;&gt;
+	&lt;img src=&#34;http://www.ryanmukherjee.com/img/engine/balance_shaft_chain.jpg&#34; alt=&#34;Balance shaft chain&#34; /&gt;
+	&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
+
+
+
+&lt;p&gt;You&amp;rsquo;ll notice that the crankshaft sprocket is roughly twice the diameter for the plane that the balance shaft is connected to as compared to the other two planes (which connect to the timing chain and oil pump). It is this diameter increase that causes the balance shafts to rotate at roughly twice the engine RPM.&lt;/p&gt;
+
+&lt;p&gt;You can also see that the front (or rightmost in this image) balance shaft is connected to the chain via a separate gear. To clarify, the balance shaft chain doesn&amp;rsquo;t connect directly to the front balance shaft. Instead, the chain drives a gear, which is connected to another gear that lies in the same plane as the front balance shaft gear. This configuration allows the front balance shaft to rotate in an opposite direction to the rear balance shaft, thereby cancelling unwanted horizontal forces. The secondary vibration that we want to counteract is a vertical force, and if the balance shafts didn&amp;rsquo;t rotate in opposite directions then we would be adding a horizontal imbalance.&lt;/p&gt;
+
+&lt;h2 id=&#34;reasons-to-remove-your-balance-shaft&#34;&gt;Reasons to remove your balance shaft&lt;/h2&gt;
+
+&lt;p&gt;One of the major problems with balance shafts is related to reliability. Because the balance shafts rotate at twice the engine RPM, their bearings can take quite a beating. It&amp;rsquo;s also relatively easy to exceed what the balance shaft bearings are capable of handling once your start increasing your rev limit.&lt;/p&gt;
+
+&lt;p&gt;Balance shafts also represent an additional load on the engine. It takes energy to spin the weighted balance shafts and it takes oil pressure to stiffen the balance shaft chain tensioner and feed the balance shaft bearings. To make matters worse, the balance shafts aren&amp;rsquo;t actually installed for any performance-related purpose. The purpose of the balance shafts is to prevent engine vibration from reaching the driver/passengers of the vehicle.&lt;/p&gt;
+
+&lt;p&gt;One might think that the balance shafts would help the rotating assembly be more balanced. However, the balance shafts are independent of the rotating assembly. Any secondary vibration in the rotating assembly first gets absorbed by the main bearings, transferred to and then cancelled in the block by the balance shafts. So in terms of minimizing bearing load, the balance shafts don&amp;rsquo;t have any benefit. As such, it seems almost necessary to remove the balance shafts for a performance build.&lt;/p&gt;
+
+&lt;p&gt;Surprisingly, the EA888 Gen 2 does seem to support balance shaft removal without much effort. Because the balance shafts are driven with an independent chain, we don&amp;rsquo;t need to worry about customizing the oil pump setup (previous engine generations had their balance shafts integrated into the oil pump). The only major hurdle with the EA888 is that the water pump is driven by the front balance shaft. In future posts, I&amp;rsquo;ll go into more detail about the steps necessary to delete the balance shafts and discuss replacing the mechanical water pump with an electric one.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>engine failure</title>
@@ -84,9 +152,10 @@
 
     
         &lt;p&gt;&lt;span class=&#34;image center-image&#34;&gt;
-            &lt;img src=&#34;http://www.ryanmukherjee.com/img/engine/block_front.jpg&#34; alt=&#34;Block rust&#34; /&gt;
-        &lt;/span&gt;&lt;/p&gt;
     
+	&lt;a href=&#34;http://www.ryanmukherjee.com/img/engine/block_front.jpg&#34;&gt;
+	&lt;img src=&#34;http://www.ryanmukherjee.com/img/engine/block_front.jpg&#34; alt=&#34;Block rust&#34; /&gt;
+	&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
 
 
 
@@ -124,9 +193,10 @@
 
     
         &lt;p&gt;&lt;span class=&#34;image center-image&#34;&gt;
-            &lt;img src=&#34;http://www.ryanmukherjee.com/img/engine/plugs_and_coilpacks.jpg&#34; alt=&#34;Plugs and coilpacks&#34; /&gt;
-        &lt;/span&gt;&lt;/p&gt;
     
+	&lt;a href=&#34;http://www.ryanmukherjee.com/img/engine/plugs_and_coilpacks.jpg&#34;&gt;
+	&lt;img src=&#34;http://www.ryanmukherjee.com/img/engine/plugs_and_coilpacks.jpg&#34; alt=&#34;Plugs and coilpacks&#34; /&gt;
+	&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
 
 
 
@@ -160,9 +230,10 @@
 
     
         &lt;p&gt;&lt;span class=&#34;image center-image&#34;&gt;
-            &lt;img src=&#34;http://www.ryanmukherjee.com/img/engine/pcv_valve_cover.jpg&#34; alt=&#34;PCV removed&#34; /&gt;
-        &lt;/span&gt;&lt;/p&gt;
     
+	&lt;a href=&#34;http://www.ryanmukherjee.com/img/engine/pcv_valve_cover.jpg&#34;&gt;
+	&lt;img src=&#34;http://www.ryanmukherjee.com/img/engine/pcv_valve_cover.jpg&#34; alt=&#34;PCV removed&#34; /&gt;
+	&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
 
 
 
@@ -204,8 +275,10 @@
         
             
                 
+						&lt;a href=&#39;http://www.ryanmukherjee.com/img/engine/intake_valves_1.jpg&#39;&gt;
                         &lt;img src=&#39;http://www.ryanmukherjee.com/img/engine/intake_valves_1.jpg&#39;
                             alt=&#34;Intake valves cylinder 1&#34; /&gt;
+						&lt;/a&gt;
                     &lt;/span&gt;&lt;/div&gt;
                 
                 
@@ -227,8 +300,10 @@
         
             
                 
+						&lt;a href=&#39;http://www.ryanmukherjee.com/img/engine/mounted_exhaust_manifold.jpg&#39;&gt;
                         &lt;img src=&#39;http://www.ryanmukherjee.com/img/engine/mounted_exhaust_manifold.jpg&#39;
                             alt=&#34;Exhaust manifold&#34; /&gt;
+						&lt;/a&gt;
                     &lt;/span&gt;&lt;/div&gt;
                 
                 
@@ -250,8 +325,10 @@
         
             
                 
+						&lt;a href=&#39;http://www.ryanmukherjee.com/img/engine/block_exhaust_manifold_removed.jpg&#39;&gt;
                         &lt;img src=&#39;http://www.ryanmukherjee.com/img/engine/block_exhaust_manifold_removed.jpg&#39;
                             alt=&#34;Exhaust manifold removed&#34; /&gt;
+						&lt;/a&gt;
                     &lt;/span&gt;&lt;/div&gt;
                 
                 
@@ -301,8 +378,10 @@
         
             
                 
+						&lt;a href=&#39;http://www.ryanmukherjee.com/img/engine/intake_valves_1_grime.jpg&#39;&gt;
                         &lt;img src=&#39;http://www.ryanmukherjee.com/img/engine/intake_valves_1_grime.jpg&#39;
                             alt=&#34;Intake valves cylinder 1&#34; /&gt;
+						&lt;/a&gt;
                     &lt;/span&gt;&lt;/div&gt;
                 
                 
@@ -324,8 +403,10 @@
         
             
                 
+						&lt;a href=&#39;http://www.ryanmukherjee.com/img/engine/intake_valves_2.jpg&#39;&gt;
                         &lt;img src=&#39;http://www.ryanmukherjee.com/img/engine/intake_valves_2.jpg&#39;
                             alt=&#34;Intake valves cylinder 2&#34; /&gt;
+						&lt;/a&gt;
                     &lt;/span&gt;&lt;/div&gt;
                 
                 
@@ -347,8 +428,10 @@
         
             
                 
+						&lt;a href=&#39;http://www.ryanmukherjee.com/img/engine/intake_valves_3.jpg&#39;&gt;
                         &lt;img src=&#39;http://www.ryanmukherjee.com/img/engine/intake_valves_3.jpg&#39;
                             alt=&#34;Intake valves cylinder 3&#34; /&gt;
+						&lt;/a&gt;
                     &lt;/span&gt;&lt;/div&gt;
                 
                 
@@ -370,8 +453,10 @@
         
             
                 
+						&lt;a href=&#39;http://www.ryanmukherjee.com/img/engine/intake_valves_4.jpg&#39;&gt;
                         &lt;img src=&#39;http://www.ryanmukherjee.com/img/engine/intake_valves_4.jpg&#39;
                             alt=&#34;Intake valves cylinder 4&#34; /&gt;
+						&lt;/a&gt;
                     &lt;/span&gt;&lt;/div&gt;
                 
                 
@@ -393,8 +478,10 @@
         
             
                 
+						&lt;a href=&#39;http://www.ryanmukherjee.com/img/engine/exhaust_valves_1.jpg&#39;&gt;
                         &lt;img src=&#39;http://www.ryanmukherjee.com/img/engine/exhaust_valves_1.jpg&#39;
                             alt=&#34;Exhaust valves cylinder 1&#34; /&gt;
+						&lt;/a&gt;
                     &lt;/span&gt;&lt;/div&gt;
                 
                 
@@ -416,8 +503,10 @@
         
             
                 
+						&lt;a href=&#39;http://www.ryanmukherjee.com/img/engine/exhaust_valves_2.jpg&#39;&gt;
                         &lt;img src=&#39;http://www.ryanmukherjee.com/img/engine/exhaust_valves_2.jpg&#39;
                             alt=&#34;Exhaust valves cylinder 2&#34; /&gt;
+						&lt;/a&gt;
                     &lt;/span&gt;&lt;/div&gt;
                 
                 
@@ -439,8 +528,10 @@
         
             
                 
+						&lt;a href=&#39;http://www.ryanmukherjee.com/img/engine/exhaust_valves_3.jpg&#39;&gt;
                         &lt;img src=&#39;http://www.ryanmukherjee.com/img/engine/exhaust_valves_3.jpg&#39;
                             alt=&#34;Exhaust valves cylinder 3&#34; /&gt;
+						&lt;/a&gt;
                     &lt;/span&gt;&lt;/div&gt;
                 
                 
@@ -462,8 +553,10 @@
         
             
                 
+						&lt;a href=&#39;http://www.ryanmukherjee.com/img/engine/exhaust_valves_4.jpg&#39;&gt;
                         &lt;img src=&#39;http://www.ryanmukherjee.com/img/engine/exhaust_valves_4.jpg&#39;
                             alt=&#34;Exhaust valves cylinder 4&#34; /&gt;
+						&lt;/a&gt;
                     &lt;/span&gt;&lt;/div&gt;
                 
                 
@@ -520,9 +613,10 @@
 
     
         &lt;p&gt;&lt;span class=&#34;image center-image&#34;&gt;
-            &lt;img src=&#34;http://www.ryanmukherjee.com/img/engine/intake_flaps_4.jpg&#34; alt=&#34;Intake manifold flaps&#34; /&gt;
-        &lt;/span&gt;&lt;/p&gt;
     
+	&lt;a href=&#34;http://www.ryanmukherjee.com/img/engine/intake_flaps_4.jpg&#34;&gt;
+	&lt;img src=&#34;http://www.ryanmukherjee.com/img/engine/intake_flaps_4.jpg&#34; alt=&#34;Intake manifold flaps&#34; /&gt;
+	&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
 
 
 
@@ -564,8 +658,10 @@
         
             
                 
+						&lt;a href=&#39;http://www.ryanmukherjee.com/img/engine/cams_top.jpg&#39;&gt;
                         &lt;img src=&#39;http://www.ryanmukherjee.com/img/engine/cams_top.jpg&#39;
                             alt=&#34;Camshafts&#34; /&gt;
+						&lt;/a&gt;
                     &lt;/span&gt;&lt;/div&gt;
                 
                 
@@ -587,8 +683,10 @@
         
             
                 
+						&lt;a href=&#39;http://www.ryanmukherjee.com/img/engine/top_valve_cover.jpg&#39;&gt;
                         &lt;img src=&#39;http://www.ryanmukherjee.com/img/engine/top_valve_cover.jpg&#39;
                             alt=&#34;Valve cover&#34; /&gt;
+						&lt;/a&gt;
                     &lt;/span&gt;&lt;/div&gt;
                 
                 
@@ -638,8 +736,10 @@
         
             
                 
+						&lt;a href=&#39;http://www.ryanmukherjee.com/img/engine/balance_shaft_chain.jpg&#39;&gt;
                         &lt;img src=&#39;http://www.ryanmukherjee.com/img/engine/balance_shaft_chain.jpg&#39;
                             alt=&#34;Timing chain removed&#34; /&gt;
+						&lt;/a&gt;
                     &lt;/span&gt;&lt;/div&gt;
                 
                 
@@ -661,8 +761,10 @@
         
             
                 
+						&lt;a href=&#39;http://www.ryanmukherjee.com/img/engine/cams_removed_side.jpg&#39;&gt;
                         &lt;img src=&#39;http://www.ryanmukherjee.com/img/engine/cams_removed_side.jpg&#39;
                             alt=&#34;Cams removed&#34; /&gt;
+						&lt;/a&gt;
                     &lt;/span&gt;&lt;/div&gt;
                 
                 
@@ -712,8 +814,10 @@
         
             
                 
+						&lt;a href=&#39;http://www.ryanmukherjee.com/img/engine/valves.jpg&#39;&gt;
                         &lt;img src=&#39;http://www.ryanmukherjee.com/img/engine/valves.jpg&#39;
                             alt=&#34;Cams removed&#34; /&gt;
+						&lt;/a&gt;
                     &lt;/span&gt;&lt;/div&gt;
                 
                 
@@ -735,8 +839,10 @@
         
             
                 
+						&lt;a href=&#39;http://www.ryanmukherjee.com/img/engine/head_standalone.jpg&#39;&gt;
                         &lt;img src=&#39;http://www.ryanmukherjee.com/img/engine/head_standalone.jpg&#39;
                             alt=&#34;Head standalone&#34; /&gt;
+						&lt;/a&gt;
                     &lt;/span&gt;&lt;/div&gt;
                 
                 
@@ -758,8 +864,10 @@
         
             
                 
+						&lt;a href=&#39;http://www.ryanmukherjee.com/img/engine/head_removed_3.jpg&#39;&gt;
                         &lt;img src=&#39;http://www.ryanmukherjee.com/img/engine/head_removed_3.jpg&#39;
                             alt=&#34;Head removed&#34; /&gt;
+						&lt;/a&gt;
                     &lt;/span&gt;&lt;/div&gt;
                 
                 
@@ -809,8 +917,10 @@
         
             
                 
+						&lt;a href=&#39;http://www.ryanmukherjee.com/img/engine/pistons_and_rods.jpg&#39;&gt;
                         &lt;img src=&#39;http://www.ryanmukherjee.com/img/engine/pistons_and_rods.jpg&#39;
                             alt=&#34;Pistons and rods&#34; /&gt;
+						&lt;/a&gt;
                     &lt;/span&gt;&lt;/div&gt;
                 
                 
@@ -832,8 +942,10 @@
         
             
                 
+						&lt;a href=&#39;http://www.ryanmukherjee.com/img/engine/piston_carbon.jpg&#39;&gt;
                         &lt;img src=&#39;http://www.ryanmukherjee.com/img/engine/piston_carbon.jpg&#39;
                             alt=&#34;Cylinder 1 piston&#34; /&gt;
+						&lt;/a&gt;
                     &lt;/span&gt;&lt;/div&gt;
                 
                 
@@ -883,8 +995,10 @@
         
             
                 
+						&lt;a href=&#39;http://www.ryanmukherjee.com/img/engine/main_bearings_1_2_3.jpg&#39;&gt;
                         &lt;img src=&#39;http://www.ryanmukherjee.com/img/engine/main_bearings_1_2_3.jpg&#39;
                             alt=&#34;Main bearings 1, 2, and 3&#34; /&gt;
+						&lt;/a&gt;
                     &lt;/span&gt;&lt;/div&gt;
                 
                 
@@ -906,8 +1020,10 @@
         
             
                 
+						&lt;a href=&#39;http://www.ryanmukherjee.com/img/engine/main_bearings_2_3_horiz.jpg&#39;&gt;
                         &lt;img src=&#39;http://www.ryanmukherjee.com/img/engine/main_bearings_2_3_horiz.jpg&#39;
                             alt=&#34;Main bearings 2 and 3&#34; /&gt;
+						&lt;/a&gt;
                     &lt;/span&gt;&lt;/div&gt;
                 
                 
@@ -929,8 +1045,10 @@
         
             
                 
+						&lt;a href=&#39;http://www.ryanmukherjee.com/img/engine/main_bearings_3_4_horiz.jpg&#39;&gt;
                         &lt;img src=&#39;http://www.ryanmukherjee.com/img/engine/main_bearings_3_4_horiz.jpg&#39;
                             alt=&#34;Main bearings 3 and 4&#34; /&gt;
+						&lt;/a&gt;
                     &lt;/span&gt;&lt;/div&gt;
                 
                 
@@ -952,8 +1070,10 @@
         
             
                 
+						&lt;a href=&#39;http://www.ryanmukherjee.com/img/engine/main_bearings_4_5_horiz.jpg&#39;&gt;
                         &lt;img src=&#39;http://www.ryanmukherjee.com/img/engine/main_bearings_4_5_horiz.jpg&#39;
                             alt=&#34;Main bearings 4 and 5&#34; /&gt;
+						&lt;/a&gt;
                     &lt;/span&gt;&lt;/div&gt;
                 
                 
@@ -1110,9 +1230,10 @@ obdsim -t /dev/rfcomm0
 
     
         &lt;span class=&#34;image left&#34;&gt;
-            &lt;img src=&#34;http://www.ryanmukherjee.com/img/main/profile.jpg&#34; alt=&#34;Profile Picture&#34; /&gt;
-        &lt;/span&gt;
     
+	&lt;a href=&#34;http://www.ryanmukherjee.com/img/main/profile.jpg&#34;&gt;
+	&lt;img src=&#34;http://www.ryanmukherjee.com/img/main/profile.jpg&#34; alt=&#34;Profile Picture&#34; /&gt;
+	&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
 
 
 

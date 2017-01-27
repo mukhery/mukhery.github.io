@@ -2,6 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://www.ryanmukherjee.com/blog/balance-shaft-delete/</loc>
+    <lastmod>2017-01-26T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://www.ryanmukherjee.com/blog/engine-failure/</loc>
     <lastmod>2017-01-25T00:00:00+00:00</lastmod>
   </url>
@@ -33,7 +38,7 @@
   
   <url>
     <loc>http://www.ryanmukherjee.com/blog/</loc>
-    <lastmod>2017-01-25T00:00:00+00:00</lastmod>
+    <lastmod>2017-01-26T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -44,13 +49,13 @@
   
   <url>
     <loc>http://www.ryanmukherjee.com/</loc>
-    <lastmod>2017-01-25T00:00:00+00:00</lastmod>
+    <lastmod>2017-01-26T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://www.ryanmukherjee.com/categories/hardware/</loc>
-    <lastmod>2017-01-25T00:00:00+00:00</lastmod>
+    <lastmod>2017-01-26T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   

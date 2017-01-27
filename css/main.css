@@ -2129,8 +2129,8 @@
 		}
 
 			.image.featured img {
-				max-height: 60vh;
-				max-width: 60vw;
+				max-height: 90vh;
+				max-width: 100%;
 				margin: auto;
 			}
 
