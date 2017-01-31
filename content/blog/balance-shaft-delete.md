@@ -35,4 +35,6 @@ Balance shafts also represent an additional load on the engine. It takes energy 
 
 One might think that the balance shafts would help the rotating assembly be more balanced. However, the balance shafts are independent of the rotating assembly. Any secondary vibration in the rotating assembly first gets absorbed by the main bearings, transferred to and then cancelled in the block by the balance shafts. So in terms of minimizing bearing load, the balance shafts don't have any benefit. As such, it seems almost necessary to remove the balance shafts for a performance build.
 
+{{< img-post path="/img/engine" file="balance_shafts.jpg" alt="Balance shafts and oil pump" type="center" >}}
+
 Surprisingly, the EA888 Gen 2 does seem to support balance shaft removal without much effort. Because the balance shafts are driven with an independent chain, we don't need to worry about customizing the oil pump setup (previous engine generations had their balance shafts integrated into the oil pump). The only major hurdle with the EA888 is that the water pump is driven by the front balance shaft. In future posts, I'll go into more detail about the steps necessary to delete the balance shafts and discuss replacing the mechanical water pump with an electric one.
