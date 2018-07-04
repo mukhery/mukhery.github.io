@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
     <loc>http://www.ryanmukherjee.com/blog/eerie_silence/</loc>
@@ -53,13 +54,13 @@
   </url>
   
   <url>
-    <loc>http://www.ryanmukherjee.com/</loc>
+    <loc>http://www.ryanmukherjee.com/categories/hardware/</loc>
     <lastmod>2018-07-03T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://www.ryanmukherjee.com/categories/hardware/</loc>
+    <loc>http://www.ryanmukherjee.com/</loc>
     <lastmod>2018-07-03T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
@@ -67,6 +68,11 @@
   <url>
     <loc>http://www.ryanmukherjee.com/categories/software/</loc>
     <lastmod>2016-10-01T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.ryanmukherjee.com/tags/</loc>
     <priority>0</priority>
   </url>
   
