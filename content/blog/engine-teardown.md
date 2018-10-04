@@ -2,12 +2,12 @@
 author = "Ryan Mukherjee"
 categories = ["Hardware"]
 date = "2017-01-20"
-description = "Engine teardown"
+description = "A closer look inside my new used engine"
 featured = "crank_removed.jpg"
 featuredalt = "Bare block"
 featuredpath = "/img/engine"
 linktitle = ""
-title = "engine teardown"
+title = "Engine teardown"
 type = "post"
 
 +++
