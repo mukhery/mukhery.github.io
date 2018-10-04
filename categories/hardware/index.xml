@@ -6,10 +6,28 @@
     <description>Recent content in Hardware on Ryan Mukherjee</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 03 Jul 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 03 Oct 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="http://www.ryanmukherjee.com/categories/hardware/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>High Pressure Fuel Pump Upgrade</title>
+      <link>http://www.ryanmukherjee.com/blog/hpfp/</link>
+      <pubDate>Wed, 03 Oct 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.ryanmukherjee.com/blog/hpfp/</guid>
+      <description>Motivation I&amp;rsquo;ll keep this section short, because most of you probably already know why one might want to upgrade their high pressure fuel pump (HPFP). For those of you who don&amp;rsquo;t, the rationale is simple: to make more power we need to be able to inject more fuel. Along those lines, we might upgrade the fuel injectors to ones that are capable of flowing more volume, or we might change the engine tuning so that the injectors flow fuel for longer.</description>
+    </item>
+    
+    <item>
+      <title>Engine painting</title>
+      <link>http://www.ryanmukherjee.com/blog/engine-painting/</link>
+      <pubDate>Mon, 03 Sep 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.ryanmukherjee.com/blog/engine-painting/</guid>
+      <description>Prep As I learned from going through this process, painting an engine block (and doing a good job) is no easy feat. The reason for this, as you&amp;rsquo;ve likely already heard, is that getting a good quality result requires a lot of preparation. From my experience, there are two main things that make preparation difficult. First, used gasoline engines are especially dirty, and you want your nice paint to stick to the raw metal and not whatever contamination is on the surface of the engine.</description>
+    </item>
     
     <item>
       <title>eerie silence</title>
@@ -43,7 +61,7 @@ When I went to start my car after work, it started idling really rough like a cy
     </item>
     
     <item>
-      <title>engine teardown</title>
+      <title>Engine teardown</title>
       <link>http://www.ryanmukherjee.com/blog/engine-teardown/</link>
       <pubDate>Fri, 20 Jan 2017 00:00:00 +0000</pubDate>
       

@@ -21,8 +21,8 @@
         "accountablePerson" : "",
         "copyrightHolder" : "",
         "copyrightYear" : "2018",
-        "datePublished": "2018-07-03 00:00:00 &#43;0000 UTC",
-        "dateModified" : "2018-07-03 00:00:00 &#43;0000 UTC",
+        "datePublished": "2018-10-03 00:00:00 &#43;0000 UTC",
+        "dateModified" : "2018-10-03 00:00:00 &#43;0000 UTC",
         "url" : "http://www.ryanmukherjee.com/",
         "wordCount" : "0",
         "keywords" : [ "Blog" ]
@@ -73,7 +73,7 @@
 
 
 
-<meta property="og:updated_time" content="2018-07-03T00:00:00&#43;00:00"/>
+<meta property="og:updated_time" content="2018-10-03T00:00:00&#43;00:00"/>
 
 
 
@@ -251,11 +251,11 @@ if (!doNotTrack) {
                 
                         <article class="mini-post">
                             <header>
-                                <h3><a href="http://www.ryanmukherjee.com/blog/eerie_silence/">eerie silence</a></h3>
+                                <h3><a href="http://www.ryanmukherjee.com/blog/hpfp/">High Pressure Fuel Pump Upgrade</a></h3>
                                 
                                 <time class="published" datetime=
-                                    '2018-07-03'>
-                                    July 3, 2018</time>
+                                    '2018-10-03'>
+                                    October 3, 2018</time>
                             </header>
                             
     
@@ -271,17 +271,14 @@ if (!doNotTrack) {
 
 
   
-  
-    
-  
 
 
         
         
         
 
-        <a href="http://www.ryanmukherjee.com/blog/eerie_silence/" class="image featured">
-            <img src="http://www.ryanmukherjee.com/img/2018/07/engine_bay.jpg" alt="">
+        <a href="http://www.ryanmukherjee.com/blog/hpfp/" class="image featured">
+            <img src="http://www.ryanmukherjee.com/img/2018/10/apr_hpfp.jpg" alt="">
         </a>
     
 
@@ -290,13 +287,37 @@ if (!doNotTrack) {
                 
                         <article class="mini-post">
                             <header>
-                                <h3><a href="http://www.ryanmukherjee.com/blog/balance-shaft-delete/">balance shaft delete</a></h3>
+                                <h3><a href="http://www.ryanmukherjee.com/blog/engine-painting/">Engine painting</a></h3>
                                 
                                 <time class="published" datetime=
-                                    '2017-01-26'>
-                                    January 26, 2017</time>
+                                    '2018-09-03'>
+                                    September 3, 2018</time>
                             </header>
                             
+    
+
+    
+        
+        
+
+
+
+
+
+
+
+  
+
+
+        
+        
+        
+
+        <a href="http://www.ryanmukherjee.com/blog/engine-painting/" class="image featured">
+            <img src="http://www.ryanmukherjee.com/img/painting/block_tape_removed.jpg" alt="">
+        </a>
+    
+
 
                         </article>
                 
@@ -322,18 +343,18 @@ if (!doNotTrack) {
   <header>
     <div class="title">
         
-            <h2><a href="http://www.ryanmukherjee.com/blog/eerie_silence/">eerie silence</a></h2>
+            <h2><a href="http://www.ryanmukherjee.com/blog/hpfp/">High Pressure Fuel Pump Upgrade</a></h2>
         
         
-            <p>It&#39;s been a while...</p>
+            <p>Backwards compatibility for the win!</p>
         
     </div>
     <div class="meta">
         
 
         <time class="published"
-            datetime='2018-07-03'>
-            July 3, 2018</time>
+            datetime='2018-10-03'>
+            October 3, 2018</time>
         <span class="author">Ryan Mukherjee</span>
         
         
@@ -357,23 +378,168 @@ if (!doNotTrack) {
 
 
   
-  
-    
-  
 
 
         
         
         
 
-        <a href="http://www.ryanmukherjee.com/blog/eerie_silence/" class="image featured">
-            <img src="http://www.ryanmukherjee.com/img/2018/07/engine_bay.jpg" alt="">
+        <a href="http://www.ryanmukherjee.com/blog/hpfp/" class="image featured">
+            <img src="http://www.ryanmukherjee.com/img/2018/10/apr_hpfp.jpg" alt="">
         </a>
     
 
 
   <div id="content">
-    <p>It&rsquo;s been quite a while since my last post&hellip; I&rsquo;ve been preoccupied with work, life, and trying to get the car up and running. To keep things brief for now, the car is driving nicely. I&rsquo;m still being gentle with it, primarily because the engine is on its first couple hundred miles. I&rsquo;ve also had the car break down a couple times now, so I&rsquo;m slowly rebuilding my confidence that the car can handle long distances. I&rsquo;m planning to start posting more frequently now that I&rsquo;ve finished a few work projects and got the car up and running. I&rsquo;ll pick up where I left off with the engine build and then later go into some of the issues that I encountered after first start and how I&rsquo;ve solved them. Stay tuned!</p>
+    
+
+<h2 id="motivation">Motivation</h2>
+
+<p>I&rsquo;ll keep this section short, because most of you probably already know why one might want to upgrade their high pressure fuel pump (HPFP). For those of you who don&rsquo;t, the rationale is simple: to make more power we need to be able to inject more fuel. Along those lines, we might upgrade the fuel injectors to ones that are capable of flowing more volume, or we might change the engine tuning so that the injectors flow fuel for longer. However, if we increase the volume of fuel that the injectors are capable of injecting then we also need to ensure adequate fuel supply to the injectors. That&rsquo;s where fuel pump upgrades come into play. An upgraded HPFP is capable of flowing a larger volume of fuel than the stock pump.</p>
+
+<p>On the EA888 engine there&rsquo;s a high-pressure fuel regulator that allows the ECU to control fuel pressure. As such, upgrading the HPFP won&rsquo;t have any affect unless the engine wasn&rsquo;t able to keep up with fuel demands before the upgrade, or if the pressure regulator can&rsquo;t cope with the increased volume of fuel (which is probably unlikely). So the good news is that you can upgrade the pump in your garage and then get a tune for it later, or it&rsquo;ll just solve any fueling issues you&rsquo;re already having.</p>
+
+<h2 id="aftermarket-options">Aftermarket options</h2>
+
+<p>The big problem with the EA888 Gen2 (USA) engine is that, for some reason, the HPFP upgrade options were nonexistent until recently and even now very limited. Supposedly the rest-of-world (ROW) version of the engine had a fuel pump that could be upgraded, but I&rsquo;m not sure what the difference is. Regardless, now that the manufacturer and a lot of the aftermarket has moved on to the Gen3 engine, I don&rsquo;t expect the Gen2 options to get any better.</p>
+
+<p>APR is one of the big players in this area. The nice thing about APR is that you can simply send your fuel pump over and they&rsquo;ll rebuild it, test it, and send it back. Unfortunately, they don&rsquo;t offer any Gen2 pump upgrade options.</p>
+
+<h2 id="retrofitting-the-ea888-gen3-hpfp">Retrofitting the EA888 Gen3 HPFP</h2>
+
+<p>So the big find that I made is that the EA888 Gen3 pump <em>can</em> be used on the EA888 Gen2 engine. The catch is that you have to retrofit a Gen3 vacuum pump as well.</p>
+
+<p>It turns out that the Gen3 engine has an identical vacuum pump mounting location and camshaft lobes for driving the vacuum pump and fuel pump. The fuel pumps themselves are different, so you can&rsquo;t simply put a Gen3 fuel pump in a Gen2 vacuum housing. However, because of the similarities, you can simply retrofit the entire Gen3 vacuum pump and fuel pump onto the Gen2 head.</p>
+
+
+
+
+    
+    
+        
+        
+        
+        
+    
+
+    
+    
+    
+
+    
+    
+
+
+
+
+
+
+
+  
+
+
+    
+
+    
+        <p><a href="http://www.ryanmukherjee.com/img/2018/10/camshaft_inside_gen3_housing.jpg"><span class="image center">
+            <img src="http://www.ryanmukherjee.com/img/2018/10/camshaft_inside_gen3_housing.jpg" alt="Camshaft visible inside Gen3 HPFP housing">
+        </span></a></p>
+    
+	
+
+
+
+<p>There are several additional modifications that I had to make to get everything to fit, although none of them were particularly difficult:</p>
+
+<ul>
+<li>The Gen3 pump housing has the HPFP sitting in a higher position, which meant that I had to bend the fuel lines connecting the HPFP output to the fuel rail to accomodate.</li>
+<li>I had to move my Gen2 HPFP pressure regulator over to the Gen3 pump so that I could use my existing wiring.</li>
+<li>I had to bend the coolant hard line around the Gen3 housing.</li>
+<li>I had to move the Gen2 HPFP vacuum line connector onto the Gen3 pump so that my stock vacuum lines fit.</li>
+<li>I tapped and plugged the extra nipple attached to the Gen3 HPFP.</li>
+<li>Finally, I had to cut the edge of the PCV adapter plate so that it wouldn&rsquo;t impact the HPFP.</li>
+</ul>
+
+<p>After making all these modifications, I found that everything fit perfectly. I sent my Gen3 HPFP to APR to get upgraded and have since installed the upgraded pump on my car. It works beautifully!</p>
+
+
+
+
+    
+
+    
+    
+
+
+
+
+
+
+
+  
+
+
+    
+
+    <div class="box alt">
+        <div class="row uniform">
+        
+        
+        
+            
+                <div class="6u">
+            
+            
+        
+            
+                
+                    
+                    <span class="image fit">
+                
+            
+            
+        
+            
+                
+						<a href='http://www.ryanmukherjee.com/img/2018/10/pcv_adapter_trimmed.jpg'>
+						<img src='http://www.ryanmukherjee.com/img/2018/10/pcv_adapter_trimmed.jpg'
+                            alt="Trimmed PCV adapter plate"/>
+						</a>
+                    </span></div>
+                
+                
+            
+            
+        
+            
+                <div class="6u$">
+            
+            
+        
+            
+                
+                    
+                    <span class="image fit">
+                
+            
+            
+        
+            
+                
+						<a href='http://www.ryanmukherjee.com/img/2018/10/hpfp_mounted.jpg'>
+						<img src='http://www.ryanmukherjee.com/img/2018/10/hpfp_mounted.jpg'
+                            alt="Finished view of the EA888 Gen3 HPFP on an EA888 Gen2 engine"/>
+						</a>
+                    </span></div>
+                
+                
+            
+            
+        
+        </div>
+    </div>
+
+
 
   </div>
 
@@ -407,8 +573,8 @@ if (!doNotTrack) {
 
 <ul class="actions pagination">
     
-        <li><a href="http://www.ryanmukherjee.com/blog/balance-shaft-delete/"
-                class="button big previous">balance shaft delete</a></li>
+        <li><a href="http://www.ryanmukherjee.com/blog/engine-painting/"
+                class="button big previous">Engine painting</a></li>
     
 
     
@@ -427,7 +593,7 @@ if (!doNotTrack) {
 
 
 <li>
-  <a href="//twitter.com/share?url=http%3a%2f%2fwww.ryanmukherjee.com%2fblog%2feerie_silence%2f&amp;text=eerie%20silence&amp;via=" target="_blank" class="share-btn twitter">
+  <a href="//twitter.com/share?url=http%3a%2f%2fwww.ryanmukherjee.com%2fblog%2fhpfp%2f&amp;text=High%20Pressure%20Fuel%20Pump%20Upgrade&amp;via=" target="_blank" class="share-btn twitter">
     <i class="fa fa-twitter"></i>
     <p>Twitter</p>
     </a>
@@ -437,7 +603,7 @@ if (!doNotTrack) {
 
 
 <li>
-  <a href="//plus.google.com/share?url=http%3a%2f%2fwww.ryanmukherjee.com%2fblog%2feerie_silence%2f" target="_blank" class="share-btn google-plus">
+  <a href="//plus.google.com/share?url=http%3a%2f%2fwww.ryanmukherjee.com%2fblog%2fhpfp%2f" target="_blank" class="share-btn google-plus">
     <i class="fa fa-google-plus"></i>
     <p>Google+</p>
   </a>
@@ -448,7 +614,7 @@ if (!doNotTrack) {
 
 
 <li>
-  <a href="//www.facebook.com/sharer/sharer.php?u=http%3a%2f%2fwww.ryanmukherjee.com%2fblog%2feerie_silence%2f" target="_blank" class="share-btn facebook">
+  <a href="//www.facebook.com/sharer/sharer.php?u=http%3a%2f%2fwww.ryanmukherjee.com%2fblog%2fhpfp%2f" target="_blank" class="share-btn facebook">
     <i class="fa fa-facebook"></i>
     <p>Facebook</p>
     </a>
@@ -458,7 +624,7 @@ if (!doNotTrack) {
 
 
 <li>
-  <a href="//reddit.com/submit?url=http%3a%2f%2fwww.ryanmukherjee.com%2fblog%2feerie_silence%2f&amp;title=eerie%20silence" target="_blank" class="share-btn reddit">
+  <a href="//reddit.com/submit?url=http%3a%2f%2fwww.ryanmukherjee.com%2fblog%2fhpfp%2f&amp;title=High%20Pressure%20Fuel%20Pump%20Upgrade" target="_blank" class="share-btn reddit">
     <i class="fa fa-reddit-alien"></i>
     <p>Reddit</p>
   </a>
@@ -468,7 +634,7 @@ if (!doNotTrack) {
 
 
 <li>
-  <a href="//www.linkedin.com/shareArticle?url=http%3a%2f%2fwww.ryanmukherjee.com%2fblog%2feerie_silence%2f&amp;title=eerie%20silence" target="_blank" class="share-btn linkedin">
+  <a href="//www.linkedin.com/shareArticle?url=http%3a%2f%2fwww.ryanmukherjee.com%2fblog%2fhpfp%2f&amp;title=High%20Pressure%20Fuel%20Pump%20Upgrade" target="_blank" class="share-btn linkedin">
       <i class="fa fa-linkedin"></i>
       <p>LinkedIn</p>
     </a>
@@ -478,7 +644,7 @@ if (!doNotTrack) {
 
 
 <li>
-  <a href="//www.stumbleupon.com/submit?url=http%3a%2f%2fwww.ryanmukherjee.com%2fblog%2feerie_silence%2f&amp;title=eerie%20silence" target="_blank" class="share-btn stumbleupon">
+  <a href="//www.stumbleupon.com/submit?url=http%3a%2f%2fwww.ryanmukherjee.com%2fblog%2fhpfp%2f&amp;title=High%20Pressure%20Fuel%20Pump%20Upgrade" target="_blank" class="share-btn stumbleupon">
     <i class="fa fa-stumbleupon"></i>
     <p>StumbleUpon</p>
   </a>
@@ -488,7 +654,7 @@ if (!doNotTrack) {
 
 
 <li>
-  <a href="//www.pinterest.com/pin/create/button/?url=http%3a%2f%2fwww.ryanmukherjee.com%2fblog%2feerie_silence%2f&amp;description=eerie%20silence" target="_blank" class="share-btn pinterest">
+  <a href="//www.pinterest.com/pin/create/button/?url=http%3a%2f%2fwww.ryanmukherjee.com%2fblog%2fhpfp%2f&amp;description=High%20Pressure%20Fuel%20Pump%20Upgrade" target="_blank" class="share-btn pinterest">
     <i class="fa fa-pinterest-p"></i>
     <p>Pinterest</p>
   </a>
@@ -498,7 +664,7 @@ if (!doNotTrack) {
 
 
 <li>
-  <a href="mailto:?subject=Check out this post by Ryan%20Mukherjee&amp;body=http%3a%2f%2fwww.ryanmukherjee.com%2fblog%2feerie_silence%2f" target="_blank" class="share-btn email">
+  <a href="mailto:?subject=Check out this post by Ryan%20Mukherjee&amp;body=http%3a%2f%2fwww.ryanmukherjee.com%2fblog%2fhpfp%2f" target="_blank" class="share-btn email">
     <i class="fa fa-envelope"></i>
     <p>Email</p>
   </a>
@@ -641,11 +807,11 @@ if (!doNotTrack) {
           <article class="mini-post">
             <header>
               <h3>
-                <a href="http://www.ryanmukherjee.com/blog/eerie_silence/">eerie silence</a>
+                <a href="http://www.ryanmukherjee.com/blog/hpfp/">High Pressure Fuel Pump Upgrade</a>
               </h3>
               
-              <time class="published" datetime='2018-07-03'>
-                July 3, 2018
+              <time class="published" datetime='2018-10-03'>
+                October 3, 2018
               </time>
             </header>
             
@@ -662,17 +828,14 @@ if (!doNotTrack) {
 
 
   
-  
-    
-  
 
 
         
         
         
 
-        <a href="http://www.ryanmukherjee.com/blog/eerie_silence/" class="image featured">
-            <img src="http://www.ryanmukherjee.com/img/2018/07/engine_bay.jpg" alt="">
+        <a href="http://www.ryanmukherjee.com/blog/hpfp/" class="image featured">
+            <img src="http://www.ryanmukherjee.com/img/2018/10/apr_hpfp.jpg" alt="">
         </a>
     
 
@@ -682,14 +845,38 @@ if (!doNotTrack) {
           <article class="mini-post">
             <header>
               <h3>
-                <a href="http://www.ryanmukherjee.com/blog/balance-shaft-delete/">balance shaft delete</a>
+                <a href="http://www.ryanmukherjee.com/blog/engine-painting/">Engine painting</a>
               </h3>
               
-              <time class="published" datetime='2017-01-26'>
-                January 26, 2017
+              <time class="published" datetime='2018-09-03'>
+                September 3, 2018
               </time>
             </header>
             
+    
+
+    
+        
+        
+
+
+
+
+
+
+
+  
+
+
+        
+        
+        
+
+        <a href="http://www.ryanmukherjee.com/blog/engine-painting/" class="image featured">
+            <img src="http://www.ryanmukherjee.com/img/painting/block_tape_removed.jpg" alt="">
+        </a>
+    
+
 
           </article>
         
@@ -726,7 +913,7 @@ if (!doNotTrack) {
             <header>
               
                 <a href="http://www.ryanmukherjee.com/categories/hardware/">Hardware</a>
-                <span style="float:right;">5</span>
+                <span style="float:right;">7</span>
               
             </header>
           </article>
