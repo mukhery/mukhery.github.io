@@ -2,14 +2,58 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Blog on Ryan Mukherjee</title>
-    <link>http://www.ryanmukherjee.com/blog/</link>
+    <link>http://www.ryanmukherjee.com/blog/index.xml</link>
     <description>Recent content in Blog on Ryan Mukherjee</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 03 Oct 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 03 Dec 2018 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://www.ryanmukherjee.com/blog/index.xml" rel="self" type="application/rss+xml" />
     
-	<atom:link href="http://www.ryanmukherjee.com/blog/index.xml" rel="self" type="application/rss+xml" />
-    
+    <item>
+      <title>Tuning the EA888 - Reading/Writing Tools</title>
+      <link>http://www.ryanmukherjee.com/blog/tuning/</link>
+      <pubDate>Mon, 03 Dec 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.ryanmukherjee.com/blog/tuning/</guid>
+      <description>
+
+&lt;h2 id=&#34;why-bother&#34;&gt;Why bother?&lt;/h2&gt;
+
+&lt;p&gt;When I tell other car people that I tuned my car a common follow up question is, &amp;ldquo;Who did you go with?&amp;rdquo; They&amp;rsquo;ll ask if I bought a tune from APR, Unitronic, or some other large corporation. I think one of the reasons for this is the complexity of modern cars. There are so many little computers, wires, and other electronic devices inside modern cars that people assume it&amp;rsquo;s almost impossible for individuals to understand what&amp;rsquo;s going on, let alone non-destructively make changes themselves.&lt;/p&gt;
+
+&lt;p&gt;I think this perceived complexity actually helped convince me to try. For one, it makes success even more satistfying if other people think it&amp;rsquo;s an impossible problem. But, before I started, I also thought tuning modern cars was a nearly impossible problem, and it was very cool to crack the problem open and change that belief.&lt;/p&gt;
+
+&lt;p&gt;One of the things I wrote about in my college application essay was that I wanted to understand, at a fundamental level, how computers worked. How does one turn raw electricity into the wealth of information and enjoyment that you can get from a computer? At the time I wrote my essay, it seemed almost like magic. Slowly and steadily, I began to realize that it isn&amp;rsquo;t magic. In fact, like most (man-made) things in life it seems, computers are pretty much just an aggregation of a bunch of simple concepts and technologies. I think it&amp;rsquo;s completely justifiable to be in awe of complex fully assembled products and systems, but I don&amp;rsquo;t think we should believe that any man-made system is beyond our understanding. Most people are capable of understanding how these systems work if they put time and effort into understanding the components.&lt;/p&gt;
+
+&lt;p&gt;All of this is to say that, having spent some time learning about tuning, I think tuning is also fairly straightforward. Back when most cars were carbuerated, I think people wouldn&amp;rsquo;t have been very surprised if you told them you tuned your car yourself. Maybe some would&amp;rsquo;ve argued that anyone could grab a screwdriver and tweak their own carbuerator. To be honest, I think at some level tuning modern cars hasn&amp;rsquo;t really changed that much. I think what has changed is that the knobs we need to tune are harder to get to, but on the upside, once we get access to the knobs we&amp;rsquo;ll have more control.&lt;/p&gt;
+
+&lt;h2 id=&#34;what-do-we-mean-by-tuning&#34;&gt;What do we mean by tuning?&lt;/h2&gt;
+
+&lt;p&gt;Generally, when we talk about tuning we&amp;rsquo;re talking about changing the operating parameters of our engine. In other words, we&amp;rsquo;re talking about changing how much fuel gets injected, when it gets injected, when the spark plugs fire, when and how variable valve timing actuators are controlled, etc. On modern vehicles, most engine parameters are controlled by computer. There are a bunch of modules around the vehicle and they all communicate via networks such as &lt;a href=&#34;https://en.wikipedia.org/wiki/Canbus&#34;&gt;CAN&lt;/a&gt;. These modules are then connected to and control things like the injectors and spark plugs.&lt;/p&gt;
+
+&lt;p&gt;The primary module controlling the engine is called the &lt;a href=&#34;https://en.wikipedia.org/wiki/Engine_control_unit&#34;&gt;ECU&lt;/a&gt;. In many modern cars, the ECU is combined with the &lt;a href=&#34;https://en.wikipedia.org/wiki/Transmission_control_unit&#34;&gt;TCU&lt;/a&gt; and the combined module is sometimes referred to as the &lt;a href=&#34;https://en.wikipedia.org/wiki/Powertrain_control_module&#34;&gt;PCM&lt;/a&gt;. Even in cars with manual transmissions, the PCM module might still have all of the logic and hardware for controlling an automatic transmission to reduce manufacturing costs.&lt;/p&gt;
+
+&lt;p&gt;Ideally, we would like full control over the ECU so that we can quickly and easily tune the car. Unfortunately, unless we switch to something like an aftermarket standalone ECU (such as the &lt;a href=&#34;https://www.aemelectronics.com/products/programmable-engine-management-systems/infinity-ecu&#34;&gt;AEM Infinity&lt;/a&gt; or &lt;a href=&#34;https://www.haltech.com/product-category/universal-ecu-kits/&#34;&gt;Haltech Elite Series&lt;/a&gt;), gaining control of the stock ECU is basically a form of reverse engineering. Different manufacturers use different protocols, modern vehicles are often protected by keys and passwords to prevent unauthorized reading/writing, and the software running on the ECU is kept secret so you can&amp;rsquo;t simply modify some source code, recompile, and then upload to your ECU. The easiest way to overcome these hurdles and get straight to tuning is to buy some tuning tools.&lt;/p&gt;
+
+&lt;h2 id=&#34;tuning-tools&#34;&gt;Tuning Tools&lt;/h2&gt;
+
+&lt;p&gt;To get started tuning, you&amp;rsquo;ll need some tools that will enable you to read and write different software onto the ECU as well as help you understand what bytes to modify. For this post I&amp;rsquo;ll focus on reading and writing. One of the biggest problems I encountered while trying to tune my own car was that tuning tools, especially ones that support modern vehicles, are very expensive. Alientech, Flashtec, and Magic Motorsport are some of the biggest players that offer tools supporting a wide variety of makes and models including many modern vehicles. Unfortunately, most of these tools are priced for professional tuners and tuning companies, which put them out of reach for myself and probably most individuals.&lt;/p&gt;
+
+&lt;p&gt;I contacted the big three tuning tool companies and asked if they had any cheaper options for individuals. Alientech was the only company that had a cheaper tool, which they call &lt;a href=&#34;https://www.alientech-tools.com/en/powergate3/&#34;&gt;Powergate3+&lt;/a&gt;. The Powergate3+ unit essentially locks itself to a particular vehicle, which makes it less suitable for professional tuning companies but great for an individual. I purchased the Powergate3+ and tried to use it with my car, but only had partial success. The tool was able to successfully read my ECU after working with customer support and providing them with a readout that I obtained from another tuner, but the Powergate3+ was never able to fully write to the ECU. I tried working with customer support again, but my North American contact basically told me that his Italian colleagues weren&amp;rsquo;t responding to resolve my problem.&lt;/p&gt;
+
+&lt;p&gt;If you can&amp;rsquo;t find the tools you need directly from the companies themselves, it is possible to find some stuff on eBay. There are also some forums, such as NefMoto and MHH Auto where people discuss and sometimes even sell used tools. The most popular options seem to be Alientech&amp;rsquo;s KESS and KTAG. KESS provides ECU reading and writing capabilities via OBD, as well as boot mode support for various ECUs. KTAG provides ECU reading and writing capabilities via BDM.&lt;/p&gt;
+
+&lt;p&gt;OBD is ideal, because it allows you to modify the software on your ECU without removing and opening the ECU. Tuning the car well, especially for a beginner (like me), requires making lots of little changes and testing them out to see what happens. Having to remove the ECU, open it, and solder wires just to write new software adds a huge amount of overhead to this process. If you&amp;rsquo;re lucky, a tool like KESS will be able to OBD read and write software to your ECU. If not, you still may be able to open the ECU and solder wires to use KESS in what&amp;rsquo;s called boot mode.&lt;/p&gt;
+
+&lt;p&gt;From what I&amp;rsquo;ve learned, boot mode is like a diagnostic mode that you can put the ECU&amp;rsquo;s primary processor in during bootup. I think of it like accessing the BIOS on your computer. If you change the voltage on certain pins during bootup, or hold down a certain key (to use the BIOS analogy), you can enter a special mode where you can access features that might otherwise be locked by the ECU&amp;rsquo;s software. However, there are limitations to boot mode. Often times you still only have access to a certain region of the ECU&amp;rsquo;s memory.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Background_debug_mode_interface&#34;&gt;BDM&lt;/a&gt; is another method that KTAG uses, which I think is similar to &lt;a href=&#34;https://en.wikipedia.org/wiki/JTAG&#34;&gt;JTAG&lt;/a&gt;. Using BDM, Alientech&amp;rsquo;s KTAG tool essentially provides full read and write access to the ECU&amp;rsquo;s memory. When modern cars come out with new ECUs and protection mechanisms to prevent unauthorized OBD modification, BDM is usually the method that most tuners use to bypass these protections. Unfortunately, BDM also requires you to physically open the ECU to access special pins connected to the primary processor.&lt;/p&gt;
+
+&lt;p&gt;I also recently learned about HP tuners &lt;a href=&#34;https://www.hptuners.com/mpvi2/&#34;&gt;MPVI2&lt;/a&gt;. It doesn&amp;rsquo;t support my car specifically, but they support the same ECU versions in other vehicles. I reached out to the company to see if it would be possible to add support for my vehicle and I&amp;rsquo;ll create another blog post if they get it working.&lt;/p&gt;
+
+&lt;p&gt;That&amp;rsquo;s all for reading and writing tools. In future tuning posts, I&amp;rsquo;ll go into more detail on how to edit the tune.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>High Pressure Fuel Pump Upgrade</title>
@@ -17,7 +61,156 @@
       <pubDate>Wed, 03 Oct 2018 00:00:00 +0000</pubDate>
       
       <guid>http://www.ryanmukherjee.com/blog/hpfp/</guid>
-      <description>Motivation I&amp;rsquo;ll keep this section short, because most of you probably already know why one might want to upgrade their high pressure fuel pump (HPFP). For those of you who don&amp;rsquo;t, the rationale is simple: to make more power we need to be able to inject more fuel. Along those lines, we might upgrade the fuel injectors to ones that are capable of flowing more volume, or we might change the engine tuning so that the injectors flow fuel for longer.</description>
+      <description>
+
+&lt;h2 id=&#34;motivation&#34;&gt;Motivation&lt;/h2&gt;
+
+&lt;p&gt;I&amp;rsquo;ll keep this section short, because most of you probably already know why one might want to upgrade their high pressure fuel pump (HPFP). For those of you who don&amp;rsquo;t, the rationale is simple: to make more power we need to be able to inject more fuel. Along those lines, we might upgrade the fuel injectors to ones that are capable of flowing more volume, or we might change the engine tuning so that the injectors flow fuel for longer. However, if we increase the volume of fuel that the injectors are capable of injecting then we also need to ensure adequate fuel supply to the injectors. That&amp;rsquo;s where fuel pump upgrades come into play. An upgraded HPFP is capable of flowing a larger volume of fuel than the stock pump.&lt;/p&gt;
+
+&lt;p&gt;On the EA888 engine there&amp;rsquo;s a high-pressure fuel regulator that allows the ECU to control fuel pressure. As such, upgrading the HPFP won&amp;rsquo;t have any affect unless the engine wasn&amp;rsquo;t able to keep up with fuel demands before the upgrade, or if the pressure regulator can&amp;rsquo;t cope with the increased volume of fuel (which is probably unlikely). So the good news is that you can upgrade the pump in your garage and then get a tune for it later, or it&amp;rsquo;ll just solve any fueling issues you&amp;rsquo;re already having.&lt;/p&gt;
+
+&lt;h2 id=&#34;aftermarket-options&#34;&gt;Aftermarket options&lt;/h2&gt;
+
+&lt;p&gt;The big problem with the EA888 Gen2 (USA) engine is that, for some reason, the HPFP upgrade options were nonexistent until recently and even now very limited. Supposedly the rest-of-world (ROW) version of the engine had a fuel pump that could be upgraded, but I&amp;rsquo;m not sure what the difference is. Regardless, now that the manufacturer and a lot of the aftermarket has moved on to the Gen3 engine, I don&amp;rsquo;t expect the Gen2 options to get any better.&lt;/p&gt;
+
+&lt;p&gt;APR is one of the big players in this area. The nice thing about APR is that you can simply send your fuel pump over and they&amp;rsquo;ll rebuild it, test it, and send it back. Unfortunately, they don&amp;rsquo;t offer any Gen2 pump upgrade options.&lt;/p&gt;
+
+&lt;h2 id=&#34;retrofitting-the-ea888-gen3-hpfp&#34;&gt;Retrofitting the EA888 Gen3 HPFP&lt;/h2&gt;
+
+&lt;p&gt;So the big find that I made is that the EA888 Gen3 pump &lt;em&gt;can&lt;/em&gt; be used on the EA888 Gen2 engine. The catch is that you have to retrofit a Gen3 vacuum pump as well.&lt;/p&gt;
+
+&lt;p&gt;It turns out that the Gen3 engine has an identical vacuum pump mounting location and camshaft lobes for driving the vacuum pump and fuel pump. The fuel pumps themselves are different, so you can&amp;rsquo;t simply put a Gen3 fuel pump in a Gen2 vacuum housing. However, because of the similarities, you can simply retrofit the entire Gen3 vacuum pump and fuel pump onto the Gen2 head.&lt;/p&gt;
+
+
+
+
+    
+    
+        
+        
+        
+        
+    
+
+    
+    
+    
+
+    
+    
+
+
+
+
+
+
+
+  
+
+
+    
+
+    
+        &lt;p&gt;&lt;a href=&#34;http://www.ryanmukherjee.com/img/2018/10/camshaft_inside_gen3_housing.jpg&#34;&gt;&lt;span class=&#34;image center&#34;&gt;
+            &lt;img src=&#34;http://www.ryanmukherjee.com/img/2018/10/camshaft_inside_gen3_housing.jpg&#34; alt=&#34;Camshaft visible inside Gen3 HPFP housing&#34;&gt;
+        &lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
+    
+	
+
+
+
+&lt;p&gt;There are several additional modifications that I had to make to get everything to fit, although none of them were particularly difficult:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;The Gen3 pump housing has the HPFP sitting in a higher position, which meant that I had to bend the fuel lines connecting the HPFP output to the fuel rail to accomodate.&lt;/li&gt;
+&lt;li&gt;I had to move my Gen2 HPFP pressure regulator over to the Gen3 pump so that I could use my existing wiring.&lt;/li&gt;
+&lt;li&gt;I had to bend the coolant hard line around the Gen3 housing.&lt;/li&gt;
+&lt;li&gt;I had to move the Gen2 HPFP vacuum line connector onto the Gen3 pump so that my stock vacuum lines fit.&lt;/li&gt;
+&lt;li&gt;I tapped and plugged the extra nipple attached to the Gen3 HPFP.&lt;/li&gt;
+&lt;li&gt;Finally, I had to cut the edge of the PCV adapter plate so that it wouldn&amp;rsquo;t impact the HPFP.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;After making all these modifications, I found that everything fit perfectly. I sent my Gen3 HPFP to APR to get upgraded and have since installed the upgraded pump on my car. It works beautifully!&lt;/p&gt;
+
+
+
+
+    
+
+    
+    
+
+
+
+
+
+
+
+  
+
+
+    
+
+    &lt;div class=&#34;box alt&#34;&gt;
+        &lt;div class=&#34;row uniform&#34;&gt;
+        
+        
+        
+            
+                &lt;div class=&#34;6u&#34;&gt;
+            
+            
+        
+            
+                
+                    
+                    &lt;span class=&#34;image fit&#34;&gt;
+                
+            
+            
+        
+            
+                
+						&lt;a href=&#39;http://www.ryanmukherjee.com/img/2018/10/pcv_adapter_trimmed.jpg&#39;&gt;
+						&lt;img src=&#39;http://www.ryanmukherjee.com/img/2018/10/pcv_adapter_trimmed.jpg&#39;
+                            alt=&#34;Trimmed PCV adapter plate&#34;/&gt;
+						&lt;/a&gt;
+                    &lt;/span&gt;&lt;/div&gt;
+                
+                
+            
+            
+        
+            
+                &lt;div class=&#34;6u$&#34;&gt;
+            
+            
+        
+            
+                
+                    
+                    &lt;span class=&#34;image fit&#34;&gt;
+                
+            
+            
+        
+            
+                
+						&lt;a href=&#39;http://www.ryanmukherjee.com/img/2018/10/hpfp_mounted.jpg&#39;&gt;
+						&lt;img src=&#39;http://www.ryanmukherjee.com/img/2018/10/hpfp_mounted.jpg&#39;
+                            alt=&#34;Finished view of the EA888 Gen3 HPFP on an EA888 Gen2 engine&#34;/&gt;
+						&lt;/a&gt;
+                    &lt;/span&gt;&lt;/div&gt;
+                
+                
+            
+            
+        
+        &lt;/div&gt;
+    &lt;/div&gt;
+
+
+</description>
     </item>
     
     <item>
@@ -26,7 +219,342 @@
       <pubDate>Mon, 03 Sep 2018 00:00:00 +0000</pubDate>
       
       <guid>http://www.ryanmukherjee.com/blog/engine-painting/</guid>
-      <description>Prep As I learned from going through this process, painting an engine block (and doing a good job) is no easy feat. The reason for this, as you&amp;rsquo;ve likely already heard, is that getting a good quality result requires a lot of preparation. From my experience, there are two main things that make preparation difficult. First, used gasoline engines are especially dirty, and you want your nice paint to stick to the raw metal and not whatever contamination is on the surface of the engine.</description>
+      <description>
+
+&lt;h2 id=&#34;prep&#34;&gt;Prep&lt;/h2&gt;
+
+&lt;p&gt;As I learned from going through this process, painting an engine block (and doing a good job) is no easy feat. The reason for this, as you&amp;rsquo;ve likely already heard, is that getting a good quality result requires a lot of preparation. From my experience, there are two main things that make preparation difficult. First, used gasoline engines are especially dirty, and you want your nice paint to stick to the raw metal and not whatever contamination is on the surface of the engine. Second, you have to be careful about what you paint because paint can probably cause premature engine failure if it gets in certain places. For example, clogging fluid passages with paint, or getting paint in areas where it could break off and clog fluid passages could easily lead to premature failure.&lt;/p&gt;
+
+&lt;p&gt;To deal with the issue of dirt and surface contaminants, I first used engine degreaser and scrubbed everything well. Before this, the block also went through a hot tanking process while at the machine shop to help clean it up. Degreasing removed a lot of the remaining oil on the engine, but there was still a decent amount of rust and oxidation. As such, I used various metal brushes as well as a rotary tool to carefully brush off most of the stuff that I could reach. Afterwards, I degreased the engine again and also used some acetone to wipe down the surface and ensure it was contaminant free before painting.&lt;/p&gt;
+
+
+
+
+    
+
+    
+    
+
+
+
+
+
+
+
+  
+
+
+    
+
+    &lt;div class=&#34;box alt&#34;&gt;
+        &lt;div class=&#34;row uniform&#34;&gt;
+        
+        
+        
+            
+                &lt;div class=&#34;8u&#34;&gt;
+            
+            
+        
+            
+                
+                    
+                    &lt;span class=&#34;image fit&#34;&gt;
+                
+            
+            
+        
+            
+                
+						&lt;a href=&#39;http://www.ryanmukherjee.com/img/painting/degreasing.jpg&#39;&gt;
+						&lt;img src=&#39;http://www.ryanmukherjee.com/img/painting/degreasing.jpg&#39;
+                            alt=&#34;Degreasing the block&#34;/&gt;
+						&lt;/a&gt;
+                    &lt;/span&gt;&lt;/div&gt;
+                
+                
+            
+            
+        
+            
+                &lt;div class=&#34;4u$&#34;&gt;
+            
+            
+        
+            
+                
+                    
+                    &lt;span class=&#34;image fit&#34;&gt;
+                
+            
+            
+        
+            
+                
+						&lt;a href=&#39;http://www.ryanmukherjee.com/img/painting/clean_block.jpg&#39;&gt;
+						&lt;img src=&#39;http://www.ryanmukherjee.com/img/painting/clean_block.jpg&#39;
+                            alt=&#34;Clean block&#34;/&gt;
+						&lt;/a&gt;
+                    &lt;/span&gt;&lt;/div&gt;
+                
+                
+            
+            
+        
+        &lt;/div&gt;
+    &lt;/div&gt;
+
+
+
+&lt;p&gt;To control which surfaces got painted, I was very meticulous about applying multiple layers of painter&amp;rsquo;s tape. Because my block was also freshly machined, I felt that I had to be extra careful. I imagine if you were sending the block to get machined after painting then you wouldn&amp;rsquo;t have to worry as much about getting paint on certain surfaces because the machining will remove it.&lt;/p&gt;
+
+&lt;p&gt;To apply tape to the block, I used a technique that I read about somewhere online. I applied multiple layers of painter&amp;rsquo;s tape ensuring that I not only completely covered each surface that I wanted to tape but also applied tape extending beyond the edge of each surface. Then, I used a hobby knife to cut the excess tape off the edges of each surface. It took a while to develop a technique for being consistent and accurate, but once I had a technique it actually wasn&amp;rsquo;t that hard. The technique I developed involved following the edge of the surface with the knife blade while holding the blade at an angle and using a slight sawing motion. When the knife was sharp, I found it would easily glide through the tape and allow me to trace the surface edges. Once you make the cut, then you simply peel off the excess tape.&lt;/p&gt;
+
+
+
+
+    
+
+    
+    
+
+
+
+
+
+
+
+  
+
+
+    
+
+    &lt;div class=&#34;box alt&#34;&gt;
+        &lt;div class=&#34;row uniform&#34;&gt;
+        
+        
+        
+            
+                &lt;div class=&#34;8u&#34;&gt;
+            
+            
+        
+            
+                
+                    
+                    &lt;span class=&#34;image fit&#34;&gt;
+                
+            
+            
+        
+            
+                
+						&lt;a href=&#39;http://www.ryanmukherjee.com/img/painting/taping.jpg&#39;&gt;
+						&lt;img src=&#39;http://www.ryanmukherjee.com/img/painting/taping.jpg&#39;
+                            alt=&#34;Engine block after taping&#34;/&gt;
+						&lt;/a&gt;
+                    &lt;/span&gt;&lt;/div&gt;
+                
+                
+            
+            
+        
+            
+                &lt;div class=&#34;4u$&#34;&gt;
+            
+            
+        
+            
+                
+                    
+                    &lt;span class=&#34;image fit&#34;&gt;
+                
+            
+            
+        
+            
+                
+						&lt;a href=&#39;http://www.ryanmukherjee.com/img/painting/cam_cover_taped.jpg&#39;&gt;
+						&lt;img src=&#39;http://www.ryanmukherjee.com/img/painting/cam_cover_taped.jpg&#39;
+                            alt=&#34;Cam cover after taping&#34;/&gt;
+						&lt;/a&gt;
+                    &lt;/span&gt;&lt;/div&gt;
+                
+                
+            
+            
+        
+        &lt;/div&gt;
+    &lt;/div&gt;
+
+
+
+&lt;h2 id=&#34;painting&#34;&gt;Painting&lt;/h2&gt;
+
+&lt;p&gt;To paint the engine, I used an automotive high-temperature enamel paint. Once I knew the surface was nice and clean, I started by applying a few coats of primer. The primer is supposed to help the paint stick to the engine while also filling in pits in the surface, which will allow you to achieve a smoother finish.&lt;/p&gt;
+
+
+
+
+    
+
+    
+    
+
+
+
+
+
+
+
+  
+
+
+    
+
+    &lt;div class=&#34;box alt&#34;&gt;
+        &lt;div class=&#34;row uniform&#34;&gt;
+        
+        
+        
+            
+                &lt;div class=&#34;6u&#34;&gt;
+            
+            
+        
+            
+                
+                    
+                    &lt;span class=&#34;image fit&#34;&gt;
+                
+            
+            
+        
+            
+                
+						&lt;a href=&#39;http://www.ryanmukherjee.com/img/painting/block_primer.jpg&#39;&gt;
+						&lt;img src=&#39;http://www.ryanmukherjee.com/img/painting/block_primer.jpg&#39;
+                            alt=&#34;Engine block after primer&#34;/&gt;
+						&lt;/a&gt;
+                    &lt;/span&gt;&lt;/div&gt;
+                
+                
+            
+            
+        
+            
+                &lt;div class=&#34;6u$&#34;&gt;
+            
+            
+        
+            
+                
+                    
+                    &lt;span class=&#34;image fit&#34;&gt;
+                
+            
+            
+        
+            
+                
+						&lt;a href=&#39;http://www.ryanmukherjee.com/img/painting/cam_cover_primer.jpg&#39;&gt;
+						&lt;img src=&#39;http://www.ryanmukherjee.com/img/painting/cam_cover_primer.jpg&#39;
+                            alt=&#34;Cam cover after primer&#34;/&gt;
+						&lt;/a&gt;
+                    &lt;/span&gt;&lt;/div&gt;
+                
+                
+            
+            
+        
+        &lt;/div&gt;
+    &lt;/div&gt;
+
+
+
+&lt;p&gt;The primer was surprisingly easy to apply. It didn&amp;rsquo;t take very much primer to get what looked like an even and effective coating. This was in contrast to the red paint, which was much thinner and required many more coats and cans of paint. Nevertheless, once the primer dried I starting painting the engine red. Following the paint instructions, I applied additional coats within an hour of the previous coat.&lt;/p&gt;
+
+
+
+
+    
+
+    
+    
+
+
+
+
+
+
+
+  
+
+
+    
+
+    &lt;div class=&#34;box alt&#34;&gt;
+        &lt;div class=&#34;row uniform&#34;&gt;
+        
+        
+        
+            
+                &lt;div class=&#34;8u&#34;&gt;
+            
+            
+        
+            
+                
+                    
+                    &lt;span class=&#34;image fit&#34;&gt;
+                
+            
+            
+        
+            
+                
+						&lt;a href=&#39;http://www.ryanmukherjee.com/img/painting/block_painted.jpg&#39;&gt;
+						&lt;img src=&#39;http://www.ryanmukherjee.com/img/painting/block_painted.jpg&#39;
+                            alt=&#34;Engine block after paint&#34;/&gt;
+						&lt;/a&gt;
+                    &lt;/span&gt;&lt;/div&gt;
+                
+                
+            
+            
+        
+            
+                &lt;div class=&#34;4u$&#34;&gt;
+            
+            
+        
+            
+                
+                    
+                    &lt;span class=&#34;image fit&#34;&gt;
+                
+            
+            
+        
+            
+                
+						&lt;a href=&#39;http://www.ryanmukherjee.com/img/painting/cam_cover_painted.jpg&#39;&gt;
+						&lt;img src=&#39;http://www.ryanmukherjee.com/img/painting/cam_cover_painted.jpg&#39;
+                            alt=&#34;Cam cover after painted&#34;/&gt;
+						&lt;/a&gt;
+                    &lt;/span&gt;&lt;/div&gt;
+                
+                
+            
+            
+        
+        &lt;/div&gt;
+    &lt;/div&gt;
+
+
+
+&lt;p&gt;After all of this, the engine sat around for a couple weeks drying. I didn&amp;rsquo;t originally intend to leave the engine sitting for so long, but other stuff came up and, frankly, it was nice to take a break after doing all of this tedious work. Eventually, I came back to the engine and removed all the tape. I think it looks really good! Although, to be honest, now that I&amp;rsquo;m writing this after the engine has been installed into the car, painting the block probably wasn&amp;rsquo;t necessary. The valve cover is really the only thing that&amp;rsquo;s readily visible. Oh well.&lt;/p&gt;
+</description>
     </item>
     
     <item>
@@ -35,7 +563,8 @@
       <pubDate>Tue, 03 Jul 2018 00:00:00 +0000</pubDate>
       
       <guid>http://www.ryanmukherjee.com/blog/eerie_silence/</guid>
-      <description>It&amp;rsquo;s been quite a while since my last post&amp;hellip; I&amp;rsquo;ve been preoccupied with work, life, and trying to get the car up and running. To keep things brief for now, the car is driving nicely. I&amp;rsquo;m still being gentle with it, primarily because the engine is on its first couple hundred miles. I&amp;rsquo;ve also had the car break down a couple times now, so I&amp;rsquo;m slowly rebuilding my confidence that the car can handle long distances.</description>
+      <description>&lt;p&gt;It&amp;rsquo;s been quite a while since my last post&amp;hellip; I&amp;rsquo;ve been preoccupied with work, life, and trying to get the car up and running. To keep things brief for now, the car is driving nicely. I&amp;rsquo;m still being gentle with it, primarily because the engine is on its first couple hundred miles. I&amp;rsquo;ve also had the car break down a couple times now, so I&amp;rsquo;m slowly rebuilding my confidence that the car can handle long distances. I&amp;rsquo;m planning to start posting more frequently now that I&amp;rsquo;ve finished a few work projects and got the car up and running. I&amp;rsquo;ll pick up where I left off with the engine build and then later go into some of the issues that I encountered after first start and how I&amp;rsquo;ve solved them. Stay tuned!&lt;/p&gt;
+</description>
     </item>
     
     <item>
@@ -44,10 +573,107 @@
       <pubDate>Thu, 26 Jan 2017 00:00:00 +0000</pubDate>
       
       <guid>http://www.ryanmukherjee.com/blog/balance-shaft-delete/</guid>
-      <description>Basics If you don&amp;rsquo;t know what a balance shaft is, it&amp;rsquo;s worth checking out this video first:  
-The EA888 Gen 2 has two balance shafts that are located on the front and back of the engine. In the picture below, you can see a single chain that remains connected to the crankshaft sprocket. This chain connects to the two balance shafts.
+      <description>
 
-You&amp;rsquo;ll notice that the crankshaft sprocket is roughly twice the diameter for the plane that the balance shaft is connected to as compared to the other two planes (which connect to the timing chain and oil pump).</description>
+&lt;h2 id=&#34;basics&#34;&gt;Basics&lt;/h2&gt;
+
+&lt;p&gt;If you don&amp;rsquo;t know what a balance shaft is, it&amp;rsquo;s worth checking out this video first:
+&lt;div class=&#34;aspect-ratio&#34;&gt;
+&lt;iframe width=&#34;560&#34; height=&#34;315&#34; src=&#34;https://www.youtube.com/embed/hwigSbyQ7AI&#34; frameborder=&#34;0&#34; allowfullscreen&gt;&lt;/iframe&gt;
+&lt;/div&gt;&lt;/p&gt;
+
+&lt;p&gt;The EA888 Gen 2 has two balance shafts that are located on the front and back of the engine. In the picture below, you can see a single chain that remains connected to the crankshaft sprocket. This chain connects to the two balance shafts.&lt;/p&gt;
+
+
+
+
+    
+    
+        
+        
+        
+        
+    
+
+    
+    
+    
+
+    
+    
+
+
+
+
+
+
+
+  
+
+
+    
+
+    
+        &lt;p&gt;&lt;a href=&#34;http://www.ryanmukherjee.com/img/engine/balance_shaft_chain.jpg&#34;&gt;&lt;span class=&#34;image center&#34;&gt;
+            &lt;img src=&#34;http://www.ryanmukherjee.com/img/engine/balance_shaft_chain.jpg&#34; alt=&#34;Balance shaft chain&#34;&gt;
+        &lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
+    
+	
+
+
+
+&lt;p&gt;You&amp;rsquo;ll notice that the crankshaft sprocket is roughly twice the diameter for the plane that the balance shaft is connected to as compared to the other two planes (which connect to the timing chain and oil pump). It is this diameter increase that causes the balance shafts to rotate at roughly twice the engine RPM.&lt;/p&gt;
+
+&lt;p&gt;You can also see that the front (or rightmost in this image) balance shaft is connected to the chain via a separate gear. To clarify, the balance shaft chain doesn&amp;rsquo;t connect directly to the front balance shaft. Instead, the chain drives a gear, which is connected to another gear that lies in the same plane as the front balance shaft gear. This configuration allows the front balance shaft to rotate in an opposite direction to the rear balance shaft, thereby cancelling unwanted horizontal forces. The secondary vibration that we want to counteract is a vertical force, and if the balance shafts didn&amp;rsquo;t rotate in opposite directions then we would be adding a horizontal imbalance.&lt;/p&gt;
+
+&lt;h2 id=&#34;reasons-to-remove-your-balance-shaft&#34;&gt;Reasons to remove your balance shaft&lt;/h2&gt;
+
+&lt;p&gt;One of the major problems with balance shafts is related to reliability. Because the balance shafts rotate at twice the engine RPM, their bearings can take quite a beating. It&amp;rsquo;s also relatively easy to exceed what the balance shaft bearings are capable of handling once your start increasing your rev limit.&lt;/p&gt;
+
+&lt;p&gt;Balance shafts also represent an additional load on the engine. It takes energy to spin the weighted balance shafts and it takes oil pressure to stiffen the balance shaft chain tensioner and feed the balance shaft bearings. To make matters worse, the balance shafts aren&amp;rsquo;t actually installed for any performance-related purpose. The purpose of the balance shafts is to prevent engine vibration from reaching the driver/passengers of the vehicle.&lt;/p&gt;
+
+&lt;p&gt;One might think that the balance shafts would help the rotating assembly be more balanced. However, the balance shafts are independent of the rotating assembly. Any secondary vibration in the rotating assembly first gets absorbed by the main bearings, transferred to and then cancelled in the block by the balance shafts. So in terms of minimizing bearing load, the balance shafts don&amp;rsquo;t have any benefit. As such, it seems almost necessary to remove the balance shafts for a performance build.&lt;/p&gt;
+
+
+
+
+    
+    
+        
+        
+        
+        
+    
+
+    
+    
+    
+
+    
+    
+
+
+
+
+
+
+
+  
+
+
+    
+
+    
+        &lt;p&gt;&lt;a href=&#34;http://www.ryanmukherjee.com/img/engine/balance_shafts.jpg&#34;&gt;&lt;span class=&#34;image center&#34;&gt;
+            &lt;img src=&#34;http://www.ryanmukherjee.com/img/engine/balance_shafts.jpg&#34; alt=&#34;Balance shafts and oil pump&#34;&gt;
+        &lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
+    
+	
+
+
+
+&lt;p&gt;Surprisingly, the EA888 Gen 2 does seem to support balance shaft removal without much effort. Because the balance shafts are driven with an independent chain, we don&amp;rsquo;t need to worry about customizing the oil pump setup (previous engine generations had their balance shafts integrated into the oil pump). The only major hurdle with the EA888 is that the water pump is driven by the front balance shaft. In future posts, I&amp;rsquo;ll go into more detail about the steps necessary to delete the balance shafts and discuss replacing the mechanical water pump with an electric one.&lt;/p&gt;
+</description>
     </item>
     
     <item>
@@ -56,8 +682,31 @@ You&amp;rsquo;ll notice that the crankshaft sprocket is roughly twice the diamet
       <pubDate>Wed, 25 Jan 2017 00:00:00 +0000</pubDate>
       
       <guid>http://www.ryanmukherjee.com/blog/engine-failure/</guid>
-      <description>Well, my engine finally failed&amp;hellip; I noticed it running a little rougher than usual at high load and low RPM on Monday morning, but didn&amp;rsquo;t really think anything of it. I actually stopped at the machine shop before work to drop off a few additional components and discuss some custom work that I&amp;rsquo;ll hopefully create a post about soon.
-When I went to start my car after work, it started idling really rough like a cylinder was misfiring and my check engine light started flashing.</description>
+      <description>&lt;p&gt;Well, my engine finally failed&amp;hellip; I noticed it running a little rougher than usual at high load and low RPM on Monday morning, but didn&amp;rsquo;t really think anything of it. I actually stopped at the machine shop before work to drop off a few additional components and discuss some custom work that I&amp;rsquo;ll hopefully create a post about soon.&lt;/p&gt;
+
+&lt;p&gt;When I went to start my car after work, it started idling really rough like a cylinder was misfiring and my check engine light started flashing. Just my luck, it was also raining. I got my scan tool out of the trunk and read the codes: P0300 random misfire and P0303 cylinder 3 misfire.&lt;/p&gt;
+
+&lt;p&gt;I had a coil pack fail a little over a year ago, which was diagnosed and replaced by the dealer. Since then, I replaced all my coil packs just in case any other old ones were close to failure. I did keep one on hand for emergencies like this, though. I swapped out the coil pack for cylinder 3 in the rain, but alas that didn&amp;rsquo;t solve the problem.&lt;/p&gt;
+
+&lt;p&gt;As my gas tank was nearing empty, I thought maybe a failing low pressure fuel pump could be causing my issue. There&amp;rsquo;s a gas station less than a minute from where I was parked, so I hobbled over and filled up the tank. While I was at it, I also checked and topped off my oil. Nothing worked.&lt;/p&gt;
+
+&lt;p&gt;Fortunately, a co-worker was kind enough to give me a ride home. I made an appointment at my local Audi dealership and dropped the car off the next morning. I got a call about two hours after I dropped the car off: extremely low compression in cylinder 3 and they suspect piston failure.&lt;/p&gt;
+
+&lt;p&gt;I always suspected that my engine had a cracked ringland or broken piston ring, which was causing excessive blow by, but I was hoping that my little TFSI would survive long enough for me to complete my engine build. Regardless, an engine really shouldn&amp;rsquo;t fail this early. I also tried to bring the issue to the attention of my dealership while it was still simply blow by and not catastrophic failure.&lt;/p&gt;
+
+&lt;p&gt;At any rate, I got in touch with Audi of America and expressed my concern. Even though my car is now out of warranty, engines shouldn&amp;rsquo;t fail at 60,000 miles. My initial conversations seemed promising, so hopefully they step up to fix the situation.&lt;/p&gt;
+
+&lt;p&gt;In the meantime, I&amp;rsquo;ve got a sweet 2017 A4 loaner. I&amp;rsquo;m normally not a huge fan of these bigger vehicles, especially coming from a small, maneuverable TT, but the transmission on this thing is amazing! The 7-speed dual-clutch downshifts faster than my car or any of the other loaners I&amp;rsquo;ve had over the years. Now I&amp;rsquo;m wondering if a DSG tune will make my car&amp;rsquo;s transmission this fast&amp;hellip;&lt;/p&gt;
+
+
+&lt;figure class=&#34;image center-image&#34;&gt;
+    &lt;a href=&#34;https://www.audiusa.com/models/audi-a4&#34;&gt;
+        &lt;img src=&#34;https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Audi_A4_2.0_TFSI_quattro.jpg/640px-Audi_A4_2.0_TFSI_quattro.jpg&#34; alt=&#34;Audi A4&#34; /&gt;
+    &lt;/a&gt;
+    
+&lt;/figure&gt;
+
+</description>
     </item>
     
     <item>
@@ -66,7 +715,1010 @@ When I went to start my car after work, it started idling really rough like a cy
       <pubDate>Fri, 20 Jan 2017 00:00:00 +0000</pubDate>
       
       <guid>http://www.ryanmukherjee.com/blog/engine-teardown/</guid>
-      <description>Initial Impressions The first thing I noticed when inspecting the engine I received is that it&amp;rsquo;s noticeable more complete than I had expected. I was expecting the engine assembly that I ordered to be stripped all the way down to the long block. Fortunately, the engine arrived with intake and exhuast manifolds, turbo, fuel system, full wiring harness, and basically any other component that is bolted directly to the block.</description>
+      <description>
+
+&lt;h2 id=&#34;initial-impressions&#34;&gt;Initial Impressions&lt;/h2&gt;
+
+&lt;p&gt;The first thing I noticed when inspecting the engine I received is that it&amp;rsquo;s noticeable more complete than I had expected. I was expecting the engine assembly that I ordered to be stripped all the way down to the long block. Fortunately, the engine arrived with intake and exhuast manifolds, turbo, fuel system, full wiring harness, and basically any other component that is bolted directly to the block.&lt;/p&gt;
+
+&lt;p&gt;A few components looked like they were either damaged during transport or during engine removal. The after run pump that supplies coolant to the turbo after turning off a hot engine was smashed. There were also a few coolant hoses that were cut. However, a majority of the components were in decent condition, or at least structurally.&lt;/p&gt;
+
+
+
+
+    
+    
+        
+        
+        
+        
+    
+
+    
+    
+    
+
+    
+    
+
+
+
+
+
+
+
+  
+
+
+    
+
+    
+        &lt;p&gt;&lt;a href=&#34;http://www.ryanmukherjee.com/img/engine/block_front.jpg&#34;&gt;&lt;span class=&#34;image center&#34;&gt;
+            &lt;img src=&#34;http://www.ryanmukherjee.com/img/engine/block_front.jpg&#34; alt=&#34;Block rust&#34;&gt;
+        &lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
+    
+	
+
+
+
+&lt;p&gt;The engine did have decent amount of oxidation on it. I imagine that the engine was poorly maintained by the owner(s), left outside in the crashed vehicle it came from for a decent amount of time, left outside after being pulled out of the vehicle, or more likely some combination of all of these things. A majority of the oxidation should be relatively easy to remove with a wire brush, though. I&amp;rsquo;ll just have to be careful to ensure that I don&amp;rsquo;t marr any critical surfaces.&lt;/p&gt;
+
+&lt;h2 id=&#34;disassembly&#34;&gt;Disassembly&lt;/h2&gt;
+
+&lt;p&gt;I started with the ignition coils and spark plugs. All the ignition coils look good, not that I was expecting anything to be wrong with them, and most of the spark plugs looked normal. The spark plug from cylinder three looks slightly fouled from carbon.&lt;/p&gt;
+
+
+
+
+    
+    
+        
+        
+        
+        
+    
+
+    
+    
+    
+
+    
+    
+
+
+
+
+
+
+
+  
+
+
+    
+
+    
+        &lt;p&gt;&lt;a href=&#34;http://www.ryanmukherjee.com/img/engine/plugs_and_coilpacks.jpg&#34;&gt;&lt;span class=&#34;image center&#34;&gt;
+            &lt;img src=&#34;http://www.ryanmukherjee.com/img/engine/plugs_and_coilpacks.jpg&#34; alt=&#34;Plugs and coilpacks&#34;&gt;
+        &lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
+    
+	
+
+
+
+&lt;p&gt;Next I removed the PCV valve on top of the valve/cam cover. This provided a look inside the head at the cams. There&amp;rsquo;s a little bit of oil glazing on the vent tube that comes up from the secondary PCV, as well as on the oil return (both on the right side of the picture). The intake cam lobes (bottom) and exhaust cam lobe that are visible both look good at this point.&lt;/p&gt;
+
+
+
+
+    
+    
+        
+        
+        
+        
+    
+
+    
+    
+    
+
+    
+    
+
+
+
+
+
+
+
+  
+
+
+    
+
+    
+        &lt;p&gt;&lt;a href=&#34;http://www.ryanmukherjee.com/img/engine/pcv_valve_cover.jpg&#34;&gt;&lt;span class=&#34;image center&#34;&gt;
+            &lt;img src=&#34;http://www.ryanmukherjee.com/img/engine/pcv_valve_cover.jpg&#34; alt=&#34;PCV removed&#34;&gt;
+        &lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
+    
+	
+
+
+
+&lt;p&gt;Next up I removed the intake and exhaust manifolds. On this engine, the exhaust manifold and turbo are integrated into a single piece. From the back of the engine, you can also see the exhaust cam shift actuators on the valve cover (top of the middle picture). The EA888 Gen 2 is one of the first engines to receive Audi&amp;rsquo;s Valvelift variable valve lift system, which adds a decent amount of low-end torque.&lt;/p&gt;
+
+
+
+
+    
+
+    
+    
+
+
+
+
+
+
+
+  
+
+
+    
+
+    &lt;div class=&#34;box alt&#34;&gt;
+        &lt;div class=&#34;row uniform&#34;&gt;
+        
+        
+        
+            
+                &lt;div class=&#34;4u&#34;&gt;
+            
+            
+        
+            
+                
+                    
+                    &lt;span class=&#34;image fit&#34;&gt;
+                
+            
+            
+        
+            
+                
+						&lt;a href=&#39;http://www.ryanmukherjee.com/img/engine/intake_valves_1.jpg&#39;&gt;
+						&lt;img src=&#39;http://www.ryanmukherjee.com/img/engine/intake_valves_1.jpg&#39;
+                            alt=&#34;Intake valves cylinder 1&#34;/&gt;
+						&lt;/a&gt;
+                    &lt;/span&gt;&lt;/div&gt;
+                
+                
+            
+            
+        
+            
+                &lt;div class=&#34;4u&#34;&gt;
+            
+            
+        
+            
+                
+                    
+                    &lt;span class=&#34;image fit&#34;&gt;
+                
+            
+            
+        
+            
+                
+						&lt;a href=&#39;http://www.ryanmukherjee.com/img/engine/mounted_exhaust_manifold.jpg&#39;&gt;
+						&lt;img src=&#39;http://www.ryanmukherjee.com/img/engine/mounted_exhaust_manifold.jpg&#39;
+                            alt=&#34;Exhaust manifold&#34;/&gt;
+						&lt;/a&gt;
+                    &lt;/span&gt;&lt;/div&gt;
+                
+                
+            
+            
+        
+            
+                &lt;div class=&#34;4u$&#34;&gt;
+            
+            
+        
+            
+                
+                    
+                    &lt;span class=&#34;image fit&#34;&gt;
+                
+            
+            
+        
+            
+                
+						&lt;a href=&#39;http://www.ryanmukherjee.com/img/engine/block_exhaust_manifold_removed.jpg&#39;&gt;
+						&lt;img src=&#39;http://www.ryanmukherjee.com/img/engine/block_exhaust_manifold_removed.jpg&#39;
+                            alt=&#34;Exhaust manifold removed&#34;/&gt;
+						&lt;/a&gt;
+                    &lt;/span&gt;&lt;/div&gt;
+                
+                
+            
+            
+        
+        &lt;/div&gt;
+    &lt;/div&gt;
+
+
+
+&lt;p&gt;Taking a closer look at the intake valves, you can see that there&amp;rsquo;s a significant amount of carbon buildup. Direct injection engines are great from an efficiency standpoint, but the lack of port injection causes rapid carbon buildup. Some newer VW/Audi engines have port injection and most people believe that this is the solution to the problem. However, from what I&amp;rsquo;ve read, the US-spec EA888 Gen 3 engines don&amp;rsquo;t actually have port injection, but they do seem to have mitigated the carbon buildup issue.&lt;/p&gt;
+
+
+
+
+    
+
+    
+    
+
+
+
+
+
+
+
+  
+
+
+    
+
+    &lt;div class=&#34;box alt&#34;&gt;
+        &lt;div class=&#34;row uniform&#34;&gt;
+        
+        
+        
+            
+                &lt;div class=&#34;3u&#34;&gt;
+            
+            
+        
+            
+                
+                    
+                    &lt;span class=&#34;image fit&#34;&gt;
+                
+            
+            
+        
+            
+                
+						&lt;a href=&#39;http://www.ryanmukherjee.com/img/engine/intake_valves_1_grime.jpg&#39;&gt;
+						&lt;img src=&#39;http://www.ryanmukherjee.com/img/engine/intake_valves_1_grime.jpg&#39;
+                            alt=&#34;Intake valves cylinder 1&#34;/&gt;
+						&lt;/a&gt;
+                    &lt;/span&gt;&lt;/div&gt;
+                
+                
+            
+            
+        
+            
+                &lt;div class=&#34;3u&#34;&gt;
+            
+            
+        
+            
+                
+                    
+                    &lt;span class=&#34;image fit&#34;&gt;
+                
+            
+            
+        
+            
+                
+						&lt;a href=&#39;http://www.ryanmukherjee.com/img/engine/intake_valves_2.jpg&#39;&gt;
+						&lt;img src=&#39;http://www.ryanmukherjee.com/img/engine/intake_valves_2.jpg&#39;
+                            alt=&#34;Intake valves cylinder 2&#34;/&gt;
+						&lt;/a&gt;
+                    &lt;/span&gt;&lt;/div&gt;
+                
+                
+            
+            
+        
+            
+                &lt;div class=&#34;3u&#34;&gt;
+            
+            
+        
+            
+                
+                    
+                    &lt;span class=&#34;image fit&#34;&gt;
+                
+            
+            
+        
+            
+                
+						&lt;a href=&#39;http://www.ryanmukherjee.com/img/engine/intake_valves_3.jpg&#39;&gt;
+						&lt;img src=&#39;http://www.ryanmukherjee.com/img/engine/intake_valves_3.jpg&#39;
+                            alt=&#34;Intake valves cylinder 3&#34;/&gt;
+						&lt;/a&gt;
+                    &lt;/span&gt;&lt;/div&gt;
+                
+                
+            
+            
+        
+            
+                &lt;div class=&#34;3u$&#34;&gt;
+            
+            
+        
+            
+                
+                    
+                    &lt;span class=&#34;image fit&#34;&gt;
+                
+            
+            
+        
+            
+                
+						&lt;a href=&#39;http://www.ryanmukherjee.com/img/engine/intake_valves_4.jpg&#39;&gt;
+						&lt;img src=&#39;http://www.ryanmukherjee.com/img/engine/intake_valves_4.jpg&#39;
+                            alt=&#34;Intake valves cylinder 4&#34;/&gt;
+						&lt;/a&gt;
+                    &lt;/span&gt;&lt;/div&gt;
+                
+                
+            
+            
+        
+            
+                &lt;div class=&#34;3u&#34;&gt;
+            
+            
+        
+            
+                
+                    
+                    &lt;span class=&#34;image fit&#34;&gt;
+                
+            
+            
+        
+            
+                
+						&lt;a href=&#39;http://www.ryanmukherjee.com/img/engine/exhaust_valves_1.jpg&#39;&gt;
+						&lt;img src=&#39;http://www.ryanmukherjee.com/img/engine/exhaust_valves_1.jpg&#39;
+                            alt=&#34;Exhaust valves cylinder 1&#34;/&gt;
+						&lt;/a&gt;
+                    &lt;/span&gt;&lt;/div&gt;
+                
+                
+            
+            
+        
+            
+                &lt;div class=&#34;3u&#34;&gt;
+            
+            
+        
+            
+                
+                    
+                    &lt;span class=&#34;image fit&#34;&gt;
+                
+            
+            
+        
+            
+                
+						&lt;a href=&#39;http://www.ryanmukherjee.com/img/engine/exhaust_valves_2.jpg&#39;&gt;
+						&lt;img src=&#39;http://www.ryanmukherjee.com/img/engine/exhaust_valves_2.jpg&#39;
+                            alt=&#34;Exhaust valves cylinder 2&#34;/&gt;
+						&lt;/a&gt;
+                    &lt;/span&gt;&lt;/div&gt;
+                
+                
+            
+            
+        
+            
+                &lt;div class=&#34;3u&#34;&gt;
+            
+            
+        
+            
+                
+                    
+                    &lt;span class=&#34;image fit&#34;&gt;
+                
+            
+            
+        
+            
+                
+						&lt;a href=&#39;http://www.ryanmukherjee.com/img/engine/exhaust_valves_3.jpg&#39;&gt;
+						&lt;img src=&#39;http://www.ryanmukherjee.com/img/engine/exhaust_valves_3.jpg&#39;
+                            alt=&#34;Exhaust valves cylinder 3&#34;/&gt;
+						&lt;/a&gt;
+                    &lt;/span&gt;&lt;/div&gt;
+                
+                
+            
+            
+        
+            
+                &lt;div class=&#34;3u$&#34;&gt;
+            
+            
+        
+            
+                
+                    
+                    &lt;span class=&#34;image fit&#34;&gt;
+                
+            
+            
+        
+            
+                
+						&lt;a href=&#39;http://www.ryanmukherjee.com/img/engine/exhaust_valves_4.jpg&#39;&gt;
+						&lt;img src=&#39;http://www.ryanmukherjee.com/img/engine/exhaust_valves_4.jpg&#39;
+                            alt=&#34;Exhaust valves cylinder 4&#34;/&gt;
+						&lt;/a&gt;
+                    &lt;/span&gt;&lt;/div&gt;
+                
+                
+            
+            
+        
+        &lt;/div&gt;
+    &lt;/div&gt;
+
+
+
+&lt;p&gt;I&amp;rsquo;ve read different reasons for the intake valve buildup. Some people think it&amp;rsquo;s solely related to the PCV valve and, more specifically, blowby being fed back into the intake where it can attach to the valves. As such, it&amp;rsquo;s suggested that using a catch can can mitigate and/or eliminate the intake valve buildup, however I haven&amp;rsquo;t seen any definitive evidence.&lt;/p&gt;
+
+&lt;p&gt;I have seen an example of someone who had their intake valves cleaned, installed a catch can, and then posted images of their valves several thousand miles later. Unfortunately, they still had a decent amount of buildup. I think one of the big flaws with this test was in the catch can that the individual used. Many of the catch can designs that I&amp;rsquo;ve seen don&amp;rsquo;t seem very efficient, in that they likely leave enough oil in the crankcase vapor to recoat the valves. In my opinion, the Mishimoto MMBCC-UNI is one of the few efficient designs with cyclonic separation and a metal filter to condense remaining particles.&lt;/p&gt;
+
+
+&lt;figure class=&#34;image center-image&#34;&gt;
+    &lt;a href=&#34;https://www.mishimoto.com/mishimoto-baffled-oil-catch-can.html&#34;&gt;
+        &lt;img src=&#34;https://i.ytimg.com/vi/WJfwc6tMoSc/maxresdefault.jpg&#34; alt=&#34;Mishimoto MMBCC-UNI&#34; /&gt;
+    &lt;/a&gt;
+    
+&lt;/figure&gt;
+
+
+&lt;p&gt;I don&amp;rsquo;t know much about exhaust valve wear, so there&amp;rsquo;s not much for me to say. The valves for cylinder three do seem to be different than the other cylinders, though. I wonder if this is related to the carbon fouling on the spark plug for cylinder three?&lt;/p&gt;
+
+&lt;p&gt;The intake manifold flaps and fuel injectors also seem to have a decent amount of carbon on them. The flaps, also known as &lt;a href=&#34;https://en.wikipedia.org/wiki/Swirl_flap&#34;&gt;swirl flaps&lt;/a&gt;, are designed to help swirl the air entering each cylinder so that it mixes with the injected fuel better at low RPM. There are a few aftermarket options for deleting these flaps as they present an airflow obstruction, which can affect power at high RPM. Seeing this carbon buildup is making me consider one of these options.&lt;/p&gt;
+
+
+
+
+    
+    
+        
+        
+        
+        
+    
+
+    
+    
+    
+
+    
+    
+
+
+
+
+
+
+
+  
+
+
+    
+
+    
+        &lt;p&gt;&lt;a href=&#34;http://www.ryanmukherjee.com/img/engine/intake_flaps_4.jpg&#34;&gt;&lt;span class=&#34;image center&#34;&gt;
+            &lt;img src=&#34;http://www.ryanmukherjee.com/img/engine/intake_flaps_4.jpg&#34; alt=&#34;Intake manifold flaps&#34;&gt;
+        &lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
+    
+	
+
+
+
+&lt;p&gt;My next step was to remove the valve/cam cover. After doing this, I realized that I should&amp;rsquo;ve removed the timing chain first. The timing chain applies a downward pull to the end of the intake and exhaust cams, so once I removed the valve cover the cams lifted out of their saddles. Later I noticed a small corner dent in one of the saddles that I think was caused by removing the cover before the timing chain. The dent isn&amp;rsquo;t a big deal, but it does show that removing the cover is a reasonably complex job when the engine is in the car because the timing chain is involved.&lt;/p&gt;
+
+
+
+
+    
+
+    
+    
+
+
+
+
+
+
+
+  
+
+
+    
+
+    &lt;div class=&#34;box alt&#34;&gt;
+        &lt;div class=&#34;row uniform&#34;&gt;
+        
+        
+        
+            
+                &lt;div class=&#34;6u&#34;&gt;
+            
+            
+        
+            
+                
+                    
+                    &lt;span class=&#34;image fit&#34;&gt;
+                
+            
+            
+        
+            
+                
+						&lt;a href=&#39;http://www.ryanmukherjee.com/img/engine/cams_top.jpg&#39;&gt;
+						&lt;img src=&#39;http://www.ryanmukherjee.com/img/engine/cams_top.jpg&#39;
+                            alt=&#34;Camshafts&#34;/&gt;
+						&lt;/a&gt;
+                    &lt;/span&gt;&lt;/div&gt;
+                
+                
+            
+            
+        
+            
+                &lt;div class=&#34;6u$&#34;&gt;
+            
+            
+        
+            
+                
+                    
+                    &lt;span class=&#34;image fit&#34;&gt;
+                
+            
+            
+        
+            
+                
+						&lt;a href=&#39;http://www.ryanmukherjee.com/img/engine/top_valve_cover.jpg&#39;&gt;
+						&lt;img src=&#39;http://www.ryanmukherjee.com/img/engine/top_valve_cover.jpg&#39;
+                            alt=&#34;Valve cover&#34;/&gt;
+						&lt;/a&gt;
+                    &lt;/span&gt;&lt;/div&gt;
+                
+                
+            
+            
+        
+        &lt;/div&gt;
+    &lt;/div&gt;
+
+
+
+&lt;p&gt;Removing the timing chain and cams was fairly straightforward. I had to use a crankshaft pulley counterhold tool (&lt;a href=&#34;http://a.co/1MjnkLO&#34;&gt;T10355&lt;/a&gt;) to remove the crankshaft pulley bolt, but then it was relatively easy to remove the chain cover, tensioner, guides, and chain. After that, the cams just lift right out.&lt;/p&gt;
+
+
+
+
+    
+
+    
+    
+
+
+
+
+
+
+
+  
+
+
+    
+
+    &lt;div class=&#34;box alt&#34;&gt;
+        &lt;div class=&#34;row uniform&#34;&gt;
+        
+        
+        
+            
+                &lt;div class=&#34;6u&#34;&gt;
+            
+            
+        
+            
+                
+                    
+                    &lt;span class=&#34;image fit&#34;&gt;
+                
+            
+            
+        
+            
+                
+						&lt;a href=&#39;http://www.ryanmukherjee.com/img/engine/balance_shaft_chain.jpg&#39;&gt;
+						&lt;img src=&#39;http://www.ryanmukherjee.com/img/engine/balance_shaft_chain.jpg&#39;
+                            alt=&#34;Timing chain removed&#34;/&gt;
+						&lt;/a&gt;
+                    &lt;/span&gt;&lt;/div&gt;
+                
+                
+            
+            
+        
+            
+                &lt;div class=&#34;6u$&#34;&gt;
+            
+            
+        
+            
+                
+                    
+                    &lt;span class=&#34;image fit&#34;&gt;
+                
+            
+            
+        
+            
+                
+						&lt;a href=&#39;http://www.ryanmukherjee.com/img/engine/cams_removed_side.jpg&#39;&gt;
+						&lt;img src=&#39;http://www.ryanmukherjee.com/img/engine/cams_removed_side.jpg&#39;
+                            alt=&#34;Cams removed&#34;/&gt;
+						&lt;/a&gt;
+                    &lt;/span&gt;&lt;/div&gt;
+                
+                
+            
+            
+        
+        &lt;/div&gt;
+    &lt;/div&gt;
+
+
+
+&lt;p&gt;After removing the cams, I removed the head bolts using &lt;a href=&#34;http://a.co/8iSRv3J&#34;&gt;this tool&lt;/a&gt; and then lifted the head off the block. In hindsight, it probably would have been cleaner to leave the valve cover on the head. The cover has holes in it that lead directory to the head bolts allowing you to unbolt the head without removing the valve cover.&lt;/p&gt;
+
+
+
+
+    
+
+    
+    
+
+
+
+
+
+
+
+  
+
+
+    
+
+    &lt;div class=&#34;box alt&#34;&gt;
+        &lt;div class=&#34;row uniform&#34;&gt;
+        
+        
+        
+            
+                &lt;div class=&#34;4u&#34;&gt;
+            
+            
+        
+            
+                
+                    
+                    &lt;span class=&#34;image fit&#34;&gt;
+                
+            
+            
+        
+            
+                
+						&lt;a href=&#39;http://www.ryanmukherjee.com/img/engine/valves.jpg&#39;&gt;
+						&lt;img src=&#39;http://www.ryanmukherjee.com/img/engine/valves.jpg&#39;
+                            alt=&#34;Cams removed&#34;/&gt;
+						&lt;/a&gt;
+                    &lt;/span&gt;&lt;/div&gt;
+                
+                
+            
+            
+        
+            
+                &lt;div class=&#34;4u&#34;&gt;
+            
+            
+        
+            
+                
+                    
+                    &lt;span class=&#34;image fit&#34;&gt;
+                
+            
+            
+        
+            
+                
+						&lt;a href=&#39;http://www.ryanmukherjee.com/img/engine/head_standalone.jpg&#39;&gt;
+						&lt;img src=&#39;http://www.ryanmukherjee.com/img/engine/head_standalone.jpg&#39;
+                            alt=&#34;Head standalone&#34;/&gt;
+						&lt;/a&gt;
+                    &lt;/span&gt;&lt;/div&gt;
+                
+                
+            
+            
+        
+            
+                &lt;div class=&#34;4u$&#34;&gt;
+            
+            
+        
+            
+                
+                    
+                    &lt;span class=&#34;image fit&#34;&gt;
+                
+            
+            
+        
+            
+                
+						&lt;a href=&#39;http://www.ryanmukherjee.com/img/engine/head_removed_3.jpg&#39;&gt;
+						&lt;img src=&#39;http://www.ryanmukherjee.com/img/engine/head_removed_3.jpg&#39;
+                            alt=&#34;Head removed&#34;/&gt;
+						&lt;/a&gt;
+                    &lt;/span&gt;&lt;/div&gt;
+                
+                
+            
+            
+        
+        &lt;/div&gt;
+    &lt;/div&gt;
+
+
+
+&lt;p&gt;Next I unbolted the rods and removed the pistons. The cylinder walls are in decent condition aside from some surface rust and a decent amount of carbon buildup. Taking a closer look at the pistons, I didn&amp;rsquo;t see any cracked ring lands or other major structural damage. Thinking back to the engine that&amp;rsquo;s currently in my car, it&amp;rsquo;s possible that it has a similar amount of carbon buildup to this engine. The carbon on the oil control rings here looks like it could be enough to reduce the effectiveness of the oil control rings.&lt;/p&gt;
+
+
+
+
+    
+
+    
+    
+
+
+
+
+
+
+
+  
+
+
+    
+
+    &lt;div class=&#34;box alt&#34;&gt;
+        &lt;div class=&#34;row uniform&#34;&gt;
+        
+        
+        
+            
+                &lt;div class=&#34;6u&#34;&gt;
+            
+            
+        
+            
+                
+                    
+                    &lt;span class=&#34;image fit&#34;&gt;
+                
+            
+            
+        
+            
+                
+						&lt;a href=&#39;http://www.ryanmukherjee.com/img/engine/pistons_and_rods.jpg&#39;&gt;
+						&lt;img src=&#39;http://www.ryanmukherjee.com/img/engine/pistons_and_rods.jpg&#39;
+                            alt=&#34;Pistons and rods&#34;/&gt;
+						&lt;/a&gt;
+                    &lt;/span&gt;&lt;/div&gt;
+                
+                
+            
+            
+        
+            
+                &lt;div class=&#34;6u$&#34;&gt;
+            
+            
+        
+            
+                
+                    
+                    &lt;span class=&#34;image fit&#34;&gt;
+                
+            
+            
+        
+            
+                
+						&lt;a href=&#39;http://www.ryanmukherjee.com/img/engine/piston_carbon.jpg&#39;&gt;
+						&lt;img src=&#39;http://www.ryanmukherjee.com/img/engine/piston_carbon.jpg&#39;
+                            alt=&#34;Cylinder 1 piston&#34;/&gt;
+						&lt;/a&gt;
+                    &lt;/span&gt;&lt;/div&gt;
+                
+                
+            
+            
+        
+        &lt;/div&gt;
+    &lt;/div&gt;
+
+
+
+&lt;p&gt;Removing the cross-bolted main caps in this engine required removing both the two main bolts as well as the perpendicularly-positioned bolts through the outside of the block. The caps use dots on a raised right trapezoid indicating the location and rotation that the cap is supposed to be installed.&lt;/p&gt;
+
+
+
+
+    
+
+    
+    
+
+
+
+
+
+
+
+  
+
+
+    
+
+    &lt;div class=&#34;box alt&#34;&gt;
+        &lt;div class=&#34;row uniform&#34;&gt;
+        
+        
+        
+            
+                &lt;div class=&#34;3u&#34;&gt;
+            
+            
+        
+            
+                
+                    
+                    &lt;span class=&#34;image fit&#34;&gt;
+                
+            
+            
+        
+            
+                
+						&lt;a href=&#39;http://www.ryanmukherjee.com/img/engine/main_bearings_1_2_3.jpg&#39;&gt;
+						&lt;img src=&#39;http://www.ryanmukherjee.com/img/engine/main_bearings_1_2_3.jpg&#39;
+                            alt=&#34;Main bearings 1, 2, and 3&#34;/&gt;
+						&lt;/a&gt;
+                    &lt;/span&gt;&lt;/div&gt;
+                
+                
+            
+            
+        
+            
+                &lt;div class=&#34;3u&#34;&gt;
+            
+            
+        
+            
+                
+                    
+                    &lt;span class=&#34;image fit&#34;&gt;
+                
+            
+            
+        
+            
+                
+						&lt;a href=&#39;http://www.ryanmukherjee.com/img/engine/main_bearings_2_3_horiz.jpg&#39;&gt;
+						&lt;img src=&#39;http://www.ryanmukherjee.com/img/engine/main_bearings_2_3_horiz.jpg&#39;
+                            alt=&#34;Main bearings 2 and 3&#34;/&gt;
+						&lt;/a&gt;
+                    &lt;/span&gt;&lt;/div&gt;
+                
+                
+            
+            
+        
+            
+                &lt;div class=&#34;3u&#34;&gt;
+            
+            
+        
+            
+                
+                    
+                    &lt;span class=&#34;image fit&#34;&gt;
+                
+            
+            
+        
+            
+                
+						&lt;a href=&#39;http://www.ryanmukherjee.com/img/engine/main_bearings_3_4_horiz.jpg&#39;&gt;
+						&lt;img src=&#39;http://www.ryanmukherjee.com/img/engine/main_bearings_3_4_horiz.jpg&#39;
+                            alt=&#34;Main bearings 3 and 4&#34;/&gt;
+						&lt;/a&gt;
+                    &lt;/span&gt;&lt;/div&gt;
+                
+                
+            
+            
+        
+            
+                &lt;div class=&#34;3u$&#34;&gt;
+            
+            
+        
+            
+                
+                    
+                    &lt;span class=&#34;image fit&#34;&gt;
+                
+            
+            
+        
+            
+                
+						&lt;a href=&#39;http://www.ryanmukherjee.com/img/engine/main_bearings_4_5_horiz.jpg&#39;&gt;
+						&lt;img src=&#39;http://www.ryanmukherjee.com/img/engine/main_bearings_4_5_horiz.jpg&#39;
+                            alt=&#34;Main bearings 4 and 5&#34;/&gt;
+						&lt;/a&gt;
+                    &lt;/span&gt;&lt;/div&gt;
+                
+                
+            
+            
+        
+        &lt;/div&gt;
+    &lt;/div&gt;
+
+
+
+&lt;p&gt;After removing the main caps, I was able to inspect the main bearings. The bearings look very good, I don&amp;rsquo;t see any major marks on the bearings, nor was I able to feel any with my fingernail. Next step is to get the engine into the machine shop so that they can clean everything up and get it ready for me to reassemble.&lt;/p&gt;
+</description>
     </item>
     
     <item>
@@ -75,7 +1727,34 @@ When I went to start my car after work, it started idling really rough like a cy
       <pubDate>Sat, 01 Oct 2016 00:00:00 +0000</pubDate>
       
       <guid>http://www.ryanmukherjee.com/blog/android-obd-terminal/</guid>
-      <description>Terminal The first step to interfacing with the ECU is communicating with the OBD adapter that&amp;rsquo;s plugged into my car. As I mentioned in a previous blog post, I&amp;rsquo;m using an OBDLink MX Bluetooth adapter to communicate with the car. As this will be my first foray into raw OBD commands, I figured the best place to start would be a terminal interface that would allow me to enter commands manually so that I can test things out.</description>
+      <description>
+
+&lt;h2 id=&#34;terminal&#34;&gt;Terminal&lt;/h2&gt;
+
+&lt;p&gt;The first step to interfacing with the ECU is communicating with the OBD adapter that&amp;rsquo;s plugged into my car. As I mentioned in a previous blog post, I&amp;rsquo;m using an OBDLink MX Bluetooth adapter to communicate with the car. As this will be my first foray into raw OBD commands, I figured the best place to start would be a terminal interface that would allow me to enter commands manually so that I can test things out. I&amp;rsquo;d also like to do some general logging of OBD/CAN traffic on my car&amp;rsquo;s network so that I can start to understand how things are connected and what normal communications look like.&lt;/p&gt;
+
+&lt;p&gt;Towards that goal, I&amp;rsquo;ve just about finished up the terminal interface. I ran into a few snags using an IntentService to handle the Bluetooth connection, but so far I&amp;rsquo;ve been able to tackle them. I was successfully able to use a BroadcastReceiver to handle user input and send it to the Bluetooth device, while using the main onHandleIntent function to wait for input from the Bluetooth connection. I initially tried to use service binding to support notifying the main Activity when the Bluetooth connection was successfully connected or not. However, I couldn&amp;rsquo;t find a way to support delaying the onServiceConnected callback until the Bluetooth connection was fully connected. As such, I switched to using a ResultReceiver, which is Parcelable and can be passed in to the IntentService as an extra.&lt;/p&gt;
+
+&lt;h2 id=&#34;obdsim&#34;&gt;OBDSim&lt;/h2&gt;
+
+&lt;p&gt;While I was looking for a way to test the current version of my app, I stumbled upon &lt;a href=&#34;https://icculus.org/obdgpslogger/obdsim.html&#34;&gt;OBDSim&lt;/a&gt;. Written by a guy named Gary, or so it seems, this tool is pretty awesome. Most of the other software ECU simulators I could find are paid and seemed to have pretty clunky interfaces.&lt;/p&gt;
+
+&lt;p&gt;I downloaded the latest &lt;a href=&#34;https://icculus.org/obdgpslogger/&#34;&gt;OBD GPS Logger&lt;/a&gt; source code, which was apparently from 6 years ago, and let out a sigh of relief when I saw that Gary used CMake. So I quickly created a build directory and got to compiling. Unfortunately, it looks like there might be some errors in the main OBD GPS Logger application. However, OBDSim is a separate target, so with a quick &amp;ldquo;make obdsim&amp;rdquo; command I was able to compile just the simulator. There were a few linking dependencies that weren&amp;rsquo;t called out in the CMakeLists.txt file, but it was trivial to install them via apt-get.&lt;/p&gt;
+
+&lt;p&gt;Next thing I knew, I had a living breathing OBD simulator. A quick Google search led me to a &lt;a href=&#34;http://unix.stackexchange.com/questions/92255/how-do-i-connect-and-send-data-to-a-bluetooth-serial-port-on-linux&#34;&gt;Stack Overflow&lt;/a&gt; article that allowed me to get my phone connected to OBDSim. I&amp;rsquo;ve replicated the necessary commands below:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;# Check if serial service is currently supported
+sdptool browse local
+# If not, create a serial service on channel 22
+sdptool add --channel=22 SP
+# Watch channel 22 with rfcomm, create /dev/rfcomm0 when a device connects
+sudo rfcomm watch /dev/rfcomm0 22
+# Start obdsim on /dev/rfcomm0 once a device connects
+obdsim -t /dev/rfcomm0
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Once connected, I was able to send commands as you can see from the screenshot in this post. My initial thought is that I need to hide the extra return carriage and terminal prompt that are being returning by the OBD adapter. However, it looks like OBDSim isn&amp;rsquo;t 100% consistent about sending these characters, so I&amp;rsquo;ll need to test on my real device to verify. My next steps will probably be to put logic like this in the Settings dialog, and then I&amp;rsquo;ll want to implement the Log tab so that I can create log files to start understanding my car&amp;rsquo;s network.&lt;/p&gt;
+</description>
     </item>
     
     <item>
@@ -84,7 +1763,37 @@ When I went to start my car after work, it started idling really rough like a cy
       <pubDate>Thu, 22 Sep 2016 00:00:00 +0000</pubDate>
       
       <guid>http://www.ryanmukherjee.com/blog/logging-obd/</guid>
-      <description>OBD Adapter Back in 2009 I purchased an OBDLink USB adapter so that I could scan trouble codes from my car using a laptop. The hardware was very nice, but as I messed around with the tool I realized it had a major shortcoming. While I appreciated that ScanTool offered open source software, I was very disappointed that the software was incapable of handling my vehicle&amp;rsquo;s proprietary protocols. This isn&amp;rsquo;t really the fault of ScanTool but rather the industry itself.</description>
+      <description>
+
+&lt;h2 id=&#34;obd-adapter&#34;&gt;OBD Adapter&lt;/h2&gt;
+
+&lt;p&gt;Back in 2009 I purchased an OBDLink USB adapter so that I could scan trouble codes from my car using a laptop. The hardware was very nice, but as I messed around with the tool I realized it had a major shortcoming. While I appreciated that ScanTool offered open source software, I was very disappointed that the software was incapable of handling my vehicle&amp;rsquo;s proprietary protocols. This isn&amp;rsquo;t really the fault of ScanTool but rather the industry itself. Standardized automotive communication protocols have come a long way over the years, but they still have a ways to go in terms of making things more standardized, open, and accessible.&lt;/p&gt;
+
+&lt;p&gt;At any rate, I was able to upgrade to an OBDLink MX Bluetooth adapter in 2012. This little adapter is small, fast, and has nice power saving features. The STN11xx IC also supports a variety of different communication protocols to enable some potentially awesome applications.&lt;/p&gt;
+
+
+&lt;figure class=&#34;image center-image&#34;&gt;
+    &lt;a href=&#34;https://www.scantool.net/obdlink-mxbt/&#34;&gt;
+        &lt;img src=&#34;http://www.obdlink.com/wp-content/uploads/2014/05/mxbt_main1.png&#34; alt=&#34;OBDLink MX Bluetooth&#34; /&gt;
+    &lt;/a&gt;
+    
+&lt;/figure&gt;
+
+
+&lt;p&gt;However, I&amp;rsquo;ve seen a surprising lack of software options for the STN11xx chip. Most of the apps that I&amp;rsquo;ve seen only support the ELM327 command set. This is certainly the best way to cover the widest variety of hardware, as the STN11xx chips also support the ELM327 v1.4 command set. But these apps miss out on some of the advanced features of the ST11xx chips.&lt;/p&gt;
+
+&lt;h2 id=&#34;building-an-android-application&#34;&gt;Building an Android Application&lt;/h2&gt;
+
+&lt;p&gt;After rebuilding my engine I&amp;rsquo;m going to need tools to properly tune the engine. I surveyed commercial tuning products, however all of the viable options for an engine this new were too expensive. As such, I have begun to write my own software to interface with my OBDLink MX adapter with the goal of working towards a custom open-source solution to reading and flashing my ECU.&lt;/p&gt;
+
+&lt;p&gt;You can follow my progress on the Android app &lt;a href=&#34;https://github.com/mukhery/AudiECU&#34;&gt;here&lt;/a&gt;. My first step is to create a terminal program to interface with the OBDLink MX bluetooth adapter and allow for manual command entry. After testing out OBD command scripts and ensuring that they work on my vehicle, I plan to incorporate these scripts into the app as part of a diagnostics page. There will also be a logs page for importing and exporting terminal logs, and eventually (if possible) the app will also have functionality to dump and flash ECU memory.&lt;/p&gt;
+
+&lt;p&gt;My current design for the app has all of the OBD command input and output being fed into a ContentProvider. This allows for fragments to more easily and seamlessly update with the latest terminal history. It also allows me to easily export and import command history by writing out the contents of the SQLite database to a file or vice versa. One of my goals is to ensure that no matter what diagnostic or ECU read/flash command a user runs, he or she can potentially export the terminal log that includes that raw OBD commands that allowed the software to perform these commands.&lt;/p&gt;
+
+&lt;p&gt;To handle the Bluetooth connection, my current design is to use an IntentService. The class&amp;rsquo;s onHandleIntent method is used to open a Bluetooth socket and instantiate an infinite loop receiving data through the socket. All received data is written into the ContentProvider and any fragments that are monitoring this data will be automatically notified to pull the latest data. Once the IntentService starts, it registers a BroadcastReceiver that listens for commands to send to the OBD adapter. As soon as it receives a BroadcastIntent, it writes the contents to the Bluetooth socket.&lt;/p&gt;
+
+&lt;p&gt;By using an IntentService, I can quickly create a background service that maintains, reads, and writes from/to a Bluetooth connection. Services are required because some OBD commands simply put the adapter into a passive listen-only mode, and we would like to remain in this mode and collect data even when the app isn&amp;rsquo;t in the foreground.&lt;/p&gt;
+</description>
     </item>
     
     <item>
@@ -93,7 +1802,30 @@ When I went to start my car after work, it started idling really rough like a cy
       <pubDate>Tue, 13 Sep 2016 00:00:00 +0000</pubDate>
       
       <guid>http://www.ryanmukherjee.com/blog/engine-purchase/</guid>
-      <description>Rationale An oil consumption issue with my current engine is what caused me to start researching engine technology and possible solutions. I initially noticed the oil consumption issue while my vehicle was still under warranty and brought the issue to the attention of my local Audi dealer. They performed an oil consumption test a little over a year ago and only measured consumption of about 0.13 liters of oil per 1000 miles.</description>
+      <description>
+
+&lt;h2 id=&#34;rationale&#34;&gt;Rationale&lt;/h2&gt;
+
+&lt;p&gt;An oil consumption issue with my current engine is what caused me to start researching engine technology and possible solutions. I initially noticed the oil consumption issue while my vehicle was still under warranty and brought the issue to the attention of my local Audi dealer. They performed an oil consumption test a little over a year ago and only measured consumption of about 0.13 liters of oil per 1000 miles.&lt;/p&gt;
+
+&lt;p&gt;Several months after my oil consumption test, the turbocharger on my vehicle failed. Fortunately, my car&amp;rsquo;s warranty period had not yet ended and my dealer replaced the entire turbocharger unit. Reflecting about this failure now makes me wonder whether or not this failure is connected with the increased oil consumption issue that I am seeing now. However, at the time I did not suspect that my engine had any major issues (especially given that it only had 40,000 miles on it).&lt;/p&gt;
+
+&lt;p&gt;As my warranty was ending, I decided to install an oil catch can to help prolong the life of my engine. Unfortunately (or fortunately, depending on how you look at it), this catch can is what revealed the greater issue with my engine. My engine was filling my catch can almost completely with oil in a little over one week of daily driving. My commute isn&amp;rsquo;t anything crazy, either. I drive about 30 minutes and 20 miles each day.&lt;/p&gt;
+
+&lt;p&gt;I took my vehicle back to the dealer after discovering this issue, even though my vehicle was now out of its warranty period. The dealer refused to perform another oil consumption test, given that I had an oil consumption test performed one year earlier and that I had modified the vehicle by adding a catch can.&lt;/p&gt;
+
+&lt;p&gt;I suspect that my vehicle might have an issue similar to the one that countless other 2.0L TFSI engine owners have experienced, and for which there is now an &lt;a href=&#34;http://www.oilconsumptionsettlement.com/&#34;&gt;oil consumption settlement&lt;/a&gt;. There are rumors that these engines had faulty piston rings, which caused excessive oil consumption and blow-by. It seems a little unlikely to me that Audi would use vastly different parts for their nearly-identical transverse version of the 2.0L TFSI engine. I suspect my engine has a similar set of faulty piston rings.&lt;/p&gt;
+
+&lt;p&gt;At any rate, my frustration getting this issue resolved through Audi encouraged me to look into solving the problem myself. As my interest in automotive science has been piqued by the issues I encountered, I decided that it could be a worthwhile endeavor to rebuild an engine myself. As I only have one vehicle and I wanted to take my time, I couldn&amp;rsquo;t use my own engine and would need to purchase a used one.&lt;/p&gt;
+
+&lt;h2 id=&#34;the-engine&#34;&gt;The engine&lt;/h2&gt;
+
+&lt;p&gt;Luckily, just as I made the decision to rebuild an engine for my car I found a perfect used engine online from &lt;a href=&#34;https://www.lkqonline.com/&#34;&gt;LKQ&lt;/a&gt;. The host vehicle was nearly identical to mine in model year, color, and options. Ed at &lt;a href=&#34;http://4induktion.com/&#34;&gt;Induktion Motorsports&lt;/a&gt; was kind enough to help me out with some guidance as I made the purchase and to receive the engine for me.&lt;/p&gt;
+
+&lt;p&gt;As I was waiting for the engine to arrive, I made sure I had the right tools to work on the engine. I turned to &lt;a href=&#34;http://www.harborfreight.com/&#34;&gt;Harbor Freight&lt;/a&gt; as any hobbyist on a budget would. With the engine weighing in around 320 lbs, a &lt;a href=&#34;http://www.harborfreight.com/1000-lb-capacity-engine-stand-69886.html&#34;&gt;1000 lb engine stand&lt;/a&gt; should be more than strong enough to hold to engine while I work on it. I also needed a &lt;a href=&#34;http://www.harborfreight.com/1-ton-capacity-foldable-shop-crane-61858.html&#34;&gt;shop crane&lt;/a&gt; to move the engine around and get it on and off a truck.&lt;/p&gt;
+
+&lt;p&gt;Finally the day came for me to pick up the engine. The engine was shipped on a wood pallet with an additional wooden box strapped to the bottom. The engine was light enough for 3-4 people to lift easily, and it was very easy to manage the shop crane to pull the engine off a truck. I bought four M12x1.75 bolts from Home Depot and used them to bolt the engine to the stand.&lt;/p&gt;
+</description>
     </item>
     
   </channel>

@@ -1,15 +1,58 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Software on Ryan Mukherjee</title>
-    <link>http://www.ryanmukherjee.com/categories/software/</link>
-    <description>Recent content in Software on Ryan Mukherjee</description>
+    <title>software on Ryan Mukherjee</title>
+    <link>http://www.ryanmukherjee.com/categories/software/index.xml</link>
+    <description>Recent content in software on Ryan Mukherjee</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 01 Oct 2016 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://www.ryanmukherjee.com/categories/software/index.xml" rel="self" type="application/rss+xml" />
     
-	<atom:link href="http://www.ryanmukherjee.com/categories/software/index.xml" rel="self" type="application/rss+xml" />
-    
+    <item>
+      <title>Tuning the EA888 - Reading/Writing Tools</title>
+      <link>http://www.ryanmukherjee.com/blog/tuning/</link>
+      <pubDate>Mon, 03 Dec 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.ryanmukherjee.com/blog/tuning/</guid>
+      <description>
+
+&lt;h2 id=&#34;why-bother&#34;&gt;Why bother?&lt;/h2&gt;
+
+&lt;p&gt;When I tell other car people that I tuned my car a common follow up question is, &amp;ldquo;Who did you go with?&amp;rdquo; They&amp;rsquo;ll ask if I bought a tune from APR, Unitronic, or some other large corporation. I think one of the reasons for this is the complexity of modern cars. There are so many little computers, wires, and other electronic devices inside modern cars that people assume it&amp;rsquo;s almost impossible for individuals to understand what&amp;rsquo;s going on, let alone non-destructively make changes themselves.&lt;/p&gt;
+
+&lt;p&gt;I think this perceived complexity actually helped convince me to try. For one, it makes success even more satistfying if other people think it&amp;rsquo;s an impossible problem. But, before I started, I also thought tuning modern cars was a nearly impossible problem, and it was very cool to crack the problem open and change that belief.&lt;/p&gt;
+
+&lt;p&gt;One of the things I wrote about in my college application essay was that I wanted to understand, at a fundamental level, how computers worked. How does one turn raw electricity into the wealth of information and enjoyment that you can get from a computer? At the time I wrote my essay, it seemed almost like magic. Slowly and steadily, I began to realize that it isn&amp;rsquo;t magic. In fact, like most (man-made) things in life it seems, computers are pretty much just an aggregation of a bunch of simple concepts and technologies. I think it&amp;rsquo;s completely justifiable to be in awe of complex fully assembled products and systems, but I don&amp;rsquo;t think we should believe that any man-made system is beyond our understanding. Most people are capable of understanding how these systems work if they put time and effort into understanding the components.&lt;/p&gt;
+
+&lt;p&gt;All of this is to say that, having spent some time learning about tuning, I think tuning is also fairly straightforward. Back when most cars were carbuerated, I think people wouldn&amp;rsquo;t have been very surprised if you told them you tuned your car yourself. Maybe some would&amp;rsquo;ve argued that anyone could grab a screwdriver and tweak their own carbuerator. To be honest, I think at some level tuning modern cars hasn&amp;rsquo;t really changed that much. I think what has changed is that the knobs we need to tune are harder to get to, but on the upside, once we get access to the knobs we&amp;rsquo;ll have more control.&lt;/p&gt;
+
+&lt;h2 id=&#34;what-do-we-mean-by-tuning&#34;&gt;What do we mean by tuning?&lt;/h2&gt;
+
+&lt;p&gt;Generally, when we talk about tuning we&amp;rsquo;re talking about changing the operating parameters of our engine. In other words, we&amp;rsquo;re talking about changing how much fuel gets injected, when it gets injected, when the spark plugs fire, when and how variable valve timing actuators are controlled, etc. On modern vehicles, most engine parameters are controlled by computer. There are a bunch of modules around the vehicle and they all communicate via networks such as &lt;a href=&#34;https://en.wikipedia.org/wiki/Canbus&#34;&gt;CAN&lt;/a&gt;. These modules are then connected to and control things like the injectors and spark plugs.&lt;/p&gt;
+
+&lt;p&gt;The primary module controlling the engine is called the &lt;a href=&#34;https://en.wikipedia.org/wiki/Engine_control_unit&#34;&gt;ECU&lt;/a&gt;. In many modern cars, the ECU is combined with the &lt;a href=&#34;https://en.wikipedia.org/wiki/Transmission_control_unit&#34;&gt;TCU&lt;/a&gt; and the combined module is sometimes referred to as the &lt;a href=&#34;https://en.wikipedia.org/wiki/Powertrain_control_module&#34;&gt;PCM&lt;/a&gt;. Even in cars with manual transmissions, the PCM module might still have all of the logic and hardware for controlling an automatic transmission to reduce manufacturing costs.&lt;/p&gt;
+
+&lt;p&gt;Ideally, we would like full control over the ECU so that we can quickly and easily tune the car. Unfortunately, unless we switch to something like an aftermarket standalone ECU (such as the &lt;a href=&#34;https://www.aemelectronics.com/products/programmable-engine-management-systems/infinity-ecu&#34;&gt;AEM Infinity&lt;/a&gt; or &lt;a href=&#34;https://www.haltech.com/product-category/universal-ecu-kits/&#34;&gt;Haltech Elite Series&lt;/a&gt;), gaining control of the stock ECU is basically a form of reverse engineering. Different manufacturers use different protocols, modern vehicles are often protected by keys and passwords to prevent unauthorized reading/writing, and the software running on the ECU is kept secret so you can&amp;rsquo;t simply modify some source code, recompile, and then upload to your ECU. The easiest way to overcome these hurdles and get straight to tuning is to buy some tuning tools.&lt;/p&gt;
+
+&lt;h2 id=&#34;tuning-tools&#34;&gt;Tuning Tools&lt;/h2&gt;
+
+&lt;p&gt;To get started tuning, you&amp;rsquo;ll need some tools that will enable you to read and write different software onto the ECU as well as help you understand what bytes to modify. For this post I&amp;rsquo;ll focus on reading and writing. One of the biggest problems I encountered while trying to tune my own car was that tuning tools, especially ones that support modern vehicles, are very expensive. Alientech, Flashtec, and Magic Motorsport are some of the biggest players that offer tools supporting a wide variety of makes and models including many modern vehicles. Unfortunately, most of these tools are priced for professional tuners and tuning companies, which put them out of reach for myself and probably most individuals.&lt;/p&gt;
+
+&lt;p&gt;I contacted the big three tuning tool companies and asked if they had any cheaper options for individuals. Alientech was the only company that had a cheaper tool, which they call &lt;a href=&#34;https://www.alientech-tools.com/en/powergate3/&#34;&gt;Powergate3+&lt;/a&gt;. The Powergate3+ unit essentially locks itself to a particular vehicle, which makes it less suitable for professional tuning companies but great for an individual. I purchased the Powergate3+ and tried to use it with my car, but only had partial success. The tool was able to successfully read my ECU after working with customer support and providing them with a readout that I obtained from another tuner, but the Powergate3+ was never able to fully write to the ECU. I tried working with customer support again, but my North American contact basically told me that his Italian colleagues weren&amp;rsquo;t responding to resolve my problem.&lt;/p&gt;
+
+&lt;p&gt;If you can&amp;rsquo;t find the tools you need directly from the companies themselves, it is possible to find some stuff on eBay. There are also some forums, such as NefMoto and MHH Auto where people discuss and sometimes even sell used tools. The most popular options seem to be Alientech&amp;rsquo;s KESS and KTAG. KESS provides ECU reading and writing capabilities via OBD, as well as boot mode support for various ECUs. KTAG provides ECU reading and writing capabilities via BDM.&lt;/p&gt;
+
+&lt;p&gt;OBD is ideal, because it allows you to modify the software on your ECU without removing and opening the ECU. Tuning the car well, especially for a beginner (like me), requires making lots of little changes and testing them out to see what happens. Having to remove the ECU, open it, and solder wires just to write new software adds a huge amount of overhead to this process. If you&amp;rsquo;re lucky, a tool like KESS will be able to OBD read and write software to your ECU. If not, you still may be able to open the ECU and solder wires to use KESS in what&amp;rsquo;s called boot mode.&lt;/p&gt;
+
+&lt;p&gt;From what I&amp;rsquo;ve learned, boot mode is like a diagnostic mode that you can put the ECU&amp;rsquo;s primary processor in during bootup. I think of it like accessing the BIOS on your computer. If you change the voltage on certain pins during bootup, or hold down a certain key (to use the BIOS analogy), you can enter a special mode where you can access features that might otherwise be locked by the ECU&amp;rsquo;s software. However, there are limitations to boot mode. Often times you still only have access to a certain region of the ECU&amp;rsquo;s memory.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Background_debug_mode_interface&#34;&gt;BDM&lt;/a&gt; is another method that KTAG uses, which I think is similar to &lt;a href=&#34;https://en.wikipedia.org/wiki/JTAG&#34;&gt;JTAG&lt;/a&gt;. Using BDM, Alientech&amp;rsquo;s KTAG tool essentially provides full read and write access to the ECU&amp;rsquo;s memory. When modern cars come out with new ECUs and protection mechanisms to prevent unauthorized OBD modification, BDM is usually the method that most tuners use to bypass these protections. Unfortunately, BDM also requires you to physically open the ECU to access special pins connected to the primary processor.&lt;/p&gt;
+
+&lt;p&gt;I also recently learned about HP tuners &lt;a href=&#34;https://www.hptuners.com/mpvi2/&#34;&gt;MPVI2&lt;/a&gt;. It doesn&amp;rsquo;t support my car specifically, but they support the same ECU versions in other vehicles. I reached out to the company to see if it would be possible to add support for my vehicle and I&amp;rsquo;ll create another blog post if they get it working.&lt;/p&gt;
+
+&lt;p&gt;That&amp;rsquo;s all for reading and writing tools. In future tuning posts, I&amp;rsquo;ll go into more detail on how to edit the tune.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>android obd terminal</title>
@@ -17,7 +60,34 @@
       <pubDate>Sat, 01 Oct 2016 00:00:00 +0000</pubDate>
       
       <guid>http://www.ryanmukherjee.com/blog/android-obd-terminal/</guid>
-      <description>Terminal The first step to interfacing with the ECU is communicating with the OBD adapter that&amp;rsquo;s plugged into my car. As I mentioned in a previous blog post, I&amp;rsquo;m using an OBDLink MX Bluetooth adapter to communicate with the car. As this will be my first foray into raw OBD commands, I figured the best place to start would be a terminal interface that would allow me to enter commands manually so that I can test things out.</description>
+      <description>
+
+&lt;h2 id=&#34;terminal&#34;&gt;Terminal&lt;/h2&gt;
+
+&lt;p&gt;The first step to interfacing with the ECU is communicating with the OBD adapter that&amp;rsquo;s plugged into my car. As I mentioned in a previous blog post, I&amp;rsquo;m using an OBDLink MX Bluetooth adapter to communicate with the car. As this will be my first foray into raw OBD commands, I figured the best place to start would be a terminal interface that would allow me to enter commands manually so that I can test things out. I&amp;rsquo;d also like to do some general logging of OBD/CAN traffic on my car&amp;rsquo;s network so that I can start to understand how things are connected and what normal communications look like.&lt;/p&gt;
+
+&lt;p&gt;Towards that goal, I&amp;rsquo;ve just about finished up the terminal interface. I ran into a few snags using an IntentService to handle the Bluetooth connection, but so far I&amp;rsquo;ve been able to tackle them. I was successfully able to use a BroadcastReceiver to handle user input and send it to the Bluetooth device, while using the main onHandleIntent function to wait for input from the Bluetooth connection. I initially tried to use service binding to support notifying the main Activity when the Bluetooth connection was successfully connected or not. However, I couldn&amp;rsquo;t find a way to support delaying the onServiceConnected callback until the Bluetooth connection was fully connected. As such, I switched to using a ResultReceiver, which is Parcelable and can be passed in to the IntentService as an extra.&lt;/p&gt;
+
+&lt;h2 id=&#34;obdsim&#34;&gt;OBDSim&lt;/h2&gt;
+
+&lt;p&gt;While I was looking for a way to test the current version of my app, I stumbled upon &lt;a href=&#34;https://icculus.org/obdgpslogger/obdsim.html&#34;&gt;OBDSim&lt;/a&gt;. Written by a guy named Gary, or so it seems, this tool is pretty awesome. Most of the other software ECU simulators I could find are paid and seemed to have pretty clunky interfaces.&lt;/p&gt;
+
+&lt;p&gt;I downloaded the latest &lt;a href=&#34;https://icculus.org/obdgpslogger/&#34;&gt;OBD GPS Logger&lt;/a&gt; source code, which was apparently from 6 years ago, and let out a sigh of relief when I saw that Gary used CMake. So I quickly created a build directory and got to compiling. Unfortunately, it looks like there might be some errors in the main OBD GPS Logger application. However, OBDSim is a separate target, so with a quick &amp;ldquo;make obdsim&amp;rdquo; command I was able to compile just the simulator. There were a few linking dependencies that weren&amp;rsquo;t called out in the CMakeLists.txt file, but it was trivial to install them via apt-get.&lt;/p&gt;
+
+&lt;p&gt;Next thing I knew, I had a living breathing OBD simulator. A quick Google search led me to a &lt;a href=&#34;http://unix.stackexchange.com/questions/92255/how-do-i-connect-and-send-data-to-a-bluetooth-serial-port-on-linux&#34;&gt;Stack Overflow&lt;/a&gt; article that allowed me to get my phone connected to OBDSim. I&amp;rsquo;ve replicated the necessary commands below:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;# Check if serial service is currently supported
+sdptool browse local
+# If not, create a serial service on channel 22
+sdptool add --channel=22 SP
+# Watch channel 22 with rfcomm, create /dev/rfcomm0 when a device connects
+sudo rfcomm watch /dev/rfcomm0 22
+# Start obdsim on /dev/rfcomm0 once a device connects
+obdsim -t /dev/rfcomm0
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Once connected, I was able to send commands as you can see from the screenshot in this post. My initial thought is that I need to hide the extra return carriage and terminal prompt that are being returning by the OBD adapter. However, it looks like OBDSim isn&amp;rsquo;t 100% consistent about sending these characters, so I&amp;rsquo;ll need to test on my real device to verify. My next steps will probably be to put logic like this in the Settings dialog, and then I&amp;rsquo;ll want to implement the Log tab so that I can create log files to start understanding my car&amp;rsquo;s network.&lt;/p&gt;
+</description>
     </item>
     
     <item>
@@ -26,7 +96,37 @@
       <pubDate>Thu, 22 Sep 2016 00:00:00 +0000</pubDate>
       
       <guid>http://www.ryanmukherjee.com/blog/logging-obd/</guid>
-      <description>OBD Adapter Back in 2009 I purchased an OBDLink USB adapter so that I could scan trouble codes from my car using a laptop. The hardware was very nice, but as I messed around with the tool I realized it had a major shortcoming. While I appreciated that ScanTool offered open source software, I was very disappointed that the software was incapable of handling my vehicle&amp;rsquo;s proprietary protocols. This isn&amp;rsquo;t really the fault of ScanTool but rather the industry itself.</description>
+      <description>
+
+&lt;h2 id=&#34;obd-adapter&#34;&gt;OBD Adapter&lt;/h2&gt;
+
+&lt;p&gt;Back in 2009 I purchased an OBDLink USB adapter so that I could scan trouble codes from my car using a laptop. The hardware was very nice, but as I messed around with the tool I realized it had a major shortcoming. While I appreciated that ScanTool offered open source software, I was very disappointed that the software was incapable of handling my vehicle&amp;rsquo;s proprietary protocols. This isn&amp;rsquo;t really the fault of ScanTool but rather the industry itself. Standardized automotive communication protocols have come a long way over the years, but they still have a ways to go in terms of making things more standardized, open, and accessible.&lt;/p&gt;
+
+&lt;p&gt;At any rate, I was able to upgrade to an OBDLink MX Bluetooth adapter in 2012. This little adapter is small, fast, and has nice power saving features. The STN11xx IC also supports a variety of different communication protocols to enable some potentially awesome applications.&lt;/p&gt;
+
+
+&lt;figure class=&#34;image center-image&#34;&gt;
+    &lt;a href=&#34;https://www.scantool.net/obdlink-mxbt/&#34;&gt;
+        &lt;img src=&#34;http://www.obdlink.com/wp-content/uploads/2014/05/mxbt_main1.png&#34; alt=&#34;OBDLink MX Bluetooth&#34; /&gt;
+    &lt;/a&gt;
+    
+&lt;/figure&gt;
+
+
+&lt;p&gt;However, I&amp;rsquo;ve seen a surprising lack of software options for the STN11xx chip. Most of the apps that I&amp;rsquo;ve seen only support the ELM327 command set. This is certainly the best way to cover the widest variety of hardware, as the STN11xx chips also support the ELM327 v1.4 command set. But these apps miss out on some of the advanced features of the ST11xx chips.&lt;/p&gt;
+
+&lt;h2 id=&#34;building-an-android-application&#34;&gt;Building an Android Application&lt;/h2&gt;
+
+&lt;p&gt;After rebuilding my engine I&amp;rsquo;m going to need tools to properly tune the engine. I surveyed commercial tuning products, however all of the viable options for an engine this new were too expensive. As such, I have begun to write my own software to interface with my OBDLink MX adapter with the goal of working towards a custom open-source solution to reading and flashing my ECU.&lt;/p&gt;
+
+&lt;p&gt;You can follow my progress on the Android app &lt;a href=&#34;https://github.com/mukhery/AudiECU&#34;&gt;here&lt;/a&gt;. My first step is to create a terminal program to interface with the OBDLink MX bluetooth adapter and allow for manual command entry. After testing out OBD command scripts and ensuring that they work on my vehicle, I plan to incorporate these scripts into the app as part of a diagnostics page. There will also be a logs page for importing and exporting terminal logs, and eventually (if possible) the app will also have functionality to dump and flash ECU memory.&lt;/p&gt;
+
+&lt;p&gt;My current design for the app has all of the OBD command input and output being fed into a ContentProvider. This allows for fragments to more easily and seamlessly update with the latest terminal history. It also allows me to easily export and import command history by writing out the contents of the SQLite database to a file or vice versa. One of my goals is to ensure that no matter what diagnostic or ECU read/flash command a user runs, he or she can potentially export the terminal log that includes that raw OBD commands that allowed the software to perform these commands.&lt;/p&gt;
+
+&lt;p&gt;To handle the Bluetooth connection, my current design is to use an IntentService. The class&amp;rsquo;s onHandleIntent method is used to open a Bluetooth socket and instantiate an infinite loop receiving data through the socket. All received data is written into the ContentProvider and any fragments that are monitoring this data will be automatically notified to pull the latest data. Once the IntentService starts, it registers a BroadcastReceiver that listens for commands to send to the OBD adapter. As soon as it receives a BroadcastIntent, it writes the contents to the Bluetooth socket.&lt;/p&gt;
+
+&lt;p&gt;By using an IntentService, I can quickly create a background service that maintains, reads, and writes from/to a Bluetooth connection. Services are required because some OBD commands simply put the adapter into a passive listen-only mode, and we would like to remain in this mode and collect data even when the app isn&amp;rsquo;t in the foreground.&lt;/p&gt;
+</description>
     </item>
     
   </channel>
