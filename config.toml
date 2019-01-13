@@ -1,4 +1,4 @@
-baseurl = "http://www.ryanmukherjee.com/"
+baseurl = "//www.ryanmukherjee.com/"
 languageCode = "en-us"
 title = "Ryan Mukherjee"
 theme = "hugo-future-imperfect"
