@@ -1,87 +1,93 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>http://www.ryanmukherjee.com/blog/tuning/</loc>
+    <loc>//www.ryanmukherjee.com/blog/tuning/</loc>
     <lastmod>2018-12-03T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://www.ryanmukherjee.com/blog/hpfp/</loc>
+    <loc>//www.ryanmukherjee.com/blog/hpfp/</loc>
     <lastmod>2018-10-03T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://www.ryanmukherjee.com/blog/engine-painting/</loc>
+    <loc>//www.ryanmukherjee.com/blog/engine-painting/</loc>
     <lastmod>2018-09-03T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://www.ryanmukherjee.com/blog/eerie_silence/</loc>
+    <loc>//www.ryanmukherjee.com/blog/eerie_silence/</loc>
     <lastmod>2018-07-03T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://www.ryanmukherjee.com/blog/balance-shaft-delete/</loc>
+    <loc>//www.ryanmukherjee.com/blog/balance-shaft-delete/</loc>
     <lastmod>2017-01-26T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://www.ryanmukherjee.com/blog/engine-failure/</loc>
+    <loc>//www.ryanmukherjee.com/blog/engine-failure/</loc>
     <lastmod>2017-01-25T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://www.ryanmukherjee.com/blog/engine-teardown/</loc>
+    <loc>//www.ryanmukherjee.com/blog/engine-teardown/</loc>
     <lastmod>2017-01-20T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://www.ryanmukherjee.com/blog/android-obd-terminal/</loc>
+    <loc>//www.ryanmukherjee.com/blog/android-obd-terminal/</loc>
     <lastmod>2016-10-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://www.ryanmukherjee.com/blog/logging-obd/</loc>
+    <loc>//www.ryanmukherjee.com/blog/logging-obd/</loc>
     <lastmod>2016-09-22T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://www.ryanmukherjee.com/blog/engine-purchase/</loc>
+    <loc>//www.ryanmukherjee.com/blog/engine-purchase/</loc>
     <lastmod>2016-09-13T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://www.ryanmukherjee.com/about/</loc>
+    <loc>//www.ryanmukherjee.com/about/</loc>
     <lastmod>2016-09-12T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://www.ryanmukherjee.com/blog/</loc>
+    <loc>//www.ryanmukherjee.com/blog/</loc>
     <lastmod>2018-12-03T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://www.ryanmukherjee.com/categories/</loc>
+    <loc>//www.ryanmukherjee.com/categories/</loc>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://www.ryanmukherjee.com/</loc>
-    <lastmod>2018-12-03T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://www.ryanmukherjee.com/categories/hardware/</loc>
+    <loc>//www.ryanmukherjee.com/categories/hardware/</loc>
     <lastmod>2018-10-03T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://www.ryanmukherjee.com/categories/software/</loc>
+    <loc>//www.ryanmukherjee.com/</loc>
     <lastmod>2018-12-03T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>//www.ryanmukherjee.com/categories/software/</loc>
+    <lastmod>2018-12-03T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>//www.ryanmukherjee.com/tags/</loc>
     <priority>0</priority>
   </url>
   

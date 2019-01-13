@@ -8,7 +8,7 @@ pre {
     width: 100%
 }
 
-/* http://stackoverflow.com/questions/25302836/responsive-video-iframes-keeping-aspect-ratio-with-only-css */
+/* https://stackoverflow.com/questions/25302836/responsive-video-iframes-keeping-aspect-ratio-with-only-css */
 /* This element defines the size the iframe will take.
    In this example we want to have a ratio of 25:14 */
 .aspect-ratio {
